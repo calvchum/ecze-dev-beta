@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ECZE-dev",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A Darkgreen Design project",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Calvin Cheung <calvchum@gmail.com>",
   "dependencies": {
     "dotenv": "^8.0.0",
     "gatsby": "^2.8.6",
