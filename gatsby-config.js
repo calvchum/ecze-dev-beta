@@ -1,7 +1,4 @@
-const contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
-}
+const keys = require("./config/keys")
 
 module.exports = {
   siteMetadata: {
@@ -34,9 +31,12 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-contentful`,
-      options: contentfulConfig
+      options: {
+        spaceId: keys.spaceId,
+        accessToken: keys.accessToken,
       },
     },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
