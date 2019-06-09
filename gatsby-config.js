@@ -1,3 +1,8 @@
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+}
+
 module.exports = {
   siteMetadata: {
     title: `ECZE`,
@@ -25,6 +30,11 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/wave.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
