@@ -1,20 +1,50 @@
 import React, { Component } from "react"
 import Layout from "../components/layout"
+import FilterBlog from "../components/filterblog"
+import BlogSection from "../components/blogsection"
 import { Link, graphql } from "gatsby"
 
 export default class blog extends Component {
+  constructor() {
+    super()
+    this.state = {
+      selectedCategories: [],
+    }
+    this.updateSelectedCategories = this.updateSelectedCategories.bind(this)
+  }
+
+  updateSelectedCategories(selected) {
+    let selectedCategories = []
+    selected.forEach(category => {
+      if (category.isChecked) {
+        selectedCategories.push(category.value)
+      }
+      this.setState({
+        selectedCategories,
+      })
+    })
+  }
+
   render() {
     const posts = this.props.data.allContentfulBlogPost.edges
+    let categories = []
+    posts.forEach(post => {
+      categories.push(post.node.category)
+    })
+
+    // only pass down the posts that belong to the category
+    let displayedSections = this.state.selectedCategories.map(category => {
+      return <BlogSection posts={posts} category={category} />
+    })
+
     return (
       <Layout>
         <h1>BLOG</h1>
-        <ul>
-          {posts.map(post => (
-            <Link to={`blog/${post.node.slug}`}>
-              <li key={post.node.slug}>{post.node.title}</li>
-            </Link>
-          ))}
-        </ul>
+        <FilterBlog
+          categories={categories}
+          updateSelectedCategories={this.updateSelectedCategories}
+        />
+        {displayedSections}
       </Layout>
     )
   }
@@ -26,8 +56,8 @@ export const query = graphql`
       edges {
         node {
           slug
-          tags
           title
+          category
         }
       }
     }
