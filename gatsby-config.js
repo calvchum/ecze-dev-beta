@@ -3,8 +3,8 @@ const keys = require("./config/keys")
 module.exports = {
   siteMetadata: {
     title: `ECZE`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `If you want to cure your eczema, you need to LEARN about eczema.`,
+    author: `@calvchum`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

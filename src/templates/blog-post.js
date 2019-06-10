@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 export default class BlogPostTemplate extends Component {
   render() {
     const post = this.props.data.contentfulBlogPost
-    const site = this.props.data.site
     return (
       <Layout>
         <SEO title={`${post.title}`} />
