@@ -4,12 +4,20 @@ import { Link } from "gatsby"
 class ArticlePreview extends Component {
   render() {
     const { title, slug } = this.props.post.node
+    const imgUrl = this.props.post.node.heroImage.file.url
     return (
-      <div>
-        <Link to={`/blog/${slug}`}>
-          <li>{title}</li>
-        </Link>
-      </div>
+      <Link to={`/blog/${slug}`} style={{ textDecoration: "none" }}>
+        <div
+          style={{
+            border: "1px solid",
+            borderRadius: "4px",
+            marginBottom: "10px",
+          }}
+        >
+          <img src={imgUrl} alt="title" style={{ height: "100px" }} />
+          <li style={{ listStyleType: "none" }}>{title}</li>
+        </div>
+      </Link>
     )
   }
 }
