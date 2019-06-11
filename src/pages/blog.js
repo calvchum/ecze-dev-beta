@@ -33,8 +33,8 @@ export default class blog extends Component {
     })
 
     // only pass down the posts that belong to the category
-    let displayedSections = this.state.selectedCategories.map(category => {
-      return <BlogSection posts={posts} category={category} />
+    let displayedSections = this.state.selectedCategories.map((category, i) => {
+      return <BlogSection posts={posts} category={category} key={i} />
     })
 
     return (
@@ -55,9 +55,14 @@ export const query = graphql`
     allContentfulBlogPost {
       edges {
         node {
-          slug
           title
           category
+          slug
+          heroImage {
+            file {
+              url
+            }
+          }
         }
       }
     }

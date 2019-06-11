@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import ArticlePreview from "./articlepreview"
 
 class BlogSection extends Component {
   render() {
@@ -9,11 +10,7 @@ class BlogSection extends Component {
         <ul>
           {this.props.posts.map((post, i) => {
             if (post.node.category === this.props.category) {
-              return (
-                <Link to={`/blog${post.node.slug}`}>
-                  <li>{post.node.title}</li>
-                </Link>
-              )
+              return <ArticlePreview post={post} key={i} />
             }
           })}
         </ul>
