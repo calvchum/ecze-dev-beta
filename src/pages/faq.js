@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -12,3 +12,18 @@ const Faq = () => (
 )
 
 export default Faq
+
+export const query = graphql`
+  {
+    allContentfulFaQs {
+      edges {
+        node {
+          question
+          answer {
+            answer
+          }
+        }
+      }
+    }
+  }
+`
