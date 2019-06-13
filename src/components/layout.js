@@ -8,8 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import * as data from "../constants/pageInfo"
-import { Link } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
