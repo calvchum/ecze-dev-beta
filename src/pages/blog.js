@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Layout from "../components/layout"
 import FilterBlog from "../components/filterblog"
 import BlogSection from "../components/blogsection"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 export default class blog extends Component {
   constructor() {
@@ -34,7 +34,14 @@ export default class blog extends Component {
 
     // only pass down the posts that belong to the category
     let displayedSections = this.state.selectedCategories.map((category, i) => {
-      return <BlogSection posts={posts} category={category} key={i} />
+      return (
+        <BlogSection
+          posts={posts}
+          category={category}
+          key={i}
+          title={category}
+        />
+      )
     })
 
     return (

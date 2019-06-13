@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import * as data from "../constants/pageInfo"
 
 const Header = ({ siteTitle }) => (
   <header
