@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import * as data from "../constants/pageInfo"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -27,7 +28,6 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <Link to="/blog">Blog</Link>
     </div>
   </header>
 )
