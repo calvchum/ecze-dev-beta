@@ -8,7 +8,9 @@ const HeroBannerWrapper = styled.div`
   grid: repeat(2, auto) / 1fr;
   justify-content: center;
   margin: 0em;
-  padding: 4em ${paddingDefaults.pageBorder};
+  padding: 4em 0em;
+  max-width: 960px;
+  margin: 0 auto;
 `;
 const HeroBannerText = styled.div`
   max-width: 672px;
@@ -19,8 +21,6 @@ const ButtonWrapper = styled.div`
   justify-content: flex-end;
   padding-top: 3em;
 `;
-
-
 
 
 const HeroBanner = () => (
