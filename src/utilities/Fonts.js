@@ -1,8 +1,12 @@
 // GATSBY RECOMMENDS TYPOGRAPHY.JS
 import Typography from "typography"
+import styled from "styled-components"
 
-export const typography = new Typography({
+// THIS OBJECT CALLS GOOGLE FONT API
+const typography = new Typography({
   baseFontSize: "16px",
+  bodyFontFamily: ["DM Sans", "sans-serif"],
+  headerFontFamily: ["DM Sans", "sans-serif"],
   googleFonts: [
 	  {
 	    name: 'DM Sans',
@@ -12,11 +16,44 @@ export const typography = new Typography({
 	    ],
 	  }
 	],
-  bodyFontFamily: ["DM Sans", "sans-serif"],
 })
-export const fontsize = {
-	hero: '3em',
-	h1: '2.25em',
-	subheader: '1.5em',
-	body: '1.125em'
+
+
+// TYPORGRAPHY SETUP OBJECTS
+const fontsize = {
+	hero: '2.67em',
+	h1: '2em',
+	subheader: '1.3em',
+	body: '1em'
 }
+export const NavLinksFont = {
+	fontFamily: 'DM Sans',
+	fontWeight: '400'
+}
+export const HeaderBaselines = {
+	margin: '0.4em 0em',
+	fontFamily: 'DM Sans',
+	fontWeight: '500'
+}
+
+// TYPOGRAPHY STYLED COMPONENTS
+export const HeroText = styled.h1`
+	${HeaderBaselines}
+	font-size: ${fontsize.hero};
+`;
+export const HeaderText = styled.h1`
+	${HeaderBaselines}
+	font-size: ${fontsize.h1};
+`;
+export const SubheaderText = styled.h2`
+	${HeaderBaselines}
+	font-size: ${fontsize.subheader};
+`;
+export const BodyText = styled.p`
+	font-size: ${fontsize.body};
+	margin: 0em;
+	font-family: 'DM Sans';
+	font-weight: 400;
+`;
+
+export default typography;
