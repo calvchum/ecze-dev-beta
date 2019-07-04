@@ -1,13 +1,12 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { NavWrapper, ListItem } from './Navigation'
-import * as data from "../constants/pageInfo"
-import { colors } from '../utilities'
+import Navigation from './Navigation'
+import { colors, SubheaderText, BodyText } from '../utilities'
 
 const FooterWrapper = styled.section`
     display: grid;
-    grid: 150px 150px / 1fr 1fr;
+    grid: repeat(2, auto) / 3fr 2fr;
     padding: 3em;
     background: ${colors.almostWhite};
     justify-content: center;
@@ -18,7 +17,7 @@ const SocialMedia = styled.div`
 `;
 
 const SocMediaIcon = styled.img`
-  padding: 0em 8px;
+  padding: 0em 0.5em;
 `;
 
 const AboutEcze = styled.div`
@@ -29,43 +28,36 @@ const ContactEcze = styled.div`
   padding-left: 2em;
 `;
 
-const NavigationFooter = styled(NavWrapper)`
+const FooterNavWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  margin: 0em;
   padding-left: 2em;
-`;
+  padding-bottom: 2em;
 
+
+`;
 
 const Footer = () => (
   <FooterWrapper>
     <SocialMedia>
-      <SocMediaIcon src={require('../assets/icons/facebook.svg')} alt="ECZE Logo" />   
-      <SocMediaIcon src={require('../assets/icons/instagram.svg')} alt="ECZE Logo" />   
-      <SocMediaIcon src={require('../assets/icons/youtube.svg')} alt="ECZE Logo" />   
+      <SocMediaIcon src={require('../assets/icons/facebook.svg')} alt="FB Logo" />   
+      <SocMediaIcon src={require('../assets/icons/instagram.svg')} alt="INSTA Logo" />   
+      <SocMediaIcon src={require('../assets/icons/youtube.svg')} alt="YT Logo" />   
     </SocialMedia>
-    <NavigationFooter>
-      <p>More Info</p>
-      {data.pageData.map((page, i) => {
-        return (
-          <ListItem key={i}>
-            <Link to={page.link}> 
-              {page.title}
-            </Link>
-          </ListItem> 
-        )
-      })}
-    </NavigationFooter>
+    <FooterNavWrapper>
+      <SubheaderText>More Info</SubheaderText>
+      <Navigation />
+    </FooterNavWrapper>
     <AboutEcze>
-      <h2>About ECZE</h2>
-      <p>We bring you products that are safe, non-toxic, and highly effective. We believe in tangible results you can see and feel, and we believe in the power of nature to bring these results.</p>
+      <SubheaderText>About ECZE</SubheaderText>
+      <BodyText>We bring you products that are safe, non-toxic, and highly effective. We believe in tangible results you can see and feel, and we believe in the power of nature to bring these results.</BodyText>
     </AboutEcze>
-
     <ContactEcze>
-      <h2>Contact</h2>
-      <p>Email address</p>
-      <p>Bec & Terrence</p>
+      <SubheaderText>Contact</SubheaderText>
+      <BodyText>Bec & Terrence</BodyText>
+      <BodyText>hello@ecze.com.au</BodyText>
+      <BodyText>Melbourne, Australia</BodyText>
     </ContactEcze>
   </FooterWrapper>
 

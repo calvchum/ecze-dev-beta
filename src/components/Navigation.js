@@ -2,33 +2,28 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import * as data from "../constants/pageInfo"
-import { colors } from "../utilities"
-// import Header from "./Header"
+import { colors, NavLinksFont } from "../utilities"
 
 // import { typography, fontsize } from "../utilities"
 
-export const NavWrapper = styled.ul`
-  display: flex;
-  grid: 120px / repeat(4, auto);
-  justify-content: flex-end;
-  align-items: center;
+const ListItem = styled.li`
+  ${NavLinksFont}
   list-style: none;
   margin-bottom: 0em;
   margin-left: 0em;
-`;
-
-export const ListItem = styled.li`
-  margin: 0em 0.5em;
   & a {
     color: ${colors.almostBlack}
     text-decoration: none;
+    transition: 0.2s;
+  }
+  & a:hover {
+    color: ${colors.primary}
+    text-decoration: underline;
   }
 `;
 
-
-
 const Navigation = ({ props }) => (
-  <NavWrapper>
+  <>
     {data.pageData.map((page, i) => {
       return (
         <ListItem key={i}>
@@ -38,7 +33,7 @@ const Navigation = ({ props }) => (
         </ListItem> 
       )
     })}
-  </NavWrapper>
+  </>
 )
 
 export default Navigation
