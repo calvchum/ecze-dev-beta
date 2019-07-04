@@ -20,7 +20,7 @@ const typography = new Typography({
 
 
 // TYPORGRAPHY SETUP OBJECTS
-const fontsize = {
+export const fontsize = {
 	hero: '2.67em',
 	h1: '2em',
 	subheader: '1.3em',

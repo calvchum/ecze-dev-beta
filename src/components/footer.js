@@ -2,12 +2,12 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Navigation from './Navigation'
-import { colors, SubheaderText, BodyText } from '../utilities'
+import { colors, SubheaderText, BodyText, paddingDefaults } from '../utilities'
 
 const FooterWrapper = styled.section`
     display: grid;
     grid: repeat(2, auto) / 3fr 2fr;
-    padding: 3em;
+    padding: ${paddingDefaults.pageBorder};
     background: ${colors.almostWhite};
     justify-content: center;
 `;
@@ -34,8 +34,6 @@ const FooterNavWrapper = styled.ul`
   margin: 0em;
   padding-left: 2em;
   padding-bottom: 2em;
-
-
 `;
 
 const Footer = () => (
