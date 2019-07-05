@@ -33,7 +33,7 @@ export const pageQuery = graphql`
       }
     }
     allContentfulBlogPost(
-      filter: { category: { eq: $category } }
+      filter: { category: { eq: $category }, slug: { ne: $slug } }
       limit: 3
       sort: { fields: createdAt, order: DESC }
     ) {
