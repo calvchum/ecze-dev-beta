@@ -40,6 +40,7 @@ export default class blog extends Component {
           category={category}
           key={i}
           title={category}
+          postlimit={6}
         />
       )
     })
