@@ -3,8 +3,8 @@ import ArticlePreview from "./articlepreview"
 /* eslint-disable */
 class BlogSection extends Component {
   render() {
-    // postLimit is the max amount of post displayed per section. it is a prop passed from the parent component, default if null is no limit
-    const postLimit = 5
+    // postLimit is the max amount of post displayed per section. it is a prop passed from the parent component, default if null is practically   no limit
+    const postLimit = this.props.postLimit || 999
     // the reason to push it to a new array is to limit the number of times it renders by applying slice to it.
     let renderPosts = []
     this.props.posts.map((post, i) => {
