@@ -4,7 +4,7 @@ import { colors, BodyText } from '../utilities'
 
 const KillerPointsContainer = styled.div`
   background: ${colors.almostWhite}
-  width: 100vw;
+  width: 100vw;  
 `;
 const KillerPointsWrapper = styled.div`
   max-width: 960px;
@@ -13,21 +13,28 @@ const KillerPointsWrapper = styled.div`
 
 const UnderlinedPhrase = styled(BodyText)`
   border-bottom: 8px ${colors.secondary} solid;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 1em;
 `;
+
 
 const IconSectionWrapper = styled.div`
   display: grid;
-  grid: 1fr / 1fr 1fr;
+  grid-template-columns: repeat( auto-fit, minmax(400px, auto) );
+  grid-gap: 8px;
   justify-content: center;
 `;
 const IconSection = styled.div`
-  // display: grid;
-  // grid: repeat(2, auto) / 1fr;
-  // align-items: center;
 `;
 
 const Icon = styled.img`
-  padding: 1.5em 1.5em;
+   padding: 1.5em;
+`;
+const DescriptionText = styled.div`
+  max-width: 672px;
+  padding: 4em 1.5em;
+  margin: 0 auto;
 `;
 
 
@@ -35,10 +42,10 @@ const Icon = styled.img`
 const KillerPoints = () => (
   <KillerPointsContainer>
     <KillerPointsWrapper>
-      <div>
+      <DescriptionText>
         <BodyText>Simply moisturising or using topical steroids for eczema is often as effective as taking an anti-depressant for depression. It is all about masking the symptoms as opposed to providing a holistic solution.</BodyText>
-      </div>
-
+      </DescriptionText>
+    
       <IconSectionWrapper>
 
         <IconSection>
@@ -50,12 +57,9 @@ const KillerPoints = () => (
         </IconSection> 
 
         <IconSection>
-        <div>
           <UnderlinedPhrase>The Outside Stuff</UnderlinedPhrase>
-          
-        </div>
           <div>
-            <Icon src={require('../assets/icons/search.svg')} alt="ECZE Logo" /> 
+            <Icon src={require('../assets/icons/idea.svg')} alt="ECZE Logo" /> 
             <Icon src={require('../assets/icons/solution.svg')} alt="ECZE Logo" />   
           </div>
         </IconSection> 

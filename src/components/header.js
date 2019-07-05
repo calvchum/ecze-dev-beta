@@ -5,7 +5,7 @@ import Navigation from "./Navigation"
 import { paddingDefaults } from "../utilities"
 import eczeLogoWhite from "../assets/logo/white.svg"
 
-const HeaderWrapper = styled.section`
+const HeaderWrapper = styled.div`
   display: grid;
   grid: 120px / 1fr 1fr;
   align-items: center;
