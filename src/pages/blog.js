@@ -59,7 +59,7 @@ export default class blog extends Component {
 
 export const query = graphql`
   query BlogPageQuery {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
           title
