@@ -1,4 +1,8 @@
 export const paddingDefaults = {
 	pageBorder: '3em',
-	max: '960px'
+	topBottom: '8em',
+}
+
+export const lineWidths = {
+	ctaUnderline: '8'
 }

@@ -8,7 +8,7 @@ const HeroBannerWrapper = styled.div`
   grid: repeat(2, auto) / 1fr;
   justify-content: center;
   margin: 0em;
-  padding: 4em 0em;
+  padding: ${paddingDefaults.topBottom} 0em;
   max-width: 960px;
   margin: 0 auto;
 `;
@@ -30,7 +30,7 @@ const HeroBanner = () => (
       <BodyText>We provide simple and holistic remedies to help you overcome your eczema.</BodyText>
     </HeroBannerText>
     <ButtonWrapper>
-      <CTAButton />
+      <CTAButton cta="Lets get started" />
     </ButtonWrapper>
   </HeroBannerWrapper>
 )
