@@ -14,7 +14,11 @@ const CTAButtonStyle = styled.button`
 	transition: 0.3s;
 	& img {
 		margin: 0em;
+		transition: 0.3s;
 		padding-left: 0.5em;
+		&:hover {
+			transform: translateX(10px);
+		}
 	}
 	&:hover {
 		transform: translateX(10px);
