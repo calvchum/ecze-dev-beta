@@ -2,14 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Navigation from "./Navigation"
+import { paddingDefaults } from "../utilities"
 import eczeLogoWhite from "../assets/logo/white.svg"
-// import { typography, fontsize } from "../utilities"
 
 const HeaderWrapper = styled.section`
   display: grid;
   grid: 120px / 1fr 1fr;
   align-items: center;
-  padding: 0em 3em;
+  padding: 0em ${paddingDefaults.pageBorder};
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 `
 

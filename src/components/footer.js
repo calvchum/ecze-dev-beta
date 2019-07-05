@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Navigation from "./Navigation"
-import { colors, SubheaderText, BodyText } from "../utilities"
+import { colors, SubheaderText, BodyText, paddingDefaults } from '../utilities'
 import facebookIcon from "../assets/icons/facebook.svg"
 import instagramIcon from "../assets/icons/instagram.svg"
 import youtubeIcon from "../assets/icons/youtube.svg"
@@ -13,21 +13,21 @@ const FooterWrapper = styled.section`
   padding: 3em;
   background: ${colors.almostWhite};
   justify-content: center;
-`
+`;
 
 const SocialMedia = styled.div`
   display: flex;
-`
+`;
 
 const SocMediaIcon = styled.img`
   padding: 0em 0.5em;
-`
+`;
 
 const AboutEcze = styled.div``
 
 const ContactEcze = styled.div`
   padding-left: 2em;
-`
+`;
 
 const FooterNavWrapper = styled.ul`
   display: flex;
@@ -35,7 +35,7 @@ const FooterNavWrapper = styled.ul`
   margin: 0em;
   padding-left: 2em;
   padding-bottom: 2em;
-`
+`;
 
 const Footer = () => (
   <FooterWrapper>
