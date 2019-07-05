@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { colors, BodyText } from '../utilities'
+import { Underline } from "./Underline"
+import { lineWidths, colors, BodyText, paddingDefaults } from '../utilities'
 
 const KillerPointsContainer = styled.div`
   background: ${colors.almostWhite}
@@ -9,16 +10,14 @@ const KillerPointsContainer = styled.div`
 const KillerPointsWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
+  padding: ${paddingDefaults.topBottom} 0em;
 `;
 
-const UnderlinedPhrase = styled(BodyText)`
-  border-bottom: 8px ${colors.secondary} solid;
+const CenteredBodyText = styled(BodyText)`
   text-align: center;
   padding: 1em;
   margin-bottom: 1em;
 `;
-
-
 const IconSectionWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(400px, auto) );
@@ -33,7 +32,7 @@ const Icon = styled.img`
 `;
 const DescriptionText = styled.div`
   max-width: 672px;
-  padding: 4em 1.5em;
+  padding: 0em 1.5em 4em 1.5em;
   margin: 0 auto;
 `;
 
@@ -47,9 +46,8 @@ const KillerPoints = () => (
       </DescriptionText>
     
       <IconSectionWrapper>
-
         <IconSection>
-          <UnderlinedPhrase>The Inside Stuff</UnderlinedPhrase>
+          <CenteredBodyText><Underline size={lineWidths.ctaUnderline} color={colors.secondary}>The Inside Stuff</Underline></CenteredBodyText>
           <div>
             <Icon src={require('../assets/icons/idea.svg')} alt="ECZE Logo" /> 
             <Icon src={require('../assets/icons/solution.svg')} alt="ECZE Logo" />   
@@ -57,7 +55,7 @@ const KillerPoints = () => (
         </IconSection> 
 
         <IconSection>
-          <UnderlinedPhrase>The Outside Stuff</UnderlinedPhrase>
+          <CenteredBodyText><Underline size={lineWidths.ctaUnderline} color={colors.secondary}>The Outside Stuff</Underline></CenteredBodyText>
           <div>
             <Icon src={require('../assets/icons/idea.svg')} alt="ECZE Logo" /> 
             <Icon src={require('../assets/icons/solution.svg')} alt="ECZE Logo" />   
