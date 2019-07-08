@@ -4,14 +4,11 @@ import { Link } from "gatsby"
 import { Underline } from './Underline'
 import { colors, lineWidths, HeaderBaselines, fontsize } from '../utilities'
 
-// import styled from "styled-components"
-
 const CTAButtonStyle = styled.button`
 	${HeaderBaselines}
 	font-size: ${fontsize.h1};
 	border: none;
 	padding: 0px 0px 8px 0px;
-	// border-bottom: 8px ${colors.primary} solid;
 	transition: 0.3s;
 	& img {
 		margin: 0em;
@@ -32,7 +29,7 @@ export const CTAButton = ({ cta }) => (
   <Link to="getstarted">
     <CTAButtonStyle>
 	    <Underline size={lineWidths.ctaUnderline} color={colors.primary}>{cta}
-	    <img src={require('../assets/icons/arrow.svg')} alt="left arrow" /> 
+	    	<img src={require('../assets/icons/arrow.svg')} alt="left arrow" /> 
 	    </Underline>  
     </CTAButtonStyle>
   </Link>

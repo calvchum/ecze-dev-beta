@@ -1,5 +1,14 @@
 import React, { Component } from "react"
 import ArticlePreview from "./articlepreview"
+import styled from 'styled-components'
+
+const ArticleGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+  max-width: 934px;
+`;
+
 /* eslint-disable */
 class BlogSection extends Component {
   render() {
@@ -16,11 +25,11 @@ class BlogSection extends Component {
     return (
       <div>
         <h3>{this.props.title}</h3>
-        <ul>
+        <ArticleGrid>
           {renderPosts.slice(0, postLimit).map((post, i) => {
             return <ArticlePreview post={post} key={i} />
           })}
-        </ul>
+        </ArticleGrid>
       </div>
     )
   }
