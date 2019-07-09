@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import ArticlePreview from "./articlepreview"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const ArticleGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8px;
   max-width: 934px;
-`;
+`
 
 /* eslint-disable */
 class BlogSection extends Component {
@@ -22,6 +22,17 @@ class BlogSection extends Component {
       }
     })
 
+    // the 'See More...' button only renders if the seeMore prop is explicitly specified as true
+    const seeMoreButton = (
+      <button
+        onClick={() =>
+          this.props.handleSeeMore(this.props.category, this.props.index)
+        }
+      >
+        See more...
+      </button>
+    )
+
     return (
       <div>
         <h3>{this.props.title}</h3>
@@ -30,6 +41,7 @@ class BlogSection extends Component {
             return <ArticlePreview post={post} key={i} />
           })}
         </ArticleGrid>
+        {this.props.seeMore ? seeMoreButton : null}
       </div>
     )
   }
