@@ -9,8 +9,26 @@ export default class blog extends Component {
     super()
     this.state = {
       selectedCategories: [],
+      foo: [],
     }
     this.updateSelectedCategories = this.updateSelectedCategories.bind(this)
+    this.handleSeeMore = this.handleSeeMore.bind(this)
+  }
+
+  handleSeeMore(e, i) {
+    // this function is called by the See More button from the blogsection component
+    // it incremenets the postLimit value by 6
+    //take a copy of the state of the object we want to change
+    let selectedCategoriesCopy = JSON.parse(
+      JSON.stringify(this.state.selectedCategories)
+    )
+    // add to our state
+    const updatedLimit = this.state.selectedCategories[i].postLimit + 6
+    selectedCategoriesCopy[i].postLimit = updatedLimit
+    // update our state
+    this.setState({
+      selectedCategories: selectedCategoriesCopy,
+    })
   }
 
   updateSelectedCategories(selected) {
@@ -39,7 +57,6 @@ export default class blog extends Component {
     this.state.selectedCategories.forEach(object => {
       categoryArray.push(object.name)
     })
-    console.log(categoryArray)
 
     // only pass down the posts that belong to the category
     let displayedSections = categoryArray.map((category, i) => {
@@ -48,8 +65,11 @@ export default class blog extends Component {
           posts={posts}
           category={category}
           key={i}
+          index={i}
           title={category}
-          postLimit={6}
+          postLimit={this.state.selectedCategories[i].postLimit}
+          seeMore={true}
+          handleSeeMore={this.handleSeeMore}
         />
       )
     })
