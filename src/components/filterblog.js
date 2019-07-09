@@ -19,7 +19,7 @@ export default class FilterBlog extends Component {
       let categoryObject = {
         id: i,
         value: category,
-        isChecked: true,
+        isChecked: false,
       }
       categoriesArray.push(categoryObject)
     })

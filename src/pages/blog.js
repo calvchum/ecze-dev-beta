@@ -9,10 +9,27 @@ export default class blog extends Component {
     super()
     this.state = {
       selectedCategories: [],
-      foo: [],
     }
     this.updateSelectedCategories = this.updateSelectedCategories.bind(this)
     this.handleSeeMore = this.handleSeeMore.bind(this)
+  }
+
+  componentDidMount() {
+    const posts = this.props.data.allContentfulBlogPost.edges
+    let categories = []
+    posts.forEach(post => {
+      categories.push(post.node.category)
+    })
+    const uniqueCategories = new Set(categories)
+    console.log(uniqueCategories)
+    let selectedCategories = []
+    uniqueCategories.forEach(category => {
+      let categoryObject = { name: category, postLimit: 6 }
+      selectedCategories.push(categoryObject)
+    })
+    this.setState({
+      selectedCategories,
+    })
   }
 
   handleSeeMore(e, i) {
@@ -36,13 +53,14 @@ export default class blog extends Component {
     selected.forEach(category => {
       if (category.isChecked) {
         // create an object with key value pair of name: name, postLimit: 6
-        let categoryObect = { name: category.value, postLimit: 6 }
+        let categoryObect = { name: category.value }
         selectedCategories.push(categoryObect)
       }
       this.setState({
         selectedCategories,
       })
     })
+    console.log(this.state.selectedCategories.length)
   }
 
   render() {
@@ -61,6 +79,7 @@ export default class blog extends Component {
     // only pass down the posts that belong to the category
     let displayedSections = categoryArray.map((category, i) => {
       const { postLimit } = this.state.selectedCategories[i]
+
       return (
         <BlogSection
           posts={posts}
