@@ -17,10 +17,12 @@ export default class blog extends Component {
   componentDidMount() {
     const posts = this.props.data.allContentfulBlogPost.edges
     let categories = []
+    categories.push("Latest posts")
     posts.forEach(post => {
       categories.push(post.node.category)
     })
     const uniqueCategories = new Set(categories)
+    console.log(uniqueCategories)
     let selectedCategories = []
     uniqueCategories.forEach(category => {
       let categoryObject = { name: category, postLimit: 6 }
@@ -79,9 +81,16 @@ export default class blog extends Component {
     let displayedSections = categoryArray.map((category, i) => {
       const { postLimit } = this.state.selectedCategories[i]
 
+      let renderPosts = []
+      posts.map((post, i) => {
+        if (post.node.category === category || category === "Latest posts") {
+          renderPosts.push(post)
+        }
+      })
+      console.log(renderPosts)
       return (
         <BlogSection
-          posts={posts}
+          posts={renderPosts}
           category={category}
           key={i}
           index={i}

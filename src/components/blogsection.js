@@ -37,11 +37,11 @@ class BlogSection extends Component {
       <div>
         <h3>{this.props.title}</h3>
         <ArticleGrid>
-          {renderPosts.slice(0, postLimit).map((post, i) => {
+          {this.props.posts.slice(0, postLimit).map((post, i) => {
             return <ArticlePreview post={post} key={i} />
           })}
         </ArticleGrid>
-        {this.props.seeMore && renderPosts.length >= postLimit
+        {this.props.seeMore && this.props.posts.length >= postLimit
           ? seeMoreButton
           : null}
       </div>
