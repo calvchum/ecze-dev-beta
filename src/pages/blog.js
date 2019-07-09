@@ -23,7 +23,7 @@ export default class blog extends Component {
       JSON.stringify(this.state.selectedCategories)
     )
     // add to our state
-    const updatedLimit = this.state.selectedCategories[i].postLimit + 6
+    const updatedLimit = this.state.selectedCategories[i].postLimit + 3
     selectedCategoriesCopy[i].postLimit = updatedLimit
     // update our state
     this.setState({
