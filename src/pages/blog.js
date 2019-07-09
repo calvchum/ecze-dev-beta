@@ -17,7 +17,9 @@ export default class blog extends Component {
     let selectedCategories = []
     selected.forEach(category => {
       if (category.isChecked) {
-        selectedCategories.push(category.value)
+        // create an object with key value pair of name: name, postLimit: 6
+        let categoryObect = { name: category.value, postLimit: 6 }
+        selectedCategories.push(categoryObect)
       }
       this.setState({
         selectedCategories,
@@ -32,8 +34,15 @@ export default class blog extends Component {
       categories.push(post.node.category)
     })
 
+    // extract all the category names from categoryObject
+    let categoryArray = []
+    this.state.selectedCategories.forEach(object => {
+      categoryArray.push(object.name)
+    })
+    console.log(categoryArray)
+
     // only pass down the posts that belong to the category
-    let displayedSections = this.state.selectedCategories.map((category, i) => {
+    let displayedSections = categoryArray.map((category, i) => {
       return (
         <BlogSection
           posts={posts}
