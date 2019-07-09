@@ -21,7 +21,6 @@ export default class blog extends Component {
       categories.push(post.node.category)
     })
     const uniqueCategories = new Set(categories)
-    console.log(uniqueCategories)
     let selectedCategories = []
     uniqueCategories.forEach(category => {
       let categoryObject = { name: category, postLimit: 6 }
