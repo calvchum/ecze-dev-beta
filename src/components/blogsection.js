@@ -21,6 +21,7 @@ class BlogSection extends Component {
         renderPosts.push(post)
       }
     })
+    console.log(renderPosts.length, postLimit)
 
     // the 'See More...' button only renders if the seeMore prop is explicitly specified as true
     const seeMoreButton = (
@@ -41,7 +42,9 @@ class BlogSection extends Component {
             return <ArticlePreview post={post} key={i} />
           })}
         </ArticleGrid>
-        {this.props.seeMore ? seeMoreButton : null}
+        {this.props.seeMore && renderPosts.length >= postLimit
+          ? seeMoreButton
+          : null}
       </div>
     )
   }
