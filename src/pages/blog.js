@@ -60,6 +60,7 @@ export default class blog extends Component {
 
     // only pass down the posts that belong to the category
     let displayedSections = categoryArray.map((category, i) => {
+      const { postLimit } = this.state.selectedCategories[i]
       return (
         <BlogSection
           posts={posts}
@@ -67,7 +68,7 @@ export default class blog extends Component {
           key={i}
           index={i}
           title={category}
-          postLimit={this.state.selectedCategories[i].postLimit}
+          postLimit={postLimit}
           seeMore={true}
           handleSeeMore={this.handleSeeMore}
         />
