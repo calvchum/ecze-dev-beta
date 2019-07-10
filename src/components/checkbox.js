@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { BodyText } from '../utilities'
 
 const CheckBoxStyling = styled.input`
-  width: 100px;
+  
 `;
+
+const PaddedBodyText = styled(BodyText)`
+  padding: 0.5em 0em 0.5em 1em;
+`;
+
 
 class CheckBox extends Component {
   render() {
     return (
-      <li>
+      <PaddedBodyText>
         <label>
           <CheckBoxStyling
             type="checkbox"
@@ -18,7 +24,7 @@ class CheckBox extends Component {
           />
           {this.props.category.value}
         </label>
-      </li>
+      </PaddedBodyText>
     )
   }
 }

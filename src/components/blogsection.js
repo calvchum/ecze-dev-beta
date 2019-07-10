@@ -1,12 +1,18 @@
 import React, { Component } from "react"
 import ArticlePreview from "./articlepreview"
+import { Underline } from "./Underline"
 import styled from "styled-components"
+import { SubheaderText, lineWidths, colors } from "../utilities"
 
 const ArticleGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
   grid-gap: 8px;
   max-width: 934px;
+  padding-bottom: 3em;
+`
+const GridSectionTitleWrapper = styled.div`
+  padding: 0em 0em 1em 0em;
 `
 
 /* eslint-disable */
@@ -35,7 +41,9 @@ class BlogSection extends Component {
 
     return (
       <div>
-        <h3>{this.props.title}</h3>
+        <GridSectionTitleWrapper>
+          <SubheaderText><Underline size={lineWidths.ctaUnderline} color={colors.secondary}>{this.props.title}</Underline></SubheaderText>
+        </GridSectionTitleWrapper>
         <ArticleGrid>
           {this.props.posts.slice(0, postLimit).map((post, i) => {
             return <ArticlePreview post={post} key={i} />
