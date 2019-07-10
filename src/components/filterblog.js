@@ -6,6 +6,9 @@ const FilterList = styled.ul`
   list-style: none;
   margin: 0em;
   max-width: 250px;
+  position: sticky;
+  top: 10%;
+  left: 1em;
 `;
 
 export default class FilterBlog extends Component {
