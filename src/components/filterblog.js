@@ -1,5 +1,12 @@
 import React, { Component } from "react"
 import CheckBox from "./checkbox"
+import styled from 'styled-components'
+
+const FilterList = styled.ul`
+  list-style: none;
+  margin: 0em;
+  max-width: 250px;
+`;
 
 export default class FilterBlog extends Component {
   constructor() {
@@ -44,7 +51,7 @@ export default class FilterBlog extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <FilterList>
           {this.state.categories.map((category, i) => {
             return (
               <CheckBox
@@ -55,7 +62,7 @@ export default class FilterBlog extends Component {
               />
             )
           })}
-        </ul>
+        </FilterList>
       </div>
     )
   }
