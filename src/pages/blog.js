@@ -3,6 +3,9 @@ import Layout from "../components/layout"
 import FilterBlog from "../components/filterblog"
 import BlogSection from "../components/blogsection"
 import { graphql } from "gatsby"
+import { HeaderText, SubheaderText, colors, lineWidths } from '../utilities'
+import { Underline } from '../components/Underline'
+import { BlogFilterWrapper } from '../components/BlogFilterWrapper'
 
 export default class blog extends Component {
   constructor() {
@@ -104,12 +107,17 @@ export default class blog extends Component {
 
     return (
       <Layout>
-        <h1>BLOG</h1>
-        <FilterBlog
-          categories={categories}
-          updateSelectedCategories={this.updateSelectedCategories}
-        />
-        {displayedSections}
+        <HeaderText><Underline size={lineWidths.ctaUnderline} color={colors.primary}>The Ecze Blog</Underline></HeaderText>
+        <SubheaderText style={{fontWeight: '400'}} >Want to go deeper into holistic approaches to Eczema? We’ve got you covered.</SubheaderText>
+        <BlogFilterWrapper>
+          <FilterBlog
+            categories={categories}
+            updateSelectedCategories={this.updateSelectedCategories}
+          />
+          <div>
+            {displayedSections}
+          </div>
+        </BlogFilterWrapper>
       </Layout>
     )
   }

@@ -1,11 +1,16 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
+import styled from 'styled-components'
+
+const CheckBoxStyling = styled.input`
+  width: 100px;
+`;
 
 class CheckBox extends Component {
   render() {
     return (
       <li>
         <label>
-          <input
+          <CheckBoxStyling
             type="checkbox"
             checked={this.props.category.isChecked}
             value={this.props.category.value}
