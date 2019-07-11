@@ -3,6 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import FaqListItem from "../components/faqListItem"
 import SEO from "../components/seo"
+import { HeaderText, SubheaderText, BodyText, colors, lineWidths, BackgroundColor } from '../utilities'
+import { Underline } from '../components/Underline'
+import { FaqHeaderWrapper, FaqWrapper, QuestionWrapper } from '../components/FaqPage'
 
 export default class Faq extends Component {
   constructor() {
@@ -41,32 +44,43 @@ export default class Faq extends Component {
 
   render() {
     return (
-      <Layout>
-        <SEO title="FAQ" />
-        <h1>FAQs</h1>
-        <p>Products. Allergies. Shipping. Info.</p>
-        {this.state.faqItem.map((faq, i) => {
-          if (faq.isClicked) {
-            return (
-              <FaqListItem
-                key={i}
-                index={i}
-                question={faq.question}
-                answer={faq.answer}
-                handleClick={this.handleClick}
-              />
-            )
-          }
-          return (
-            <FaqListItem
-              key={i}
-              index={i}
-              question={faq.question}
-              handleClick={this.handleClick}
-            />
-          )
-        })}
-      </Layout>
+      <BackgroundColor color={colors.almostWhite}>
+        <Layout>
+          <SEO title="FAQ" />
+          <FaqWrapper>
+            <FaqHeaderWrapper>
+              <HeaderText><Underline size={lineWidths.ctaUnderline} color={colors.primary}>FAQs</Underline></HeaderText> 
+              <div>
+                <SubheaderText>Products. Allergies. Shipping. Info.</SubheaderText>
+              </div>
+            </FaqHeaderWrapper>
+
+            <QuestionWrapper>
+              {this.state.faqItem.map((faq, i) => {
+                if (faq.isClicked) {
+                  return (
+                    <FaqListItem
+                      key={i}
+                      index={i}
+                      question={faq.question}
+                      answer={faq.answer}
+                      handleClick={this.handleClick}
+                    />
+                  )
+                }
+                return (
+                  <FaqListItem
+                    key={i}
+                    index={i}
+                    question={faq.question}
+                    handleClick={this.handleClick}
+                  />
+                )
+              })}
+            </QuestionWrapper>
+          </FaqWrapper>
+        </Layout>
+      </BackgroundColor>
     )
   }
 }
