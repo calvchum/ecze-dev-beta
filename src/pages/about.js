@@ -7,12 +7,45 @@ const About = () => (
 	<StaticQuery
 		query={graphql`
 			query AboutPageQuery {
-				allContentfulFaQs {
+				allContentfulAsset {
 					edges {
 						node {
-							question
-							answer {
-								answer
+							file {
+								url
+							}
+						}
+					}
+				}
+
+				allContentfulAboutPage {
+					edges {
+						node {
+							section1 {
+								childMarkdownRemark {
+									html
+								}
+							}
+							accentQuote1
+							section2 {
+								childMarkdownRemark {
+									html
+								}
+							}
+							section3 {
+								childMarkdownRemark {
+									html
+								}
+							}
+							section4 {
+								childMarkdownRemark {
+									html
+								}
+							}
+							accentQuote2
+							section5 {
+								childMarkdownRemark {
+									html
+								}
 							}
 						}
 					}
@@ -22,12 +55,57 @@ const About = () => (
 		render={data => (
 			<>
 				<Layout>
+					{console.log(data.allContentfulAsset.edges[0].node.file.url)}
+					<SEO title="About" />
 					<div>
-						<h1>About page</h1>
-						<p>
-							this is where the about information goes. It will be made as a
-							stateless component. Use the Faq page as a reference
-						</p>
+						<h1>Our story</h1>
+
+						<div
+							dangerouslySetInnerHTML={{
+								__html:
+									data.allContentfulAboutPage.edges[0].node.section1
+										.childMarkdownRemark.html,
+							}}
+						/>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: data.allContentfulAboutPage.edges[0].node.accentQuote1,
+							}}
+						/>
+
+						<div
+							dangerouslySetInnerHTML={{
+								__html:
+									data.allContentfulAboutPage.edges[0].node.section2
+										.childMarkdownRemark.html,
+							}}
+						/>
+						<div
+							dangerouslySetInnerHTML={{
+								__html:
+									data.allContentfulAboutPage.edges[0].node.section3
+										.childMarkdownRemark.html,
+							}}
+						/>
+						<div
+							dangerouslySetInnerHTML={{
+								__html:
+									data.allContentfulAboutPage.edges[0].node.section4
+										.childMarkdownRemark.html,
+							}}
+						/>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: data.allContentfulAboutPage.edges[0].node.accentQuote2,
+							}}
+						/>
+						<div
+							dangerouslySetInnerHTML={{
+								__html:
+									data.allContentfulAboutPage.edges[0].node.section5
+										.childMarkdownRemark.html,
+							}}
+						/>
 					</div>
 				</Layout>
 			</>
