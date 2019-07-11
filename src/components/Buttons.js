@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Underline } from './Underline'
-import { colors, lineWidths, HeaderBaselines, fontsize } from '../utilities'
+import { colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '../utilities'
 
 const CTAButtonStyle = styled.button`
 	${HeaderBaselines}
@@ -34,5 +34,31 @@ export const CTAButton = ({ cta }) => (
     </CTAButtonStyle>
   </Link>
 )
+
+
+const SignUpButtonStyle = styled.button`
+	padding: 1em;
+	border: none;
+	background: ${props => props.background = 'primary' ? colors.primary : colors.almostBlack}
+	color: ${props => props.color = 'almostWhite' ? colors.almostWhite : colors.almostBlack}
+	transition: 0.3s;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+		cursor: pointer;
+	}
+`;	
+
+
+export const SignUpButton = ({ cta }) => (
+  <Link to="getstarted">
+    <SignUpButtonStyle>
+	    <BodyText>{cta}</BodyText>  
+    </SignUpButtonStyle>
+  </Link>
+)
+
 
 
