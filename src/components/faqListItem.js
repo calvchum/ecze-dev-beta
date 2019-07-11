@@ -1,14 +1,15 @@
 import React, { Component } from "react"
 
 class FaqListItem extends Component {
-  render() {
-    return (
-      <div>
-        <h3>{this.props.question}</h3>
-        <p>{this.props.answer}</p>
-      </div>
-    )
-  }
+	render() {
+		const { question, answer, index } = this.props
+		return (
+			<div onClick={() => this.props.handleClick(index)}>
+				<h3>{question}</h3>
+				<p>{answer}</p>
+			</div>
+		)
+	}
 }
 
 export default FaqListItem
