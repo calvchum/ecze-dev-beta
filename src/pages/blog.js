@@ -3,9 +3,9 @@ import Layout from "../components/layout"
 import FilterBlog from "../components/filterblog"
 import BlogSection from "../components/blogsection"
 import { graphql } from "gatsby"
-import { HeaderText, SubheaderText, colors, lineWidths } from '../utilities'
+import { HeaderText, SubheaderText, colors, lineWidths, BackgroundColor } from '../utilities'
 import { Underline } from '../components/Underline'
-import { BlogFilterWrapper, BlogHeaderWrapper, BlogHeader, BackgroundColor, PaddingBottom } from '../components/BlogPage'
+import { BlogFilterWrapper, BlogHeaderWrapper, BlogHeader, PaddingBottom } from '../components/BlogPage'
 
 export default class blog extends Component {
   constructor() {
@@ -106,7 +106,7 @@ export default class blog extends Component {
     })
 
     return (
-      <BackgroundColor>
+      <BackgroundColor color={colors.almostWhite}>
         <Layout>
           <BlogHeaderWrapper>
             <BlogHeader>
@@ -126,7 +126,6 @@ export default class blog extends Component {
             </div>
           </BlogFilterWrapper>
         </Layout>
-        
       </BackgroundColor>
     )
   }

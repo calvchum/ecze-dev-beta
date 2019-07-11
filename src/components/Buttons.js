@@ -40,14 +40,13 @@ export const CTAButton = ({ cta }) => (
 
 const SignUpButtonStyle = styled.button`
 	display: flex;
-	padding: 1em;
+	padding: 0.8em;
 	border: ${lineWidths.signUp}px solid ${colors.almostBlack};
-	background: ${colors.almostWhite};
+	background: white;
 	color: ${colors.almostBlack};
 	transition: 0.3s;
 	& a {
 		underline: none;
-
 	}
 	&:focus {
 		outline: none;
@@ -60,12 +59,15 @@ const SignUpButtonStyle = styled.button`
 `;	
 
 const MailIcon = styled.img`
-	width: 30px;
-	margin: 0em 0.5em;
+	width: 24px;
+	margin: 0em 0.5em ;
+	&:hover {
+		color: ${colors.almostBlack};
+	}
 `;
 
 export const SignUpButton = ({ cta }) => (
-  <Link to="getstarted">
+  <Link style={{ textDecoration: 'none' }} to="getstarted">
     <SignUpButtonStyle>
 	    <BodyText>{cta}</BodyText> 
 	    <MailIcon src={mailIcon} alt="mail icon" />
