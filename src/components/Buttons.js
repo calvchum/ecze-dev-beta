@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { Underline } from './Underline'
 import { colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '../utilities'
+import mailIcon from "../assets/icons/mail.svg"
+
 
 const CTAButtonStyle = styled.button`
 	${HeaderBaselines}
@@ -37,25 +39,36 @@ export const CTAButton = ({ cta }) => (
 
 
 const SignUpButtonStyle = styled.button`
+	display: flex;
 	padding: 1em;
-	border: none;
-	background: ${props => props.background = 'primary' ? colors.primary : colors.almostBlack}
-	color: ${props => props.color = 'almostWhite' ? colors.almostWhite : colors.almostBlack}
+	border: ${lineWidths.signUp}px solid ${colors.almostBlack};
+	background: ${colors.almostWhite};
+	color: ${colors.almostBlack};
 	transition: 0.3s;
+	& a {
+		underline: none;
+
+	}
 	&:focus {
 		outline: none;
 	}
 	&:hover {
-		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 		cursor: pointer;
+		background: ${colors.almostBlack};
+		color: ${colors.almostWhite};
 	}
 `;	
 
+const MailIcon = styled.img`
+	width: 30px;
+	margin: 0em 0.5em;
+`;
 
 export const SignUpButton = ({ cta }) => (
   <Link to="getstarted">
     <SignUpButtonStyle>
-	    <BodyText>{cta}</BodyText>  
+	    <BodyText>{cta}</BodyText> 
+	    <MailIcon src={mailIcon} alt="mail icon" />
     </SignUpButtonStyle>
   </Link>
 )
