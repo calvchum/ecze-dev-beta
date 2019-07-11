@@ -29,10 +29,14 @@ export default class Faq extends Component {
   }
 
   handleClick(i) {
-    const faqItem = { ...this.state.faqItem }
-    console.log(faqItem[i])
-    console.log(faqItem[i].isClicked)
+    let faqItem = JSON.parse(JSON.stringify(this.state.faqItem))
+    faqItem.map(faq => {
+      return (faq.isClicked = false)
+    })
     faqItem[i].isClicked = !faqItem[i].isClicked
+    this.setState({
+      faqItem,
+    })
   }
 
   render() {
