@@ -10,12 +10,12 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import Header from "./Header";
 import Footer from "./Footer";
-import { colors } from "../utilities";
+import SignUpForm from "./SignUpForm";
+// import { colors } from "../utilities";
 import styled from "styled-components";
 import "./layout.css";
 
 const MainContainer = styled.div`
-  // background: ${colors.almostWhite}
 `;
 
 
@@ -36,6 +36,7 @@ const Layout = ({ children }) => (
         <MainContainer>
           <main>{children}</main>
         </MainContainer>
+        <SignUpForm />
         <Footer />
       </>
     )}

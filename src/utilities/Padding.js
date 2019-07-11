@@ -4,5 +4,6 @@ export const paddingDefaults = {
 }
 
 export const lineWidths = {
-	ctaUnderline: '8'
+	ctaUnderline: '8',
+	signUp: '4'
 }
