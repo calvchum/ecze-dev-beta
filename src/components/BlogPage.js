@@ -9,8 +9,6 @@ export const BlogFilterWrapper = styled.div`
 
 export const BlogHeaderWrapper = styled.div`
 		padding: 3em 0em 3em 250px;
-		// display: flex;
-		// justify-content: center;
 `;
 
 export const BlogHeader = styled.div`
@@ -20,10 +18,6 @@ export const PaddingBottom = styled.div`
 	padding-bottom: 1em;
 `;
 
-
-export const BackgroundColor = styled.div`
-	background: ${colors.almostWhite}
-`;
 
 
 
