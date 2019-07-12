@@ -74,7 +74,6 @@ export default class blog extends Component {
         selectedCategories,
       })
     })
-    console.log(this.state.selectedCategories.length)
   }
 
   render() {
@@ -97,7 +96,6 @@ export default class blog extends Component {
       let renderPosts = []
       posts.map((post, i) => {
         if (post.node.category === category || category === "Latest posts") {
-          console.log(post.node)
           renderPosts.push(post.node)
         }
       })

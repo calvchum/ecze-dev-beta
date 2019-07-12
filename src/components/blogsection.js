@@ -20,7 +20,6 @@ class BlogSection extends Component {
   render() {
     // postLimit is the max amount of post displayed per section. it is a prop passed from the parent component, default if null is practically   no limit
     const postLimit = this.props.postLimit || 999
-    console.log(`${this.props.category} blogsection`, this.props.posts)
     // the 'See More...' button only renders if the seeMore prop is explicitly specified as true
     const seeMoreButton = (
       <button
