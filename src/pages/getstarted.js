@@ -50,8 +50,16 @@ export default class GetStarted extends Component {
           </p>
         </div>
         <div>
-          {this.state.getStartedCategories.map((category, i) => {
-            return <p>hi</p>
+          {this.state.getStartedCategories.map((object, i) => {
+            return (
+              <BlogSection
+                posts={object.posts}
+                title={object.category}
+                key={i}
+                index={i}
+                postLimit={3}
+              />
+            )
           })}
         </div>
         <Link to="/">Go back to the homepage</Link>}
