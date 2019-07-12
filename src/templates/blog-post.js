@@ -15,7 +15,6 @@ export default class BlogPostTemplate extends Component {
     posts.map((post, i) => {
       renderPosts.push(post.node)
     })
-    console.log(renderPosts)
     return (
       <Layout>
         <SEO title={`${post.title}`} />
