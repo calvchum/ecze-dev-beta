@@ -62,7 +62,7 @@ export default class GetStarted extends Component {
             )
           })}
         </div>
-        <Link to="/">Go back to the homepage</Link>}
+        <Link to="/">Go back to the homepage</Link>
       </Layout>
     )
   }
