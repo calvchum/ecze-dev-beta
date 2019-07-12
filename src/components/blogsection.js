@@ -6,7 +6,7 @@ import { SubheaderText, lineWidths, colors } from "../utilities"
 
 const ArticleGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 8px;
   max-width: 934px;
   padding-bottom: 3em;
@@ -20,14 +20,7 @@ class BlogSection extends Component {
   render() {
     // postLimit is the max amount of post displayed per section. it is a prop passed from the parent component, default if null is practically   no limit
     const postLimit = this.props.postLimit || 999
-    // the reason to push it to a new array is to limit the number of times it renders by applying slice to it.
-    let renderPosts = []
-    this.props.posts.map((post, i) => {
-      if (post.node.category === this.props.category) {
-        renderPosts.push(post)
-      }
-    })
-
+    console.log(`${this.props.category} blogsection`, this.props.posts)
     // the 'See More...' button only renders if the seeMore prop is explicitly specified as true
     const seeMoreButton = (
       <button
@@ -42,7 +35,11 @@ class BlogSection extends Component {
     return (
       <div>
         <GridSectionTitleWrapper>
-          <SubheaderText><Underline size={lineWidths.ctaUnderline} color={colors.secondary}>{this.props.title}</Underline></SubheaderText>
+          <SubheaderText>
+            <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
+              {this.props.title}
+            </Underline>
+          </SubheaderText>
         </GridSectionTitleWrapper>
         <ArticleGrid>
           {this.props.posts.slice(0, postLimit).map((post, i) => {
