@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import BlogSection from "../components/blogsection"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import * as data from "../constants/getStartedPosts"
 
 // the text on this page should be managed by Contentful and not hard coded
 
@@ -15,14 +16,18 @@ export default class GetStarted extends Component {
   }
 
   componentDidMount() {
-    // Fill the state with pre-selected categories
-    const categoryArray = ["Learning", "Developing", "Engaging"]
-
-    const getStartedCategories = []
-    categoryArray.map(category => {
-      let categoryObject = {}
-      categoryObject.categoryName = category
-      return getStartedCategories.push(categoryObject)
+    let getStartedCategories = []
+    data.postData.map(object => {
+      let objectPosts = []
+      object.slugs.map(slug => {
+        this.props.data.allContentfulBlogPost.edges.forEach(edge => {
+          if (edge.node.slug === slug) {
+            objectPosts.push(edge.node)
+          }
+        })
+        object.posts = objectPosts
+      })
+      getStartedCategories.push(object)
     })
     this.setState({
       getStartedCategories,
@@ -44,32 +49,34 @@ export default class GetStarted extends Component {
             you all you need to know about eczema
           </p>
         </div>
-        <div></div>
-        <Link to="/">Go back to the homepage</Link>
+        <div>
+          {this.state.getStartedCategories.map((category, i) => {
+            return (
+              <BlogSection
+                category={category.name}
+                posts={category.posts}
+                index={i}
+                key={i}
+                postLimit={3}
+                seeMore={false}
+              />
+            )
+          })}
+        </div>
+        <Link to="/">Go back to the homepage</Link>}
       </Layout>
     )
   }
 }
 
+// prettier-ignore
 export const query = graphql`
   {
-    allContentfulBlogPost(
-      filter: {
-        slug: {
-          in: [
-            "this-is-a-test"
-            "the-skin-is-the-largest-organ-in-the-body"
-            "loremipsem"
-            "using-the-right-type-of-gloves-to-prevent-rashes"
-            "healing-diet-sample-blog"
-            "sample-blog-post"
-          ]
-        }
-      }
-    ) {
+    allContentfulBlogPost{
       edges {
         node {
           title
+          category
           slug
           heroImage {
             file {
