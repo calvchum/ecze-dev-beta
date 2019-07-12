@@ -8,7 +8,14 @@ export default class BlogPostTemplate extends Component {
   render() {
     const post = this.props.data.contentfulBlogPost
     const category = this.props.data.contentfulBlogPost.category
+    // need to pass down "posts" as an array of objects to BlogSection, not an array of node objects
     const posts = this.props.data.allContentfulBlogPost.edges
+
+    let renderPosts = []
+    posts.map((post, i) => {
+      renderPosts.push(post.node)
+    })
+    console.log(renderPosts)
     return (
       <Layout>
         <SEO title={`${post.title}`} />
@@ -19,7 +26,11 @@ export default class BlogPostTemplate extends Component {
             __html: post.body.childMarkdownRemark.html,
           }}
         />
-        <BlogSection posts={posts} category={category} title="Similar posts" />
+        <BlogSection
+          posts={renderPosts}
+          category={category}
+          title="Similar posts"
+        />
       </Layout>
     )
   }
