@@ -4,6 +4,21 @@ import BlogSection from "../components/blogsection"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as data from "../constants/getStartedPosts"
+import { 
+  BodyText, 
+  HeaderText, 
+  SubheaderText, 
+  colors, 
+  lineWidths,
+  BackgroundColor
+} from '../utilities'
+import { 
+  GetStartedWrapper, 
+  HeaderSection,
+  BodySection 
+} from '../components/GetStarted'
+import { Underline } from '../components/Underline'
+import { PaddingBottom } from '../components/BlogPage'
 
 // the text on this page should be managed by Contentful and not hard coded
 
@@ -38,32 +53,30 @@ export default class GetStarted extends Component {
     return (
       <Layout>
         <SEO title="Get started" />
-        <h3>If you have eczema, the first step is to LEARN about eczema</h3>
-        <div>
-          <p>
-            Now I'm not sure if it’s just me, but I have an incredibly short
-            attention span (I blame social media for this deficiency), and I
-            personally find medical reports a total snooze fest. But if you want
-            a quick education summary that doesn’t come from a smarty pants
-            doctor, here is a list of short and helpful blog posts that tells
-            you all you need to know about eczema
-          </p>
-        </div>
-        <div>
-          {this.state.getStartedCategories.map((object, i) => {
-            return (
-              <BlogSection
-                posts={object.posts}
-                title={object.category}
-                key={i}
-                index={i}
-                postLimit={3}
-              />
-            )
-          })}
-        </div>
-        <Link to="/">Go back to the homepage</Link>
-      </Layout>
+        <GetStartedWrapper>
+          <HeaderSection>
+            <PaddingBottom>
+              <HeaderText><Underline size={lineWidths.ctaUnderline} color={colors.primary}>Getting Started</Underline></HeaderText> 
+            </PaddingBottom>
+            <SubheaderText style={{ fontWeight: "400" }}>If you have eczema, the first step is to LEARN about eczema</SubheaderText>
+          </HeaderSection>  
+          <BackgroundColor color={colors.almostWhite}>
+            <BodySection>
+              {this.state.getStartedCategories.map((object, i) => {
+                return (
+                  <BlogSection
+                    posts={object.posts}
+                    title={object.category}
+                    key={i}
+                    index={i}
+                    postLimit={3}
+                  />
+                )
+              })}
+            </BodySection>
+          </BackgroundColor>      
+        </GetStartedWrapper>
+      </Layout> 
     )
   }
 }
