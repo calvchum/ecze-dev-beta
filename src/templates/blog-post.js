@@ -1,8 +1,33 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 import Layout from "../components/layout"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
+import { 
+BodyText, 
+HeaderText,
+colors,
+BackgroundColor
+} from '../utilities'
+
+const IndividualBlogWrapper = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+`;
+const BlogHeaderWrapper = styled.div`
+  border-bottom: 1px solid ${colors.almostBlack};
+  padding-bottom: 0.4em;
+`;
+
+const BlogContentWrapper = styled.div`
+  padding: 1em 0em 3em 0em;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: justify;
+
+`;
+
 
 export default class BlogPostTemplate extends Component {
   render() {
@@ -16,21 +41,27 @@ export default class BlogPostTemplate extends Component {
       renderPosts.push(post.node)
     })
     return (
-      <Layout>
-        <SEO title={`${post.title}`} />
-        <h1>{post.title}</h1>
-        <p>{post.publishDate}</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: post.body.childMarkdownRemark.html,
-          }}
-        />
-        <BlogSection
-          posts={renderPosts}
-          category={category}
-          title="Similar posts"
-        />
-      </Layout>
+      <BackgroundColor color={colors.almostWhite}>
+        <Layout>
+          <SEO title={`${post.title}`} />
+          <IndividualBlogWrapper>
+            <BlogHeaderWrapper>
+              <HeaderText>{post.title}</HeaderText>
+              <BodyText>{post.publishDate}</BodyText> 
+            </BlogHeaderWrapper>
+            <BlogContentWrapper
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.html,
+              }}
+            />
+            <BlogSection
+              posts={renderPosts}
+              category={category}
+              title="Similar posts"
+            />
+          </IndividualBlogWrapper>
+        </Layout>
+      </BackgroundColor>
     )
   }
 }
