@@ -26,9 +26,14 @@ export default class blog extends Component {
     }
     this.updateSelectedCategories = this.updateSelectedCategories.bind(this)
     this.handleSeeMore = this.handleSeeMore.bind(this)
+    this.populateState = this.populateState.bind(this)
   }
 
   componentDidMount() {
+    this.populateState()
+  }
+
+  populateState() {
     const posts = this.props.data.allContentfulBlogPost.edges
     let categories = []
     categories.push("Latest posts")
@@ -74,6 +79,15 @@ export default class blog extends Component {
         selectedCategories,
       })
     })
+  }
+
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
+    if (
+      nextState.selectedCategories === undefined ||
+      nextState.selectedCategories.length === 0
+    ) {
+      this.populateState()
+    }
   }
 
   render() {
