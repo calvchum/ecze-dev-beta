@@ -67,6 +67,12 @@ export default class blog extends Component {
     })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.selectedCategories.length === 0) {
+      this.populateState()
+    }
+  }
+
   updateSelectedCategories(selected) {
     let selectedCategories = []
     selected.forEach(category => {
@@ -79,15 +85,6 @@ export default class blog extends Component {
         selectedCategories,
       })
     })
-  }
-
-  UNSAFE_componentWillUpdate(nextProps, nextState) {
-    if (
-      nextState.selectedCategories === undefined ||
-      nextState.selectedCategories.length === 0
-    ) {
-      this.populateState()
-    }
   }
 
   render() {
