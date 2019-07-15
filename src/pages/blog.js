@@ -90,6 +90,7 @@ export default class blog extends Component {
   render() {
     const posts = this.props.data.allContentfulBlogPost.edges
     let categories = []
+    categories.push("Latest posts")
     posts.forEach(post => {
       categories.push(post.node.category)
     })
