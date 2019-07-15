@@ -3,9 +3,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import FaqListItem from "../components/faqListItem"
 import SEO from "../components/seo"
-import { HeaderText, SubheaderText, BodyText, colors, lineWidths, BackgroundColor } from '../utilities'
-import { Underline } from '../components/Underline'
-import { FaqHeaderWrapper, FaqWrapper, QuestionWrapper } from '../components/FaqPage'
+import {
+  HeaderText,
+  SubheaderText,
+  BodyText,
+  colors,
+  lineWidths,
+  BackgroundColor,
+} from "../utilities"
+import { Underline } from "../components/Underline"
+import {
+  FaqHeaderWrapper,
+  FaqWrapper,
+  QuestionWrapper,
+} from "../components/FaqPage"
 
 export default class Faq extends Component {
   constructor() {
@@ -49,9 +60,18 @@ export default class Faq extends Component {
           <SEO title="FAQ" />
           <FaqWrapper>
             <FaqHeaderWrapper>
-              <HeaderText><Underline size={lineWidths.ctaUnderline} color={colors.primary}>FAQs</Underline></HeaderText> 
+              <HeaderText>
+                <Underline
+                  size={lineWidths.ctaUnderline}
+                  color={colors.primary}
+                >
+                  FAQs
+                </Underline>
+              </HeaderText>
               <div>
-                <SubheaderText>Products. Allergies. Shipping. Info.</SubheaderText>
+                <SubheaderText>
+                  Products. Allergies. Shipping. Info.
+                </SubheaderText>
               </div>
             </FaqHeaderWrapper>
 
