@@ -11,7 +11,6 @@ import { StaticQuery, graphql } from "gatsby";
 import Header from "./Header";
 import Footer from "./Footer";
 import SignUpForm from "./SignUpForm";
-// import { colors } from "../utilities";
 import styled from "styled-components";
 import "./layout.css";
 
