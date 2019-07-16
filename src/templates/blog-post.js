@@ -4,30 +4,23 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
-import { 
-BodyText, 
-HeaderText,
-colors,
-BackgroundColor
-} from '../utilities'
+import { BodyText, HeaderText, colors, BackgroundColor } from "../utilities"
 
 const IndividualBlogWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
-`;
+`
 const BlogHeaderWrapper = styled.div`
   border-bottom: 1px solid ${colors.almostBlack};
   padding-bottom: 0.4em;
-`;
+`
 
 const BlogContentWrapper = styled.div`
   padding: 1em 0em 3em 0em;
   margin: 0 auto;
   max-width: 600px;
   text-align: justify;
-
-`;
-
+`
 
 export default class BlogPostTemplate extends Component {
   render() {
@@ -46,8 +39,13 @@ export default class BlogPostTemplate extends Component {
           <SEO title={`${post.title}`} />
           <IndividualBlogWrapper>
             <BlogHeaderWrapper>
+              <img
+                src={post.heroImage.fluid.src}
+                alt={`${post.category} hero image`}
+              />
               <HeaderText>{post.title}</HeaderText>
-              <BodyText>{post.publishDate}</BodyText> 
+              <BodyText>{post.publishDate}</BodyText>
+              {console.log(post)}
             </BlogHeaderWrapper>
             <BlogContentWrapper
               dangerouslySetInnerHTML={{
