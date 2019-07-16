@@ -12,8 +12,12 @@ const ResponsiveNavStyles = styled(animated.div)`
   bottom: 0;
   z-index: 10;
   background: ${colors.almostWhite};
-  // height: 100%;
-  // width: 100%;
+  font-size: 2em;
+  padding: 10vh 0em 0em 1em;
+
+  & > li {
+    padding: 0.5em 0em;
+  }
 `;
 
 const ResponsiveNav = ({ style }) => {

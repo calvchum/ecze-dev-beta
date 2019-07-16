@@ -4,9 +4,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Navigation from "./Navigation"
 import ResponsiveNav from "./ResponsiveNav"
-import { paddingDefaults } from "../utilities"
+import { paddingDefaults, colors } from "../utilities"
 import eczeLogoWhite from "../assets/logo/white.svg"
-import burgerMenu from '../assets/icons/burger-menu.svg'
 import { media } from '../utilities'
 
 const HeaderWrapper = styled.div`
@@ -32,18 +31,20 @@ const LogoWrapper = styled.img`
   display: flex;
 `
 
-const BurgerWrapper = styled.img`
+const BurgerWrapper = styled.div`
   display: none;
-  z-index: 11;
-
-
   ${media.med`
     display: block;
-    height: 24px;
-    margin-bottom: 0em;
-    margin-right: 0em;
     z-index: 11;
   `}
+`
+const Span = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  padding-bottom: 8px;
+  border-bottom: 2px ${colors.almostBlack} solid;
+  transform: rotate(180deg);
 `
 
 const HeaderNavWrapper = styled.ul`
@@ -59,6 +60,7 @@ const HeaderNavWrapper = styled.ul`
   `}
 `
 
+
 const Header = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const navAnimation = useSpring({
@@ -66,7 +68,12 @@ const Header = () => {
       ? `translate3d(0,0,0)`
       : `translate3d(-100%,0,0)`
   });
-  console.log(isNavOpen)
+  const middleLine = useSpring({
+    width: isNavOpen ? `32px` : `40px`,
+  });
+  const bottomLine = useSpring({
+    width: isNavOpen ? `16px` : `40px`,
+  });
 
   return (
     <HeaderWrapper>
@@ -75,7 +82,11 @@ const Header = () => {
       </Link>
           <ResponsiveNav style={navAnimation} />
         <div style={{zIndex: 15}}>
-          <BurgerWrapper src={burgerMenu} onClick={() => setNavOpen(!isNavOpen)} />
+          <BurgerWrapper onClick={() => setNavOpen(!isNavOpen)}>
+            <Span></Span>
+            <Span style={middleLine}></Span>
+            <Span style={bottomLine}></Span>
+          </BurgerWrapper>
           <HeaderNavWrapper>
             <Navigation />
           </HeaderNavWrapper>
