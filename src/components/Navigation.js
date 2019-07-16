@@ -4,8 +4,6 @@ import styled from "styled-components"
 import * as data from "../constants/pageInfo"
 import { colors, NavLinksFont } from "../utilities"
 
-// import { typography, fontsize } from "../utilities"
-
 const ListItem = styled.li`
   ${NavLinksFont}
   list-style: none;
