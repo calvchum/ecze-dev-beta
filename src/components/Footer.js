@@ -12,6 +12,7 @@ import {
 import facebookIcon from "../assets/icons/facebook.svg"
 import instagramIcon from "../assets/icons/instagram.svg"
 import youtubeIcon from "../assets/icons/youtube.svg"
+import MailchimpForm from "./MailchimpForm"
 
 const FooterWrapper = styled.section`
   display: grid;
@@ -97,7 +98,7 @@ const Footer = () => (
       <BodyText>hello@ecze.com.au</BodyText>
       <BodyText>Melbourne, Australia</BodyText>
     </ContactEcze>
-    <p>FOO</p>
+    <MailchimpForm />
   </FooterWrapper>
 )
 
