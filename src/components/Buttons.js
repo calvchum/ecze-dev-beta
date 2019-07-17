@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Underline } from './Underline'
-import { colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '../utilities'
+import { media, colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '../utilities'
 import mailIcon from "../assets/icons/mail.svg"
 
 

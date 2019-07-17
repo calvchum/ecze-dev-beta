@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import CheckBox from "./checkbox"
 import styled from 'styled-components'
+import { media } from "../utilities"
 
 const FilterList = styled.ul`
   list-style: none;
