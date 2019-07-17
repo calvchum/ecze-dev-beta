@@ -1,6 +1,8 @@
-import React, { Component } from "react"
+import React, { Component, useState } from "react"
+import { useSpring, animated } from 'react-spring'; 
 import Layout from "../components/layout"
-import FilterBlog from "../components/filterblog"
+import FilterBlog from "../components/FilterBlog"
+import { ResponsiveFilter } from "../components/ResponsiveFilter"
 import BlogSection from "../components/blogsection"
 import { graphql } from "gatsby"
 import {
@@ -9,6 +11,7 @@ import {
   colors,
   lineWidths,
   BackgroundColor,
+  media
 } from "../utilities"
 import { Underline } from "../components/Underline"
 import {
@@ -16,6 +19,8 @@ import {
   BlogHeaderWrapper,
   BlogHeader,
   PaddingBottom,
+  ResponsiveFilterWrapper,
+  DisplayNone
 } from "../components/BlogPage"
 
 export default class blog extends Component {
@@ -146,11 +151,22 @@ export default class blog extends Component {
               </SubheaderText>
             </BlogHeader>
           </BlogHeaderWrapper>
-          <BlogFilterWrapper>
-            <FilterBlog
+{/* FILTER RESPONSIVE FUNCTIONALITY */}
+          <ResponsiveFilterWrapper>
+            <ResponsiveFilter
+              cta="filter"
               categories={categories}
               updateSelectedCategories={this.updateSelectedCategories}
             />
+          </ResponsiveFilterWrapper>
+{/* FILTER DESKTOP FUNCTIONALITY */}
+          <BlogFilterWrapper>
+            <DisplayNone>
+              <FilterBlog
+                categories={categories}
+                updateSelectedCategories={this.updateSelectedCategories}
+              />
+            </DisplayNone>
             <div>{displayedSections}</div>
           </BlogFilterWrapper>
         </Layout>

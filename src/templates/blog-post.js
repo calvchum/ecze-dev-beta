@@ -22,6 +22,12 @@ const BlogContentWrapper = styled.div`
   text-align: justify;
 `
 
+const HeroImage = styled.img`
+  width: 100vw;
+  height: 40vh;
+  background-size: cover;
+`;
+
 export default class BlogPostTemplate extends Component {
   render() {
     const post = this.props.data.contentfulBlogPost
@@ -37,12 +43,12 @@ export default class BlogPostTemplate extends Component {
       <BackgroundColor color={colors.almostWhite}>
         <Layout>
           <SEO title={`${post.title}`} />
-          <IndividualBlogWrapper>
-            <BlogHeaderWrapper>
-              <img
+              <HeroImage
                 src={post.heroImage.fluid.src}
                 alt={`${post.category} hero image`}
               />
+          <IndividualBlogWrapper>
+            <BlogHeaderWrapper>
               <HeaderText>{post.title}</HeaderText>
               <BodyText>{post.publishDate}</BodyText>
               {console.log(post)}
