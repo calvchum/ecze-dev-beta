@@ -33,7 +33,6 @@ const SignUpForm = () => (
       <SubheaderText>Keep up to date with our commnity and recommended products.</SubheaderText>
       <InputWrapper>
         <MailchimpForm />
-
       </InputWrapper>
     </SignUpWrapper>
   </BackgroundColor>
