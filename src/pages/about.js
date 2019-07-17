@@ -1,8 +1,8 @@
 import React from "react"
+import Layout from "../components/layout"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
-import Layout from "../components/layout"
 import { Underline } from "../components/Underline"
 import {
 	HeaderText,
