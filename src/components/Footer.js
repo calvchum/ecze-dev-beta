@@ -2,10 +2,17 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Navigation from "./Navigation"
-import { colors, SubheaderText, BodyText, paddingDefaults, media } from '../utilities'
+import {
+  colors,
+  SubheaderText,
+  BodyText,
+  paddingDefaults,
+  media,
+} from "../utilities"
 import facebookIcon from "../assets/icons/facebook.svg"
 import instagramIcon from "../assets/icons/instagram.svg"
 import youtubeIcon from "../assets/icons/youtube.svg"
+import MailchimpForm from "./MailchimpForm"
 
 const FooterWrapper = styled.section`
   display: grid;
@@ -19,11 +26,11 @@ const FooterWrapper = styled.section`
     grid: repeat(4, auto) / 1fr;
     grid-gap: 1em;
   `}
-`;
+`
 
 const SocialMedia = styled.div`
   display: flex;
-`;
+`
 
 const SocMediaIcon = styled.img`
   padding: 0em 0.5em;
@@ -35,13 +42,13 @@ const SocMediaIcon = styled.img`
   ${media.med`
     margin-bottom: 0em;
   `}
-`;
+`
 
 const AboutEcze = styled.div`
   ${media.med`
     text-align: justify;
   `}
-`;
+`
 
 const ContactEcze = styled.div`
   padding-left: 2em;
@@ -50,7 +57,7 @@ const ContactEcze = styled.div`
     padding-left: 0em;
     padding-bottom: 2em;
   `}
-`;
+`
 
 const FooterNavWrapper = styled.ul`
   display: flex;
@@ -64,7 +71,7 @@ const FooterNavWrapper = styled.ul`
     padding-bottom: 0em;
 
   `}
-`;
+`
 
 const Footer = () => (
   <FooterWrapper>
@@ -91,6 +98,7 @@ const Footer = () => (
       <BodyText>hello@ecze.com.au</BodyText>
       <BodyText>Melbourne, Australia</BodyText>
     </ContactEcze>
+    <MailchimpForm />
   </FooterWrapper>
 )
 
