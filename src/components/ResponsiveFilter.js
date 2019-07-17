@@ -2,36 +2,39 @@ import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import FilterBlog from "./filterblog"
-import { media } from "../utilities"
+import { media, colors, SubheaderText } from "../utilities"
 
 const ResponsiveFilterStyles = styled(animated.div)`
   width: 100vw;
-  background: white;
+  height: 100vh;
+  z-index: 19;
+  background: ${colors.almostWhite};
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-top: 20vh;
+
 `
 
-const FilterButtonStyle = styled.button`
+const FilterButtonStyle = styled.div`
   display: none;
 
   ${media.med`
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background: ${colors.almostBlack};
+    color: ${colors.almostWhite};
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 1em;
+    z-index: 20;
+    transition: 0.2s;
   `}
-
-  background: white;
-  width: 100vw;
-  height: 44px;
-  position: sticky;
-  z-index: 20;
-  top: 0;
-  left: 0;
-  border: none;
-  transition: 0.2s;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
 `
 
 export const ResponsiveFilter = ({
@@ -41,21 +44,27 @@ export const ResponsiveFilter = ({
 }) => {
   const [isFilterOpen, setFilterOpen] = useState(false)
   const filterAnimation = useSpring({
-    height: isFilterOpen ? `400px` : `0px`,
     transform: isFilterOpen ? `translateY(0%)` : `translateY(-100%)`,
-    display: isFilterOpen ? `block` : `none`,
+    opacity: isFilterOpen ? `0.95` : `0`
+  })
+
+  const filterButtonAnimation = useSpring({
+
   })
 
   return (
     <>
       <FilterButtonStyle onClick={() => setFilterOpen(!isFilterOpen)}>
-        {cta}
+        Filter
       </FilterButtonStyle>
       <ResponsiveFilterStyles style={filterAnimation}>
-        <FilterBlog
-          categories={categories}
-          updateSelectedCategories={updateSelectedCategories}
-        />
+        <SubheaderText>
+          <FilterBlog
+            categories={categories}
+            updateSelectedCategories={updateSelectedCategories}
+          />
+          
+        </SubheaderText>
       </ResponsiveFilterStyles>
     </>
   )

@@ -1,23 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { colors, SubheaderText, BodyText } from "../utilities"
+import { colors, SubheaderText, BodyText, media } from "../utilities"
 
 // Link cant be a styled component because it is GATSBY specific, using an object instead
-const linkStyles = {
-  textDecoration: "none",
-  color: colors.almostBlack,
-  maxWidth: "306px",
-  maxHeight: "406px",
-}
 
 const CardWrapper = styled.div`
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
   height: 406px;
+  padding-bottom: 1em;
   transition: 0.3s;
   &:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   }
+
+  & > a {
+    text-decoration: none;
+    color: ${colors.almostBlack}
+  }
+
+
+  ${media.med`
+    max-width: 160px;
+    height: auto;
+    
+  `}
 `
 
 const BodyTextUppercase = styled(BodyText)`
@@ -41,6 +48,11 @@ const BlogImage = styled.img`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  ${media.med`
+    width: 220px;
+    height: 180px;
+    
+  `}
 `
 
 const ArticlePreview = ({
@@ -53,12 +65,12 @@ const ArticlePreview = ({
     },
   },
 }) => (
-  <Link to={`/blog/${slug}`} style={linkStyles}>
     <CardWrapper>
+  <Link to={`/blog/${slug}`}>
       <BlogImage src={url} alt="blog post image" />
       <BodyTextUppercase>{category}</BodyTextUppercase>
       <BodyTextCapitalized>{title.toLowerCase()}</BodyTextCapitalized>
-    </CardWrapper>
   </Link>
+    </CardWrapper>
 )
 export default ArticlePreview

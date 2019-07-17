@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import ArticlePreview from "./articlepreview"
 import { Underline } from "./Underline"
 import styled from "styled-components"
-import { SubheaderText, lineWidths, colors } from "../utilities"
+import { SubheaderText, lineWidths, colors, media } from "../utilities"
 
 const ArticleGrid = styled.div`
   display: grid;
@@ -10,6 +10,10 @@ const ArticleGrid = styled.div`
   grid-gap: 8px;
   max-width: 934px;
   padding-bottom: 3em;
+  ${media.med`
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+
+  `}
 `
 const GridSectionTitleWrapper = styled.div`
   padding: 0em 0em 1em 0em;

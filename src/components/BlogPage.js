@@ -11,7 +11,6 @@ export const BlogFilterWrapper = styled.div`
 		grid-template-columns: 3fr;
 		padding: 1em;
 		margin: 0 auto;
-
 	`}
 `
 
