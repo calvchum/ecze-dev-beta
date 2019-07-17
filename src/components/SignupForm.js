@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { colors, lineWidths, SubheaderText, BodyText, BackgroundColor } from '../utilities'
 import { Underline } from './Underline'
 import { SignUpButton } from './Buttons'
+import MailchimpForm from "./MailchimpForm"
 
 
 const SignUpWrapper = styled.section`
@@ -26,29 +27,12 @@ const InputWrapper = styled.div`
   }
 `;
 
-const Input = styled.input `
-  width: 300px;
-  height: 40px;
-  border: none;
-  &:focus {
-    outline: none;
-
-  }
-`;
-
-
 const SignUpForm = () => (
   <BackgroundColor color='white'>
     <SignUpWrapper>
       <SubheaderText>Keep up to date with our commnity and recommended products.</SubheaderText>
       <InputWrapper>
-        <Underline size={lineWidths.signUp} color={colors.almostBlack}>
-          <Input 
-            type="text"
-            placeholder="x Email"
-          />
-          </Underline>
-        <SignUpButton cta="Subscribe" />
+        <MailchimpForm />
       </InputWrapper>
     </SignUpWrapper>
   </BackgroundColor>
