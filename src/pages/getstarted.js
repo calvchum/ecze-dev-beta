@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
 import * as data from "../constants/getStartedPosts"
