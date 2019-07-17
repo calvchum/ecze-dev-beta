@@ -1,13 +1,13 @@
 import React, { useState } from "react"
-import { useSpring, animated } from 'react-spring'; 
-import styled from 'styled-components';
-import FilterBlog from './FilterBlog';
-import { media } from '../utilities';
+import { useSpring, animated } from "react-spring"
+import styled from "styled-components"
+import FilterBlog from "./filterblog"
+import { media } from "../utilities"
 
 const ResponsiveFilterStyles = styled(animated.div)`
   width: 100vw;
   background: white;
-`;
+`
 
 const FilterButtonStyle = styled.button`
   display: none;
@@ -32,19 +32,25 @@ const FilterButtonStyle = styled.button`
   &:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-`;
+`
 
-export const ResponsiveFilter = ({ cta, categories, updateSelectedCategories}) => {
-  const [isFilterOpen, setFilterOpen] = useState(false);
+export const ResponsiveFilter = ({
+  cta,
+  categories,
+  updateSelectedCategories,
+}) => {
+  const [isFilterOpen, setFilterOpen] = useState(false)
   const filterAnimation = useSpring({
     height: isFilterOpen ? `400px` : `0px`,
     transform: isFilterOpen ? `translateY(0%)` : `translateY(-100%)`,
-    display:  isFilterOpen ? `block` : `none`
-  });
+    display: isFilterOpen ? `block` : `none`,
+  })
 
   return (
     <>
-      <FilterButtonStyle onClick={() => setFilterOpen(!isFilterOpen)}>{cta}</FilterButtonStyle>
+      <FilterButtonStyle onClick={() => setFilterOpen(!isFilterOpen)}>
+        {cta}
+      </FilterButtonStyle>
       <ResponsiveFilterStyles style={filterAnimation}>
         <FilterBlog
           categories={categories}
@@ -52,7 +58,5 @@ export const ResponsiveFilter = ({ cta, categories, updateSelectedCategories}) =
         />
       </ResponsiveFilterStyles>
     </>
-  );
-};
-
-
+  )
+}
