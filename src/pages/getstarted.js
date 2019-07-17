@@ -1,24 +1,24 @@
 import React, { Component } from "react"
+import Layout from "../components/layout"
 import { Link } from "gatsby"
 import BlogSection from "../components/blogsection"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as data from "../constants/getStartedPosts"
-import { 
-  BodyText, 
-  HeaderText, 
-  SubheaderText, 
-  colors, 
+import {
+  BodyText,
+  HeaderText,
+  SubheaderText,
+  colors,
   lineWidths,
-  BackgroundColor
-} from '../utilities'
-import { 
-  GetStartedWrapper, 
+  BackgroundColor,
+} from "../utilities"
+import {
+  GetStartedWrapper,
   HeaderSection,
-  BodySection 
-} from '../components/GetStarted'
-import { Underline } from '../components/Underline'
-import { PaddingBottom } from '../components/BlogPage'
+  BodySection,
+} from "../components/GetStarted"
+import { Underline } from "../components/Underline"
+import { PaddingBottom } from "../components/BlogPage"
 
 // the text on this page should be managed by Contentful and not hard coded
 
@@ -56,10 +56,19 @@ export default class GetStarted extends Component {
         <GetStartedWrapper>
           <HeaderSection>
             <PaddingBottom>
-              <HeaderText><Underline size={lineWidths.ctaUnderline} color={colors.primary}>Getting Started</Underline></HeaderText> 
+              <HeaderText>
+                <Underline
+                  size={lineWidths.ctaUnderline}
+                  color={colors.primary}
+                >
+                  Getting Started
+                </Underline>
+              </HeaderText>
             </PaddingBottom>
-            <SubheaderText style={{ fontWeight: "400" }}>If you have eczema, the first step is to LEARN about eczema</SubheaderText>
-          </HeaderSection>  
+            <SubheaderText style={{ fontWeight: "400" }}>
+              If you have eczema, the first step is to LEARN about eczema
+            </SubheaderText>
+          </HeaderSection>
           <BackgroundColor color={colors.almostWhite}>
             <BodySection>
               {this.state.getStartedCategories.map((object, i) => {
@@ -74,9 +83,9 @@ export default class GetStarted extends Component {
                 )
               })}
             </BodySection>
-          </BackgroundColor>      
+          </BackgroundColor>
         </GetStartedWrapper>
-      </Layout> 
+      </Layout>
     )
   }
 }

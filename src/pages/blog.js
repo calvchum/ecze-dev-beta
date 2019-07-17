@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react"
-import { useSpring, animated } from "react-spring"
 import Layout from "../components/layout"
+import { useSpring, animated } from "react-spring"
 import FilterBlog from "../components/filterblog"
 import { ResponsiveFilter } from "../components/ResponsiveFilter"
 import BlogSection from "../components/blogsection"
