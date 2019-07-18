@@ -12,6 +12,7 @@ import {
 	lineWidths,
 	BackgroundColor,
 	paddingDefaults,
+	media
 } from "../utilities"
 
 // PLACEHOLDER IMAGES
@@ -26,6 +27,10 @@ const AboutContentWrapper = styled.div`
 	padding: 0em;
 	max-width: 960px;
 	margin: 0 auto;
+
+	${media.med`
+		padding: 0em 1em;
+	`}
 `
 
 const SectionWrapper = styled.div`
@@ -33,6 +38,10 @@ const SectionWrapper = styled.div`
 	grid-template-columns: 1fr 1fr;
 	padding: 2em 0em;
 	grid-gap: 1em;
+	
+	${media.med`
+		grid-template-columns: 1fr;
+	`}
 `
 
 const AboutImage = styled.div`
@@ -40,13 +49,15 @@ const AboutImage = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	height: 100%;
+	width: 100%;
 	margin-bottom: 0em;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	& img {
-		max-width: 100%;
+		width: 100%;
 		height: auto;
+		margin-bottom: 0;
 	}
 `
 
@@ -59,6 +70,9 @@ const AccentWrapper = styled.div`
 	background: white;
 	padding: 3em;
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+	${media.med`
+		padding: 2em;
+	`}
 `
 
 const About = () => (

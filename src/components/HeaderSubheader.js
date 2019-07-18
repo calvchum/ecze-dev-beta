@@ -7,6 +7,10 @@ const HeaderSubheaderWrapper = styled.div`
 	max-width: 960px;
 	margin: 0 auto;
 	padding: ${paddingDefaults.topBottom} 1.5em;
+
+	& h1:first-child {
+		padding-bottom: 0.4em;
+	}
 `;
 
 const HeaderSubheader = () => (
