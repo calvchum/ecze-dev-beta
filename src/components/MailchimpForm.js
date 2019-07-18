@@ -16,7 +16,6 @@ const EmailInput = styled.input `
 
   ${media.med`
 		width: 220px;
-
   `}
 
 `;

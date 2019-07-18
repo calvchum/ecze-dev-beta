@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors } from '../utilities'
+import { colors, media } from '../utilities'
 
 export const FaqHeaderWrapper = styled.div`
 	padding-top: 3em;
@@ -13,6 +13,9 @@ export const FaqWrapper = styled.div`
 	max-width: 960px;
 	margin: 0 auto;
 
+	${media.med`
+		padding: 0em 1em;
+	`}
 `;
 
 export const QuestionAnswer = styled.div`

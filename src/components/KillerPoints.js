@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Underline } from "./Underline"
-import { lineWidths, colors, BodyText, paddingDefaults } from '../utilities'
+import { lineWidths, colors, BodyText, paddingDefaults, media } from '../utilities'
 
 const KillerPointsContainer = styled.div`
   background: ${colors.almostWhite}
@@ -23,17 +23,32 @@ const IconSectionWrapper = styled.div`
   grid-template-columns: repeat( auto-fit, minmax(400px, auto) );
   grid-gap: 8px;
   justify-content: center;
+
+  ${media.med`
+    grid-template-columns: repeat( auto-fit, minmax(150px, auto) );
+  `}
 `;
 const IconSection = styled.div`
 `;
 
 const Icon = styled.img`
-   padding: 1.5em;
+  padding: 1.5em;
+  
+  ${media.med`
+    padding: 1em;
+
+  `}
 `;
 const DescriptionText = styled.div`
   max-width: 672px;
   padding: 0em 1.5em 4em 1.5em;
   margin: 0 auto;
+`;
+
+const IconBreakpointAlign = styled.div`
+  ${media.med`
+    text-align: center;
+  `}
 `;
 
 
@@ -42,24 +57,24 @@ const KillerPoints = () => (
   <KillerPointsContainer>
     <KillerPointsWrapper>
       <DescriptionText>
-        <BodyText>Simply moisturising or using topical steroids for eczema is often as effective as taking an anti-depressant for depression. It is all about masking the symptoms as opposed to providing a holistic solution.</BodyText>
+        <BodyText style={{textAlign: 'justify'}}>Simply moisturising or using topical steroids for eczema is often as effective as taking an anti-depressant for depression. It is all about masking the symptoms as opposed to providing a holistic solution.</BodyText>
       </DescriptionText>
     
       <IconSectionWrapper>
         <IconSection>
           <CenteredBodyText><Underline size={lineWidths.ctaUnderline} color={colors.secondary}>The Inside Stuff</Underline></CenteredBodyText>
-          <div>
+          <IconBreakpointAlign>
             <Icon src={require('../assets/icons/idea.svg')} alt="ECZE Logo" /> 
             <Icon src={require('../assets/icons/solution.svg')} alt="ECZE Logo" />   
-          </div>
+          </IconBreakpointAlign>
         </IconSection> 
 
         <IconSection>
           <CenteredBodyText><Underline size={lineWidths.ctaUnderline} color={colors.secondary}>The Outside Stuff</Underline></CenteredBodyText>
-          <div>
+          <IconBreakpointAlign>
             <Icon src={require('../assets/icons/idea.svg')} alt="ECZE Logo" /> 
             <Icon src={require('../assets/icons/solution.svg')} alt="ECZE Logo" />   
-          </div>
+          </IconBreakpointAlign>
         </IconSection> 
 
       </IconSectionWrapper>
