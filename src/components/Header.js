@@ -36,6 +36,7 @@ const BurgerWrapper = styled.div`
   ${media.med`
     display: block;
     z-index: 11;
+    cursor: pointer;
   `}
 `
 const Span = styled(animated.div)`
