@@ -44,10 +44,14 @@ export default class Faq extends Component {
 
   handleClick(i) {
     let faqItem = JSON.parse(JSON.stringify(this.state.faqItem))
-    faqItem.map(faq => {
-      return (faq.isClicked = false)
-    })
+    // toggled clicked FAQ state
     faqItem[i].isClicked = !faqItem[i].isClicked
+    // creates a new array without the clicked FAQ
+    const otherQuestions = faqItem.filter(object => object !== faqItem[i])
+    // sets all other FAQ questions to unclicked
+    otherQuestions.map(question => {
+      return (question.isClicked = false)
+    })
     this.setState({
       faqItem,
     })
