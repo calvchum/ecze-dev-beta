@@ -3,16 +3,6 @@ import { SubheaderText, BodyText } from "../utilities"
 import { QuestionAnswer, QuestionArrow } from "./FaqPage"
 import downArrow from "../assets/icons/down-arrow.svg"
 
-// class FaqListItem extends Component {
-// 	render() {
-// 		const { question, answer, index } = this.props
-// 		return (
-// 		)
-// 	}
-// }
-
-// export default FaqListItem
-
 const FaqListItem = ({ index, question, answer, handleClick }) => (
 	<QuestionAnswer onClick={() => handleClick(index)}>
 		<QuestionArrow>
