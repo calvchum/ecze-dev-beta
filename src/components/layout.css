@@ -40,14 +40,14 @@ template {
   display: none;
 }
 a {
-  color: '#2F2F2F'
+  color: "#2F2F2F";
   text-decoration: none;
   transition: 0.2s;
 }
 a:active,
 a:hover {
- color: '#00DAD3';
- text-decoration: underline;
+  color: "#00DAD3";
+  text-decoration: underline;
 }
 abbr[title] {
   border-bottom: none;
