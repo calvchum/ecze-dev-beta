@@ -46,6 +46,7 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
+  color: red;
 }
 abbr[title] {
   border-bottom: none;
@@ -185,7 +186,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em 'Roboto', serif;
+  font: 112.5%/1.45em "Roboto", serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -200,7 +201,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
