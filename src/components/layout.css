@@ -40,13 +40,13 @@ template {
   display: none;
 }
 a {
-  color: "#2F2F2F";
+  color: #2f2f2f;
   text-decoration: none;
   transition: 0.2s;
 }
 a:active,
 a:hover {
-  color: "#00DAD3";
+  color: #00dad3;
   text-decoration: underline;
 }
 abbr[title] {
