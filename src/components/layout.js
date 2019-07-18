@@ -12,7 +12,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import SignUpForm from "./SignUpForm"
 import styled from "styled-components"
-import "./layout.css"
+// import "./layout.css"
 
 const MainContainer = styled.div``
 
