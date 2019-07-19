@@ -1,17 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { 
-  colors, 
-  lineWidths, 
-  SubheaderText, 
-  BodyText, 
-  BackgroundColor, 
-  media 
-} from '../utilities'
-import { Underline } from './Underline'
-import { SignUpButton } from './Buttons'
+import {
+  colors,
+  lineWidths,
+  SubheaderText,
+  BodyText,
+  BackgroundColor,
+  media,
+} from "../utilities"
+import { Underline } from "./Underline"
+import { SignUpButton } from "./Buttons"
 import MailchimpForm from "./MailchimpForm"
-
 
 const SignUpWrapper = styled.section`
   display: flex;
@@ -26,7 +25,7 @@ const SignUpWrapper = styled.section`
     padding: 3em 1em;
     align-items: flex-start;
   `}
-`;
+`
 
 const InputWrapper = styled.div`
   display: flex;
@@ -37,12 +36,14 @@ const InputWrapper = styled.div`
     display: flex;
     align-items: flex-end;
   }
-`;
+`
 
 const SignUpForm = () => (
-  <BackgroundColor color='white'>
+  <BackgroundColor color="white">
     <SignUpWrapper>
-      <SubheaderText>Keep up to date with our commnity and recommended products.</SubheaderText>
+      <SubheaderText>
+        Keep up to date with our community and recommended products.
+      </SubheaderText>
       <InputWrapper>
         <MailchimpForm />
       </InputWrapper>
