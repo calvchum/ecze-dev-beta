@@ -29,13 +29,18 @@ const FooterWrapper = styled.section`
 
 const SocialMedia = styled.div`
   display: flex;
+
+  ${media.med`
+    order: 1;
+    padding: 1em 0em;
+  `}
 `
 
 const SocMediaIcon = styled.img`
-  padding: 0em 0.5em;
-  transition: 0.3s;
+  padding: 0.5em 0.5em;
+  transition: 0.1s;
   &:hover {
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   }
   ${media.med`
     margin-bottom: 0em;
@@ -45,6 +50,7 @@ const SocMediaIcon = styled.img`
 const AboutEcze = styled.div`
   ${media.med`
     text-align: justify;
+    order: 0;
   `}
 `
 
@@ -54,6 +60,7 @@ const ContactEcze = styled.div`
   ${media.med`
     padding-left: 0em;
     padding-bottom: 2em;
+    order: 2;
   `}
 `
 
@@ -65,9 +72,9 @@ const FooterNavWrapper = styled.ul`
   padding-bottom: 2em;
 
   ${media.med`
+    display: none;
     padding-left: 0em;
     padding-bottom: 0em;
-
   `}
 `
 
