@@ -4,8 +4,6 @@ import { SubheaderText, BodyText } from "../utilities"
 import { QuestionAnswer, QuestionArrow } from "./FaqPage"
 import downArrow from "../assets/icons/down-arrow.svg"
 
-
-
 const FaqListItem = ({ index, question, answer, handleClick }) => {
 
 	const [isQuestionOpen, setQuestionOpen] = useState(false);
@@ -26,7 +24,5 @@ const FaqListItem = ({ index, question, answer, handleClick }) => {
 		</QuestionAnswer>
 	)
 }
-
-
 
 export default FaqListItem
