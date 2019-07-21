@@ -38,8 +38,8 @@ export const QuestionArrow = styled.div`
 	align-items: center;
 	cursor: pointer;
 	& img {
-		padding: 0em 1.5em 0em 0.5em;
-		margin-bottom: 0px;
+		margin: 0em 1.5em 0em 0.5em;
+		transform-origin: 50% 50%;
 	}
 `;
 
