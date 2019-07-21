@@ -10,7 +10,7 @@ export const GetStartedWrapper = styled.div`
 export const HeaderSection = styled.div`
 	padding: 5em 0em;
 	max-width: 960px;
-	margin: 0 auto;
+	margin: 2px auto;
 `;
 
 export const BodySection = styled.div`
