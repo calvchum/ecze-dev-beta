@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { animated } from 'react-spring'
 import { colors, media } from '../utilities'
 
 export const FaqHeaderWrapper = styled.div`
@@ -18,7 +19,7 @@ export const FaqWrapper = styled.div`
 	`}
 `;
 
-export const QuestionAnswer = styled.div`
+export const QuestionAnswer = styled(animated.div)`
 	border-bottom: 1px ${colors.almostBlack} solid;
 	padding: 1em 0em;
 	&:first-child {
