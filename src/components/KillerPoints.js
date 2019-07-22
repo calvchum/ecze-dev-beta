@@ -11,6 +11,7 @@ const KillerPointsWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: ${paddingDefaults.topBottom} 0em;
+  background: ${colors.almostWhite}
 `;
 
 const CenteredBodyText = styled(BodyText)`
