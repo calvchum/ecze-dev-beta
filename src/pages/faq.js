@@ -81,25 +81,13 @@ export default class Faq extends Component {
 
             <QuestionWrapper>
               {this.state.faqItem.map((faq, i) => {
-                if (faq.isClicked) {
-                  return (
-                    // generates the FaqListItem component WITH answer prop
-                    <FaqListItem
-                      key={i}
-                      index={i}
-                      question={faq.question}
-                      answer={faq.answer}
-                      isClicked={faq.isClicked}
-                      handleClick={this.handleClick}
-                    />
-                  )
-                }
                 return (
-                  // generates the FaqListItem component WITHOUT answer prop
                   <FaqListItem
                     key={i}
                     index={i}
                     question={faq.question}
+                    answer={faq.answer}
+                    isClicked={faq.isClicked}
                     handleClick={this.handleClick}
                   />
                 )
