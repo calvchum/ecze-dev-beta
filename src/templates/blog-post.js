@@ -4,11 +4,15 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
-import { BodyText, HeaderText, colors, BackgroundColor } from "../utilities"
+import { BodyText, HeaderText, colors, BackgroundColor, media } from "../utilities"
 
 const IndividualBlogWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
+
+  ${media.med`
+    padding: 0em 1em;
+  `}
 `
 const BlogHeaderWrapper = styled.div`
   border-bottom: 1px solid ${colors.almostBlack};
@@ -20,13 +24,24 @@ const BlogContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 600px;
   text-align: justify;
+
+
 `
 
 const HeroImage = styled.img`
   width: 100vw;
-  height: 40vh;
+  height: 100vh;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   background-size: cover;
 `;
+
+const OverFlowHidden = styled.div`
+  max-width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+`;
+
 
 export default class BlogPostTemplate extends Component {
   render() {
@@ -43,10 +58,12 @@ export default class BlogPostTemplate extends Component {
       <BackgroundColor color={colors.almostWhite}>
         <Layout>
           <SEO title={`${post.title}`} />
-              <HeroImage
-                src={post.heroImage.fluid.src}
-                alt={`${post.category} hero image`}
-              />
+          <OverFlowHidden>
+            <HeroImage
+              src={post.heroImage.fluid.src}
+              alt={`${post.category} hero image`}
+            />
+          </OverFlowHidden>
           <IndividualBlogWrapper>
             <BlogHeaderWrapper>
               <HeaderText>{post.title}</HeaderText>

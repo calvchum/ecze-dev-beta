@@ -8,16 +8,32 @@ const ArticleGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 8px;
-  max-width: 934px;
+  max-width: 960px;
   padding-bottom: 3em;
+  // padding-right: 1em
   ${media.med`
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    margin: 0 auto;
+  `}  
+  ${media.small`
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    margin: 0 auto;
   `}
 `
 const GridSectionTitleWrapper = styled.div`
   padding: 0em 0em 1em 0em;
 `
+
+const SeeMoreWrapper = styled.div`
+  & button {
+    padding: 0.8em;
+    background: ${colors.almostBlack};
+    color: ${colors.almostWhite};
+    &:focus {
+      outline: none;
+    }
+  }
+`;
 
 /* eslint-disable */
 class BlogSection extends Component {
@@ -26,13 +42,15 @@ class BlogSection extends Component {
     const postLimit = this.props.postLimit || 999
     // the 'See More...' button only renders if the seeMore prop is explicitly specified as true
     const seeMoreButton = (
-      <button
-        onClick={() =>
-          this.props.handleSeeMore(this.props.category, this.props.index)
-        }
-      >
-        See more...
-      </button>
+      <SeeMoreWrapper>
+        <button
+          onClick={() =>
+            this.props.handleSeeMore(this.props.category, this.props.index)
+          }
+        >
+          See more...
+        </button>
+      </SeeMoreWrapper>
     )
 
     return (
@@ -48,10 +66,10 @@ class BlogSection extends Component {
           {this.props.posts.slice(0, postLimit).map((post, i) => {
             return <ArticlePreview post={post} key={i} />
           })}
-        </ArticleGrid>
         {this.props.seeMore && this.props.posts.length >= postLimit
           ? seeMoreButton
           : null}
+        </ArticleGrid>
       </div>
     )
   }

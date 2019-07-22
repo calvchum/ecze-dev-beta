@@ -8,7 +8,7 @@ export const GetStartedWrapper = styled.div`
 
 
 export const HeaderSection = styled.div`
-	padding: 5em 0em;
+	padding: 5em 1em;
 	max-width: 960px;
 	margin: 2px auto;
 `;
@@ -16,7 +16,7 @@ export const HeaderSection = styled.div`
 export const BodySection = styled.div`
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 3em 0em;
+	padding: 3em 1em;
 `;
 
 
