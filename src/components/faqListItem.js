@@ -5,17 +5,15 @@ import { QuestionAnswer, QuestionArrow } from "./FaqPage"
 import downArrow from "../assets/icons/down-arrow.svg"
 
 const FaqListItem = ({ index, question, answer, handleClick, isClicked }) => {
-	const [isQuestionOpen, setQuestionOpen] = useState(false)
+	// const [isQuestionOpen, setQuestionOpen] = useState(false)
 	const arrowAnimation = useSpring({
-		transform: isQuestionOpen ? `rotate(180deg)` : `rotate(0deg)`,
+		transform: isClicked ? `rotate(180deg)` : `rotate(0deg)`,
 	})
 
-	console.log(isClicked)
 	return (
 		<QuestionAnswer
 			onClick={() => {
 				handleClick(index)
-				setQuestionOpen(!isQuestionOpen)
 			}}
 		>
 			<QuestionArrow>
