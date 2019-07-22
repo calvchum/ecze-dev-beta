@@ -5,7 +5,7 @@ import { media, colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '
 import mailIcon from "../assets/icons/mail.svg"
 
 const EmailInput = styled.input `
-  max-width: 300px;
+  width: 300px;
   padding: 1em;
   border: none;
   border-bottom: 4px solid ${colors.primary};
@@ -16,6 +16,10 @@ const EmailInput = styled.input `
 
   ${media.med`
 		width: 220px;
+  `}
+
+  ${media.small`
+		width: 180px;
   `}
 
 `;

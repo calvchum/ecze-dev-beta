@@ -2,8 +2,8 @@ import { css } from 'styled-components';
 
 // DEVICE SIZES
 const size = {
-  small: 400,
-  med: 760,
+  small: 350,
+  med: 800,
   large: 1140
 }
 

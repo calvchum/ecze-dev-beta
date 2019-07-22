@@ -19,11 +19,8 @@ const CardWrapper = styled.div`
     color: ${colors.almostBlack}
   }
 
-
   ${media.med`
-    max-width: 160px;
     height: auto;
-    
   `}
 `
 
@@ -43,13 +40,13 @@ const BlogImage = styled.img`
   position: relative;
   margin-bottom: 16px;
   float: left;
-  width: 306px;
+  width: 100%;
   height: 264px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  ${media.med`
-    width: 220px;
+  ${media.small`
+    width: 100%;
     height: 180px;
     
   `}
