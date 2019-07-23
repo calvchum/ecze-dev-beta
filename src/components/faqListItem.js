@@ -9,17 +9,21 @@ const FaqListItem = ({ index, question, answer, handleClick, isClicked }) => {
 		transform: isClicked ? `rotate(180deg)` : `rotate(0deg)`,
 	})
 	const answerAnimation = useSpring({
-		transform: isClicked ? `translateY(0px)` : `translateY(-10px)`
+		transform: isClicked ? `translateY(0px)` : `translateY(-10px)`,
 	})
 
 	return (
-		<QuestionAnswer onClick={() => { handleClick(index) }}>
+		<QuestionAnswer
+			onClick={() => {
+				handleClick(index)
+			}}
+		>
 			<QuestionArrow>
 				<SubheaderText>{question}</SubheaderText>
 				<animated.img style={arrowAnimation} src={downArrow} alt="" />
 			</QuestionArrow>
 			<animated.div style={answerAnimation}>
-				<BodyText>{answer}</BodyText>
+				{isClicked ? <BodyText>{answer}</BodyText> : null}
 			</animated.div>
 		</QuestionAnswer>
 	)
