@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import { animated, useSpring } from "react-spring"
 import { StaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import { Underline } from "../components/Underline"
@@ -33,7 +34,7 @@ const AboutContentWrapper = styled.div`
 	`}
 `
 
-const SectionWrapper = styled.div`
+const SectionWrapper = styled(animated.div)`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	padding: 2em 0em;
@@ -74,162 +75,163 @@ const AccentWrapper = styled.div`
 		padding: 2em;
 	`}
 `
-
 const About = () => (
-	<StaticQuery
-		query={graphql`
-			query AboutPageQuery {
-				allContentfulAsset {
-					edges {
-						node {
-							file {
-								url
-							}
-						}
-					}
-				}
-
-				allContentfulAboutPage {
-					edges {
-						node {
-							section1 {
-								childMarkdownRemark {
-									html
-								}
-							}
-							accentQuote1
-							section2 {
-								childMarkdownRemark {
-									html
-								}
-							}
-							section3 {
-								childMarkdownRemark {
-									html
-								}
-							}
-							section4 {
-								childMarkdownRemark {
-									html
-								}
-							}
-							accentQuote2
-							section5 {
-								childMarkdownRemark {
-									html
+		<StaticQuery
+			query={graphql`
+				query AboutPageQuery {
+					allContentfulAsset {
+						edges {
+							node {
+								file {
+									url
 								}
 							}
 						}
 					}
+
+					allContentfulAboutPage {
+						edges {
+							node {
+								section1 {
+									childMarkdownRemark {
+										html
+									}
+								}
+								accentQuote1
+								section2 {
+									childMarkdownRemark {
+										html
+									}
+								}
+								section3 {
+									childMarkdownRemark {
+										html
+									}
+								}
+								section4 {
+									childMarkdownRemark {
+										html
+									}
+								}
+								accentQuote2
+								section5 {
+									childMarkdownRemark {
+										html
+									}
+								}
+							}
+						}
+					}
 				}
-			}
-		`}
-		render={data => (
-			<>
-				<BackgroundColor color={colors.almostWhite}>
-					<Layout>
-						{console.log(data.allContentfulAsset.edges[0].node.file.url)}
-						<SEO title="About" />
+			`}
+			render={data => (
+				<>
+					<BackgroundColor color={colors.almostWhite}>
+						<Layout>
+							{console.log(data.allContentfulAsset.edges[0].node.file.url)}
+							<SEO title="About" />
 
-						<AboutContentWrapper>
-							<AboutHeaderWrapper>
-								<HeaderText>
-									<Underline
-										size={lineWidths.ctaUnderline}
-										color={colors.primary}
-									>
-										Our story
-									</Underline>
-								</HeaderText>
-							</AboutHeaderWrapper>
-							<SectionWrapper>
-								<BodyText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.section1
-												.childMarkdownRemark.html,
-									}}
-								/>
-								<AboutImage>
-									<img src={family} alt="" />
-								</AboutImage>
-							</SectionWrapper>
+							<AboutContentWrapper>
+								<AboutHeaderWrapper>
+									<HeaderText>
+										<Underline
+											size={lineWidths.ctaUnderline}
+											color={colors.primary}
+										>
+											Our story
+										</Underline>
+									</HeaderText>
+								</AboutHeaderWrapper>
+								<SectionWrapper>
+									<BodyText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.section1
+													.childMarkdownRemark.html,
+										}}
+									/>
+									<AboutImage>
+										<img src={family} alt="" />
+									</AboutImage>
+								</SectionWrapper>
 
-							{/* ######### ACCENT AQUOTE  */}
-							<AccentWrapper>
-								<SubheaderText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.accentQuote1,
-									}}
-								/>
-							</AccentWrapper>
+								{/* ######### ACCENT AQUOTE  */}
+								<AccentWrapper>
+									<SubheaderText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.accentQuote1,
+										}}
+									/>
+								</AccentWrapper>
 
-							<SectionWrapper>
-								<AboutImage>
-									<img src={family} alt="" />
-								</AboutImage>
-								<BodyText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.section2
-												.childMarkdownRemark.html,
-									}}
-								/>
-							</SectionWrapper>
+								<SectionWrapper>
+									<AboutImage>
+										<img src={family} alt="" />
+									</AboutImage>
+									<BodyText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.section2
+													.childMarkdownRemark.html,
+										}}
+									/>
+								</SectionWrapper>
 
-							<SectionWrapper>
-								<BodyText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.section3
-												.childMarkdownRemark.html,
-									}}
-								/>
-								<AboutImage>
-									<img src={family} alt="" />
-								</AboutImage>
-							</SectionWrapper>
+								<SectionWrapper>
+									<BodyText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.section3
+													.childMarkdownRemark.html,
+										}}
+									/>
+									<AboutImage>
+										<img src={family} alt="" />
+									</AboutImage>
+								</SectionWrapper>
 
-							<SectionWrapper>
-								<AboutImage>
-									<img src={family} alt="" />
-								</AboutImage>
-								<BodyText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.section4
-												.childMarkdownRemark.html,
-									}}
-								/>
-							</SectionWrapper>
-							{/* ######### ACCENT AQUOTE  */}
-							<AccentWrapper>
-								<SubheaderText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.accentQuote2,
-									}}
-								/>
-							</AccentWrapper>
-							<SectionWrapper>
-								<BodyText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.allContentfulAboutPage.edges[0].node.section5
-												.childMarkdownRemark.html,
-									}}
-								/>
-								<AboutImage>
-									<img src={family} alt="" />
-								</AboutImage>
-							</SectionWrapper>
-						</AboutContentWrapper>
-					</Layout>
-				</BackgroundColor>
-			</>
-		)}
-	/>
+								<SectionWrapper>
+									<AboutImage>
+										<img src={family} alt="" />
+									</AboutImage>
+									<BodyText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.section4
+													.childMarkdownRemark.html,
+										}}
+									/>
+								</SectionWrapper>
+								{/* ######### ACCENT AQUOTE  */}
+								<AccentWrapper>
+									<SubheaderText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.accentQuote2,
+										}}
+									/>
+								</AccentWrapper>
+
+								<SectionWrapper>
+									<BodyText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.allContentfulAboutPage.edges[0].node.section5
+													.childMarkdownRemark.html,
+										}}
+									/>
+									<AboutImage>
+										<img src={family} alt="" />
+									</AboutImage>
+								</SectionWrapper>
+							</AboutContentWrapper>
+						</Layout>
+					</BackgroundColor>
+				</>
+			)}
+		/>
 )
+
 
 export default About
