@@ -99,7 +99,7 @@ const Footer = () => (
     </AboutEcze>
     <ContactEcze>
       <SubheaderText>Contact</SubheaderText>
-      <BodyText>Bec & Terrence</BodyText>
+      <BodyText>Bec & Terence</BodyText>
       <BodyText>hello@ecze.com.au</BodyText>
       <BodyText>Melbourne, Australia</BodyText>
     </ContactEcze>
