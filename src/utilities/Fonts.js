@@ -1,6 +1,7 @@
 // GATSBY RECOMMENDS TYPOGRAPHY.JS
 import Typography from "typography"
 import styled from "styled-components"
+import { animated } from "react-spring"
 
 // THIS OBJECT CALLS GOOGLE FONT API
 const typography = new Typography({
@@ -49,7 +50,7 @@ export const SubheaderText = styled.h2`
 	${HeaderBaselines}
 	font-size: ${fontsize.subheader};
 `;
-export const BodyText = styled.p`
+export const BodyText = styled(animated.p)`
 	font-size: ${fontsize.body};
 	margin: 0em;
 	font-family: 'DM Sans';
