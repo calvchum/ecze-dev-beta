@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { colors, SubheaderText, BodyText, media } from "../utilities"
+import { colors, BodyText, media } from "../utilities"
 
 // Link cant be a styled component because it is GATSBY specific, using an object instead
 
@@ -61,13 +61,17 @@ const ArticlePreview = ({
       file: { url },
     },
   },
-}) => (
+}) => {
+  return (
     <CardWrapper>
-  <Link to={`/blog/${slug}`}>
-      <BlogImage src={url} alt="blog post image" />
-      <BodyTextUppercase>{category}</BodyTextUppercase>
-      <BodyTextCapitalized>{title.toLowerCase()}</BodyTextCapitalized>
-  </Link>
+      <Link to={`/blog/${slug}`}>
+          <BlogImage src={url} alt="blog post image" />
+          <BodyTextUppercase>{category}</BodyTextUppercase>
+          <BodyTextCapitalized>{title.toLowerCase()}</BodyTextCapitalized>
+      </Link>
     </CardWrapper>
-)
+  ) 
+}
+
+
 export default ArticlePreview

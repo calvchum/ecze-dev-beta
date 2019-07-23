@@ -38,17 +38,19 @@ const InputWrapper = styled.div`
   }
 `
 
-const SignUpForm = () => (
-  <BackgroundColor color="white">
-    <SignUpWrapper>
-      <SubheaderText>
-        Keep up to date with our community and recommended products.
-      </SubheaderText>
-      <InputWrapper>
-        <MailchimpForm />
-      </InputWrapper>
-    </SignUpWrapper>
-  </BackgroundColor>
-)
+const SignUpForm = () => {
+  return (
+    <BackgroundColor color="white">
+      <SignUpWrapper>
+        <SubheaderText>
+          Keep up to date with our community and recommended products.
+        </SubheaderText>
+        <InputWrapper>
+          <MailchimpForm />
+        </InputWrapper>
+      </SignUpWrapper>
+    </BackgroundColor>
+  )
+}
 
 export default SignUpForm

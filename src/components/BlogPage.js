@@ -5,17 +5,20 @@ import FilterBlog from "./filterblog"
 
 export const BlogFilterWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 250px 3fr;
+	grid-template-columns: 250px 1fr;
+	max-width: 1200px;
+	margin: 0 auto;
 
 	${media.med`
 		grid-template-columns: 3fr;
 		padding: 1em;
-		margin: 0 auto;
 	`}
 `
 
 export const BlogHeaderWrapper = styled.div`
 	padding: 3em 0em 3em 250px;
+	margin: 0 auto;
+	max-width: 1200px;
 
 	${media.med`
 		padding: 1em;

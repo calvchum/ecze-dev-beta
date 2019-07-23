@@ -40,6 +40,7 @@ export const QuestionArrow = styled.div`
 	& img {
 		margin: 0em 1.5em 0em 0.5em;
 		transform-origin: 50% 50%;
+		width: 20px;
 	}
 `;
 

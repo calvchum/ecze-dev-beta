@@ -3,8 +3,10 @@ import ArticlePreview from "./articlepreview"
 import { Underline } from "./Underline"
 import styled from "styled-components"
 import { SubheaderText, lineWidths, colors, media } from "../utilities"
+import { Trail } from 'react-spring/renderprops'
+import { animated } from 'react-spring'
 
-const ArticleGrid = styled.div`
+const ArticleGrid = styled(animated.div)`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 8px;
@@ -20,7 +22,7 @@ const ArticleGrid = styled.div`
     margin: 0 auto;
   `}
 `
-const GridSectionTitleWrapper = styled.div`
+const GridSectionTitleWrapper = styled(animated.div)`
   padding: 0em 0em 1em 0em;
 `
 
@@ -55,21 +57,43 @@ class BlogSection extends Component {
 
     return (
       <div>
-        <GridSectionTitleWrapper>
-          <SubheaderText>
-            <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-              {this.props.title}
-            </Underline>
-          </SubheaderText>
-        </GridSectionTitleWrapper>
-        <ArticleGrid>
-          {this.props.posts.slice(0, postLimit).map((post, i) => {
-            return <ArticlePreview post={post} key={i} />
-          })}
-        {this.props.seeMore && this.props.posts.length >= postLimit
-          ? seeMoreButton
-          : null}
-        </ArticleGrid>
+        <Trail
+          items='1'
+          from={{transform: 'translate3d(0,800px,0)', opacity: 0}}
+          to={{transform: 'translate3d(0,0,0)', opacity: 1}}
+        >
+        {item => ({transform, opacity}) =>
+          <animated.div style={{transform, opacity}}>
+            <GridSectionTitleWrapper>
+              <SubheaderText>
+                <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
+                  {this.props.title}
+                </Underline>
+              </SubheaderText>
+            </GridSectionTitleWrapper>
+          </animated.div>
+        }
+        </Trail>
+
+
+        <Trail
+          items='1'
+          from={{transform: 'translate3d(0,200px,0)', opacity: 0}}
+          to={{transform: 'translate3d(0,0,0)', opacity: 1}}
+        >
+        {item => ({transform, opacity}) =>
+          <animated.div style={{transform, opacity}}>
+            <ArticleGrid>
+              {this.props.posts.slice(0, postLimit).map((post, i) => {
+                return <ArticlePreview post={post} key={i} />
+              })}
+            {this.props.seeMore && this.props.posts.length >= postLimit
+              ? seeMoreButton
+              : null}
+            </ArticleGrid>
+          </animated.div>
+        }
+        </Trail>
       </div>
     )
   }

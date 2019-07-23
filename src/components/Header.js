@@ -81,13 +81,15 @@ const Header = () => {
       <Link to="/" style={{display: 'flex', alignItems: 'center'}}>
         <LogoWrapper src={eczeLogoWhite} alt="ECZE Logo" />
       </Link>
-          <ResponsiveNav style={navAnimation} />
+{/* RESPONSIVE MENU ICON & SLIDEOUT MENU */}
+        <ResponsiveNav style={navAnimation} />
         <div style={{zIndex: 15}}>
           <BurgerWrapper onClick={() => setNavOpen(!isNavOpen)}>
             <Span></Span>
             <Span style={middleLine}></Span>
             <Span style={bottomLine}></Span>
           </BurgerWrapper>
+
           <HeaderNavWrapper>
             <Navigation />
           </HeaderNavWrapper>
