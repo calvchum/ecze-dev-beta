@@ -17,7 +17,7 @@ const ListItem = styled.li`
   }
   & a:hover {
     color: ${colors.primary}
-    text-decoration: underline;
+    text-decoration: none;
   }
 `
 
@@ -28,7 +28,7 @@ const Navigation = ({ props }) => (
         return (
           <ListItem key={i}>
             <Link to={page.link}>
-              <Underline size={lineWidths.ctaUnderline} color={colors.primary}>
+              <Underline size={lineWidths.signUp} color={colors.primary}>
                 {page.title}
               </Underline>
             </Link>
