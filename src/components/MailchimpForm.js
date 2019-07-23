@@ -1,8 +1,6 @@
 import React, { Component } from "react"
-import { Underline } from './Underline'
 import styled from "styled-components"
-import { media, colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '../utilities'
-import mailIcon from "../assets/icons/mail.svg"
+import { media, colors } from '../utilities'
 
 const EmailInput = styled.input `
   width: 300px;
@@ -17,12 +15,11 @@ const EmailInput = styled.input `
   ${media.med`
 		width: 220px;
   `}
-
   ${media.small`
 		width: 180px;
   `}
-
 `;
+
 const SignUpButtonStyle = styled.input`
 	border: none;
 	padding: 1em 1.2em;

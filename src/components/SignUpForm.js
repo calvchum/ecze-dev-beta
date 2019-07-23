@@ -1,15 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  colors,
-  lineWidths,
-  SubheaderText,
-  BodyText,
-  BackgroundColor,
-  media,
-} from "../utilities"
-import { Underline } from "./Underline"
-import { SignUpButton } from "./Buttons"
+import { SubheaderText, BackgroundColor, media } from "../utilities"
 import MailchimpForm from "./MailchimpForm"
 
 const SignUpWrapper = styled.section`

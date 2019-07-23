@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Navigation from "./Navigation"
@@ -6,7 +5,6 @@ import {
   colors,
   SubheaderText,
   BodyText,
-  paddingDefaults,
   media,
 } from "../utilities"
 import facebookIcon from "../assets/icons/facebook.svg"

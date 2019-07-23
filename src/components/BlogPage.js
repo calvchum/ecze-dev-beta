@@ -1,7 +1,5 @@
-import React from "react"
 import styled from "styled-components"
-import { colors, media } from "../utilities"
-import FilterBlog from "./filterblog"
+import { media } from "../utilities"
 
 export const BlogFilterWrapper = styled.div`
 	display: grid;
@@ -22,7 +20,6 @@ export const BlogHeaderWrapper = styled.div`
 
 	${media.med`
 		padding: 1em;
-
 	`}
 `
 

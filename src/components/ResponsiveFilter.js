@@ -26,11 +26,11 @@ const FilterButtonStyle = styled(animated.div)`
     justify-content: center;    
     background: ${colors.almostBlack};
     color: ${colors.almostWhite};
-    width: 60px;
     height: 60px
     position: fixed;
-    bottom: 5%;
-    right: 1em;
+    bottom:0;
+    left: 0;
+    right: 0;
     z-index: 20;
     transition: 0.2s;
   `}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
@@ -26,8 +26,6 @@ const WelcomeMat = styled(animated.div)`
 		height: auto;
 	}
 `
-
-
 
 const IndexPage = () => {
 	const pageFade = useSpring({

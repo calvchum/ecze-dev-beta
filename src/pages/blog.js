@@ -1,27 +1,12 @@
-import React, { Component, useState } from "react"
+import React, { Component } from "react"
 import Layout from "../components/layout"
-import { useSpring, animated } from "react-spring"
 import FilterBlog from "../components/filterblog"
 import { ResponsiveFilter } from "../components/ResponsiveFilter"
 import BlogSection from "../components/blogsection"
 import { graphql } from "gatsby"
-import {
-  HeaderText,
-  SubheaderText,
-  colors,
-  lineWidths,
-  BackgroundColor,
-  media,
-} from "../utilities"
+import { HeaderText, SubheaderText, colors, lineWidths, BackgroundColor } from "../utilities"
 import { Underline } from "../components/Underline"
-import {
-  BlogFilterWrapper,
-  BlogHeaderWrapper,
-  BlogHeader,
-  PaddingBottom,
-  ResponsiveFilterWrapper,
-  DisplayNone,
-} from "../components/BlogPage"
+import { BlogFilterWrapper, BlogHeaderWrapper, BlogHeader, PaddingBottom, ResponsiveFilterWrapper, DisplayNone } from "../components/BlogPage"
 
 export default class blog extends Component {
   constructor() {

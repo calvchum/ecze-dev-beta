@@ -48,7 +48,7 @@ const ReadBlog = () => (
 	<BackgroundColor color={colors.almostWhite}>
 		<ReadBlogWrapper>
 			<LeftSide>
-				<img src={baby} alt="image of a baby"/>
+				<img src={baby} alt="a baby"/>
 			</LeftSide>
 			<RightSide>
 				<BodyText>Come discover the root cause of your eczema flare ups and start your journey towards a happier, healthier, itch-free life.</BodyText>

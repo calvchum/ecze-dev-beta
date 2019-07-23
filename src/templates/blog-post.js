@@ -24,8 +24,6 @@ const BlogContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 600px;
   text-align: justify;
-
-
 `
 
 const HeroImage = styled.img`
@@ -34,13 +32,13 @@ const HeroImage = styled.img`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-`;
+`
 
 const OverFlowHidden = styled.div`
   max-width: 100vw;
   height: 40vh;
   overflow: hidden;
-`;
+`
 
 
 export default class BlogPostTemplate extends Component {
