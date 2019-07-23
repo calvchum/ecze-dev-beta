@@ -1,26 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import { animated, useSpring } from "react-spring"
 import { StaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import { Underline } from "../components/Underline"
-import {
-	HeaderText,
-	BodyText,
-	SubheaderText,
-	colors,
-	lineWidths,
-	BackgroundColor,
-	paddingDefaults,
-	media
-} from "../utilities"
+import { HeaderText, BodyText, SubheaderText, colors, lineWidths, BackgroundColor, media } from "../utilities"
 
 // PLACEHOLDER IMAGES
-import baby from "../assets/placeholders/baby.svg"
-import clearAir from "../assets/placeholders/clear-air.svg"
 import family from "../assets/placeholders/family.svg"
-import winter from "../assets/placeholders/winter.svg"
 
 const AboutContentWrapper = styled.div`
 	display: grid;
@@ -34,7 +21,7 @@ const AboutContentWrapper = styled.div`
 	`}
 `
 
-const SectionWrapper = styled(animated.div)`
+const SectionWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	padding: 2em 0em;

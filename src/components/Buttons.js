@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Underline } from './Underline'
-import { media, colors, lineWidths, HeaderBaselines, fontsize, BodyText } from '../utilities'
+import { colors, lineWidths, HeaderBaselines, fontsize } from '../utilities'
 
 const CTAButtonStyle = styled.button`
 	${HeaderBaselines}
@@ -36,5 +36,3 @@ export const CTAButton = ({ cta }) => (
     </CTAButtonStyle>
   </Link>
 )
-
-

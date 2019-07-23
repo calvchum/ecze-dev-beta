@@ -65,11 +65,11 @@ class BlogSection extends Component {
           {item => ({ transform, opacity }) => (
             <animated.div style={{ transform, opacity }}>
               <GridSectionTitleWrapper>
-                <SubheaderText style={{fontWeight: 400}}>
+                <SubheaderText style={{ fontWeight: 400, lineHeight: '180%' }}>
                   <Underline
                     size={lineWidths.ctaUnderline}
                     color={colors.secondary}
-                    style={{fontWeight: 500}}
+                    style={{ fontWeight: 500 }}
                   >
                     {this.props.title}
                    </Underline>

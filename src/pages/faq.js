@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import {
   HeaderText,
   SubheaderText,
-  BodyText,
   colors,
   lineWidths,
   BackgroundColor,

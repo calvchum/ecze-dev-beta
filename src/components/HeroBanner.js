@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { colors, BodyText, HeaderText, paddingDefaults, media } from '../utilities'
+import { BodyText, HeaderText, paddingDefaults, media } from '../utilities'
 import { CTAButton } from './Buttons'
 
 const HeroBannerWrapper = styled.div`
@@ -16,6 +16,7 @@ const HeroBannerWrapper = styled.div`
     padding: ${paddingDefaults.topBottom} 1em;
   `}
 `;
+
 const HeroBannerText = styled.div`
   max-width: 672px;
 `;
@@ -25,7 +26,6 @@ const ButtonWrapper = styled.div`
   justify-content: flex-end;
   padding-top: 3em;
 `;
-
 
 const HeroBanner = () => (
   <HeroBannerWrapper>
