@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { animated } from 'react-spring'
 import { colors, media } from '../utilities'
@@ -13,7 +12,6 @@ export const FaqHeaderWrapper = styled.div`
 export const FaqWrapper = styled.div`
 	max-width: 960px;
 	margin: 0 auto;
-
 	${media.med`
 		padding: 0em 1em;
 	`}
@@ -31,7 +29,6 @@ export const QuestionWrapper = styled.div`
 	padding-bottom: 4em
 `;
 
-
 export const QuestionArrow = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -43,5 +40,3 @@ export const QuestionArrow = styled.div`
 		width: 20px;
 	}
 `;
-
-
