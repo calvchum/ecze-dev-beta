@@ -22,6 +22,9 @@ const CTAButtonStyle = styled.button`
 		transform: translateX(10px);
 		cursor: pointer;
 	}
+	&:focus {
+		outline: none;
+	}
 `;	
 
 export const CTAButton = ({ cta }) => (

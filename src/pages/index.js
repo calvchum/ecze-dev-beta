@@ -1,8 +1,7 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import SEO from "../components/seo"
 import HeroBanner from "../components/HeroBanner"
 import KillerPoints from "../components/KillerPoints"
@@ -28,27 +27,30 @@ const WelcomeMat = styled(animated.div)`
 	}
 `
 
+
+
 const IndexPage = () => {
 	const pageFade = useSpring({
-		from: { opacity: 1 },
-		to: { opacity: 0 },
-		config: { duration: 1000},
-		delay: 1000
-	})
+		from: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+		to: async (next, cancel) => {
+	    await next({opacity: 0})
+	    await next({transform: 'translate3d(-100%, 0, 0)'})
+  },
+  config: { duration: 1000 },
+  delay: 1000
+})
 
 return (
-		<>
-			<WelcomeMat style={pageFade} >
+		<Layout>
+			<WelcomeMat style={pageFade}>
 				<img src={eczeGrey} alt="Ecze LOGO"/>
 			</WelcomeMat>
-			<Layout>
-					<SEO title="Home" />
-					<HeroBanner />
-					<KillerPoints />
-					<HeaderSubheader />
-					<ReadBlog />
-			</Layout>
-		</>
+			<SEO title="Home" />
+			<HeroBanner />
+			<KillerPoints />
+			<HeaderSubheader />
+			<ReadBlog />
+		</Layout>
 	)
 }
 
