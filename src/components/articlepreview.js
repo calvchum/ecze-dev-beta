@@ -19,6 +19,11 @@ const CardWrapper = styled.div`
     color: ${colors.almostBlack}
   }
 
+  & > a:hover {
+    text-decoration: none;
+    color: ${colors.almostBlack}
+  }
+
   ${media.med`
     height: auto;
   `}
@@ -48,7 +53,6 @@ const BlogImage = styled.img`
   ${media.small`
     width: 100%;
     height: 180px;
-    
   `}
 `
 
