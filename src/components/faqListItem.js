@@ -11,7 +11,7 @@ const FaqListItem = ({ index, question, answer, handleClick, isClicked }) => {
 	
 	const transitions = useTransition(isClicked, null, {
     from: { opacity: 1, height: '0px' },
-    enter: { opactiy: 1, height: '100%' },
+    enter: { opactiy: 1, height: `${answer.length < 200 ? '120px' : '220px'}` },
     leave: { opacity: 0, height: '0px' }
 	})
 
@@ -27,7 +27,7 @@ const FaqListItem = ({ index, question, answer, handleClick, isClicked }) => {
 			</QuestionArrow>
 			<div>
 			  {transitions.map(({ item, key, props }) => (
-					item && <BodyText style={props} key={key}>{answer}</BodyText>
+					item && <animated.div style={props} key={key}><BodyText>{answer}</BodyText></animated.div>
 				 ))}
 			</div>
 		</QuestionAnswer>
