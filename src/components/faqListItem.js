@@ -20,7 +20,11 @@ const FaqListItem = ({ index, question, answer, handleClick, isClicked }) => {
 				<SubheaderText>{question}</SubheaderText>
 				<animated.img style={arrowAnimation} src={downArrow} alt="" />
 			</QuestionArrow>
-			<BodyText>{answer}</BodyText>
+			{isClicked ? (
+				<BodyText style={{ color: "red", animationDelay: "1s" }}>
+					{answer}
+				</BodyText>
+			) : null}
 		</QuestionAnswer>
 	)
 }
