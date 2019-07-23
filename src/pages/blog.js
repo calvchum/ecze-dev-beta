@@ -133,6 +133,7 @@ export default class blog extends Component {
     return (
       <BackgroundColor color={colors.almostWhite}>
         <Layout>
+        <div style={{padding: '0em 1em'}}>
           <BlogHeaderWrapper>
             <BlogHeader>
               <PaddingBottom>
@@ -169,6 +170,7 @@ export default class blog extends Component {
             </DisplayNone>
             <div>{displayedSections}</div>
           </BlogFilterWrapper>
+        </div>
         </Layout>
       </BackgroundColor>
     )
