@@ -1,12 +1,26 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from 'styled-components'
+import { HeaderText, BodyText, media } from '../utilities'
+
+
+const ThankYouWrapper = styled.div`
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 4em 0em;
+	${media.med`
+		padding: 4em 1em;
+	`}
+`;
 
 const ThankYouPage = () => (
 	<Layout>
 		<SEO title="Subscription success!" />
-		<h1>Thanks for subscribing to ECZE</h1>
-		<p>You will now receive email updates</p>
+		<ThankYouWrapper>
+			<HeaderText>Thanks for subscribing to ECZE</HeaderText>
+			<BodyText>You will now receive email updates and new products</BodyText>
+		</ThankYouWrapper>
 	</Layout>
 )
 
