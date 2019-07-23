@@ -41,6 +41,7 @@ export default class GetStarted extends Component {
           }
         })
         object.posts = objectPosts
+        console.log(object)
       })
       getStartedCategories.push(object)
     })
@@ -75,6 +76,7 @@ export default class GetStarted extends Component {
                 return (
                   <BlogSection
                     posts={object.posts}
+                    subtitle={object.subtitle}
                     title={object.category}
                     key={i}
                     index={i}

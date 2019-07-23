@@ -3,8 +3,8 @@ import ArticlePreview from "./articlepreview"
 import { Underline } from "./Underline"
 import styled from "styled-components"
 import { SubheaderText, lineWidths, colors, media } from "../utilities"
-import { Trail } from 'react-spring/renderprops'
-import { animated } from 'react-spring'
+import { Trail } from "react-spring/renderprops"
+import { animated } from "react-spring"
 
 const ArticleGrid = styled(animated.div)`
   display: grid;
@@ -16,7 +16,7 @@ const ArticleGrid = styled(animated.div)`
   ${media.med`
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     margin: 0 auto;
-  `}  
+  `}
   ${media.small`
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     margin: 0 auto;
@@ -35,7 +35,7 @@ const SeeMoreWrapper = styled.div`
       outline: none;
     }
   }
-`;
+`
 
 /* eslint-disable */
 class BlogSection extends Component {
@@ -58,41 +58,44 @@ class BlogSection extends Component {
     return (
       <div>
         <Trail
-          items='1'
-          from={{transform: 'translate3d(0,800px,0)', opacity: 0}}
-          to={{transform: 'translate3d(0,0,0)', opacity: 1}}
+          items="1"
+          from={{ transform: "translate3d(0,800px,0)", opacity: 0 }}
+          to={{ transform: "translate3d(0,0,0)", opacity: 1 }}
         >
-        {item => ({transform, opacity}) =>
-          <animated.div style={{transform, opacity}}>
-            <GridSectionTitleWrapper>
-              <SubheaderText>
-                <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-                  {this.props.title}
-                </Underline>
-              </SubheaderText>
-            </GridSectionTitleWrapper>
-          </animated.div>
-        }
+          {item => ({ transform, opacity }) => (
+            <animated.div style={{ transform, opacity }}>
+              <GridSectionTitleWrapper>
+                <SubheaderText>
+                  <Underline
+                    size={lineWidths.ctaUnderline}
+                    color={colors.secondary}
+                  >
+                    {this.props.title}
+                  </Underline>
+                </SubheaderText>
+                {this.props.subtitle ? this.props.subtitle : null}
+              </GridSectionTitleWrapper>
+            </animated.div>
+          )}
         </Trail>
 
-
         <Trail
-          items='1'
-          from={{transform: 'translate3d(0,200px,0)', opacity: 0}}
-          to={{transform: 'translate3d(0,0,0)', opacity: 1}}
+          items="1"
+          from={{ transform: "translate3d(0,200px,0)", opacity: 0 }}
+          to={{ transform: "translate3d(0,0,0)", opacity: 1 }}
         >
-        {item => ({transform, opacity}) =>
-          <animated.div style={{transform, opacity}}>
-            <ArticleGrid>
-              {this.props.posts.slice(0, postLimit).map((post, i) => {
-                return <ArticlePreview post={post} key={i} />
-              })}
-            {this.props.seeMore && this.props.posts.length >= postLimit
-              ? seeMoreButton
-              : null}
-            </ArticleGrid>
-          </animated.div>
-        }
+          {item => ({ transform, opacity }) => (
+            <animated.div style={{ transform, opacity }}>
+              <ArticleGrid>
+                {this.props.posts.slice(0, postLimit).map((post, i) => {
+                  return <ArticlePreview post={post} key={i} />
+                })}
+                {this.props.seeMore && this.props.posts.length >= postLimit
+                  ? seeMoreButton
+                  : null}
+              </ArticleGrid>
+            </animated.div>
+          )}
         </Trail>
       </div>
     )
