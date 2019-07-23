@@ -17,7 +17,7 @@ const ResponsiveFilterStyles = styled(animated.div)`
 
 `
 
-const FilterButtonStyle = styled.div`
+const FilterButtonStyle = styled(animated.div)`
   display: none;
 
   ${media.med`
@@ -27,8 +27,7 @@ const FilterButtonStyle = styled.div`
     background: ${colors.almostBlack};
     color: ${colors.almostWhite};
     width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    height: 60px
     position: fixed;
     bottom: 5%;
     right: 1em;
@@ -45,17 +44,17 @@ export const ResponsiveFilter = ({
   const [isFilterOpen, setFilterOpen] = useState(false)
   const filterAnimation = useSpring({
     transform: isFilterOpen ? `translateY(0%)` : `translateY(-100%)`,
-    opacity: isFilterOpen ? `0.95` : `0`
+    opacity: isFilterOpen ? `1` : `0`
   })
 
   const filterButtonAnimation = useSpring({
-
+    background: isFilterOpen ? `${colors.primary}` : `${colors.almostBlack}`
   })
 
   return (
     <>
-      <FilterButtonStyle onClick={() => setFilterOpen(!isFilterOpen)}>
-        Filter
+      <FilterButtonStyle style={filterButtonAnimation} onClick={() => setFilterOpen(!isFilterOpen)}>
+        { isFilterOpen ? 'Save' : 'Filter' }
       </FilterButtonStyle>
       <ResponsiveFilterStyles style={filterAnimation}>
         <SubheaderText>
