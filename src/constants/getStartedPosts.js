@@ -1,22 +1,22 @@
 export const postData = [
 	{
 		category: "Learning",
-		slugs: [
-			"this-is-a-test",
-			"the-skin-is-the-largest-organ-in-the-body",
-			"loremipsem",
-		],
+		slugs: ["what-is-eczema", "what-triggers-my-eczema", "managing-eczema"],
 	},
 	{
 		category: "Developing",
 		slugs: [
-			"using-the-right-type-of-gloves-to-prevent-rashes",
-			"healing-diet-sample-blog",
-			"sample-blog-post",
+			"eliminate-any-potential-triggers",
+			"experiment-with-what-works-and-what-doesnt",
+			"equip-yourself-with-the-right-support",
 		],
 	},
 	{
 		category: "Engaging",
-		slugs: ["test-123123", "last-test-case", "does-the-see-more-button-work"],
+		slugs: [
+			"becs-personal-eczema-journey",
+			"supporting-a-loved-one-with-eczema",
+			"encouragements-for-eczema-sufferers",
+		],
 	},
 ]
