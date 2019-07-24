@@ -9,7 +9,7 @@ import {
   media,
 } from "../utilities"
 import foodIcon from "../assets/icons/pearAnimated3.svg"
-import stressIcon from "../assets/icons/stressIconAnimated.svg"
+import stressIcon from "../assets/icons/relaxedStarsAnimated.svg"
 import clothesIcon from "../assets/icons/pyjamasAnimated3.svg"
 import environmentIcon from "../assets/icons/earthAnimated.svg"
 
