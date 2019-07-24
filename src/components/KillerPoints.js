@@ -14,9 +14,10 @@ import clothesIcon from "../assets/icons/clothesIcon.svg"
 import environmentIcon from "../assets/icons/earthAnimated.svg"
 
 const KillerPointsContainer = styled.div`
-  background: ${colors.almostWhite}
+  background: ${colors.almostWhite};
   width: 100vw;  
 `
+
 const KillerPointsWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
@@ -46,7 +47,6 @@ const Icon = styled.img`
   width: 50%;
   ${media.med`
     padding: 1em;
-
   `}
 `
 const DescriptionText = styled.div`

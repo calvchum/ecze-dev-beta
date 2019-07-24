@@ -7,6 +7,7 @@ import { colors, lineWidths, HeaderBaselines, fontsize } from '../utilities'
 const CTAButtonStyle = styled.button`
 	${HeaderBaselines}
 	font-size: ${fontsize.h1};
+	background-color: transparent;
 	border: none;
 	padding: 0px 0px 8px 0px;
 	transition: 0.3s;
