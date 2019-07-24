@@ -40,11 +40,11 @@ const IconSectionWrapper = styled.div`
     grid-template-columns: repeat( auto-fit, minmax(150px, auto) );
   `}
 `
-const IconSection = styled.div``
 
 const Icon = styled.img`
   padding: 1.5em;
-  width: 50%;
+  width: 204px;
+  height: 204px;
   ${media.med`
     padding: 1em;
   `}
@@ -73,7 +73,7 @@ const KillerPoints = () => (
       </DescriptionText>
 
       <IconSectionWrapper>
-        <IconSection>
+        <div>
           <CenteredBodyText>
             <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
               The Inside Stuff
@@ -83,9 +83,9 @@ const KillerPoints = () => (
             <Icon src={foodIcon} alt="ECZE Logo" />
             <Icon src={stressIcon} alt="ECZE Logo" />
           </IconBreakpointAlign>
-        </IconSection>
+        </div>
 
-        <IconSection>
+        <div>
           <CenteredBodyText>
             <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
               The Outside Stuff
@@ -95,7 +95,7 @@ const KillerPoints = () => (
             <Icon src={clothesIcon} alt="ECZE Logo" />
             <Icon src={environmentIcon} alt="ECZE Logo" />
           </IconBreakpointAlign>
-        </IconSection>
+        </div>
       </IconSectionWrapper>
     </KillerPointsWrapper>
   </KillerPointsContainer>
