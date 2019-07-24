@@ -108,7 +108,7 @@ export const pageQuery = graphql`
           createdAt(formatString: "MMM DD YYYY")
           heroImage {
             fluid(maxWidth: 1000, background: "rgb:000000") {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
             file {
               url
@@ -123,7 +123,7 @@ export const pageQuery = graphql`
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxWidth: 1000, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
       body {
