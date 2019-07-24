@@ -1,10 +1,17 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
-import { BodyText, HeaderText, colors, BackgroundColor, media } from "../utilities"
+import {
+  BodyText,
+  HeaderText,
+  colors,
+  BackgroundColor,
+  media,
+} from "../utilities"
 
 const IndividualBlogWrapper = styled.div`
   max-width: 960px;
@@ -26,7 +33,7 @@ const BlogContentWrapper = styled.div`
   text-align: justify;
 `
 
-const HeroImage = styled.img`
+const HeroImage = styled(Img)`
   width: 100vw;
   object-fit: cover;
   background-position: 50% 50%;
@@ -40,7 +47,6 @@ const OverFlowHidden = styled.div`
   overflow: hidden;
   margin-top: 2px;
 `
-
 
 export default class BlogPostTemplate extends Component {
   render() {
@@ -58,16 +64,12 @@ export default class BlogPostTemplate extends Component {
         <Layout>
           <SEO title={`${post.title}`} />
           <OverFlowHidden>
-            <HeroImage
-              src={post.heroImage.fluid.src}
-              alt={`${post.category} hero image`}
-            />
+            <HeroImage fluid={post.heroImage.fluid} />
           </OverFlowHidden>
           <IndividualBlogWrapper>
             <BlogHeaderWrapper>
               <HeaderText>{post.title}</HeaderText>
               <BodyText>{post.publishDate}</BodyText>
-              {console.log(post)}
             </BlogHeaderWrapper>
             <BlogContentWrapper
               dangerouslySetInnerHTML={{
@@ -105,6 +107,9 @@ export const pageQuery = graphql`
           slug
           createdAt(formatString: "MMM DD YYYY")
           heroImage {
+            fluid(maxWidth: 1000, background: "rgb:000000") {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
             file {
               url
             }
@@ -117,7 +122,7 @@ export const pageQuery = graphql`
       category
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
+        fluid(maxWidth: 1000, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
