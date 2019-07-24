@@ -33,7 +33,7 @@ const BlogContentWrapper = styled.div`
   text-align: justify;
 `
 
-const HeroImage = styled.img`
+const HeroImage = styled(Img)`
   width: 100vw;
   height: 100vh;
   background-position: 50% 50%;
@@ -63,7 +63,7 @@ export default class BlogPostTemplate extends Component {
         <Layout>
           <SEO title={`${post.title}`} />
           <OverFlowHidden>
-            <Img fluid={post.heroImage.fluid} />
+            <HeroImage fluid={post.heroImage.fluid} />
           </OverFlowHidden>
           <IndividualBlogWrapper>
             <BlogHeaderWrapper>
@@ -107,7 +107,7 @@ export const pageQuery = graphql`
           createdAt(formatString: "MMM DD YYYY")
           heroImage {
             fluid(maxWidth: 1000, background: "rgb:000000") {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_tracedSVG
             }
             file {
               url
