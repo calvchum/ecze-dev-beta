@@ -8,10 +8,10 @@ import {
   paddingDefaults,
   media,
 } from "../utilities"
-import foodIcon from "../assets/icons/foodIcon.svg"
-import stressIcon from "../assets/icons/stressIcon.svg"
+import foodIcon from "../assets/icons/pearAnimated3.svg"
+import stressIcon from "../assets/icons/stressIconAnimated.svg"
 import clothesIcon from "../assets/icons/clothesIcon.svg"
-import environmentIcon from "../assets/icons/environmentIcon.svg"
+import environmentIcon from "../assets/icons/earthAnimated.svg"
 
 const KillerPointsContainer = styled.div`
   background: ${colors.almostWhite}
