@@ -106,6 +106,9 @@ export const pageQuery = graphql`
           slug
           createdAt(formatString: "MMM DD YYYY")
           heroImage {
+            fluid(maxWidth: 1000, background: "rgb:000000") {
+              ...GatsbyContentfulFluid
+            }
             file {
               url
             }
@@ -118,8 +121,8 @@ export const pageQuery = graphql`
       category
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1000, background: "rgb:000000") {
+          ...GatsbyContentfulFluid
         }
       }
       body {

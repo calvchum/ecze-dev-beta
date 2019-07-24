@@ -4,9 +4,22 @@ import FilterBlog from "../components/filterblog"
 import { ResponsiveFilter } from "../components/ResponsiveFilter"
 import BlogSection from "../components/blogsection"
 import { graphql } from "gatsby"
-import { HeaderText, SubheaderText, colors, lineWidths, BackgroundColor } from "../utilities"
+import {
+  HeaderText,
+  SubheaderText,
+  colors,
+  lineWidths,
+  BackgroundColor,
+} from "../utilities"
 import { Underline } from "../components/Underline"
-import { BlogFilterWrapper, BlogHeaderWrapper, BlogHeader, PaddingBottom, ResponsiveFilterWrapper, DisplayNone } from "../components/BlogPage"
+import {
+  BlogFilterWrapper,
+  BlogHeaderWrapper,
+  BlogHeader,
+  PaddingBottom,
+  ResponsiveFilterWrapper,
+  DisplayNone,
+} from "../components/BlogPage"
 
 export default class blog extends Component {
   constructor() {
@@ -118,44 +131,44 @@ export default class blog extends Component {
     return (
       <BackgroundColor color={colors.almostWhite}>
         <Layout>
-        <div style={{padding: '0em 1em'}}>
-          <BlogHeaderWrapper>
-            <BlogHeader>
-              <PaddingBottom>
-                <HeaderText>
-                  <Underline
-                    size={lineWidths.ctaUnderline}
-                    color={colors.primary}
-                  >
-                    The Ecze Blog
-                  </Underline>
-                </HeaderText>
-              </PaddingBottom>
-              <SubheaderText style={{ fontWeight: "400" }}>
-                Want to go deeper into holistic approaches to Eczema? We’ve got
-                you covered.
-              </SubheaderText>
-            </BlogHeader>
-          </BlogHeaderWrapper>
-          {/* FILTER RESPONSIVE FUNCTIONALITY */}
-          <ResponsiveFilterWrapper>
-            <ResponsiveFilter
-              cta="filter"
-              categories={categories}
-              updateSelectedCategories={this.updateSelectedCategories}
-            />
-          </ResponsiveFilterWrapper>
-          {/* FILTER DESKTOP FUNCTIONALITY */}
-          <BlogFilterWrapper>
-            <DisplayNone>
-              <FilterBlog
+          <div style={{ padding: "0em 1em" }}>
+            <BlogHeaderWrapper>
+              <BlogHeader>
+                <PaddingBottom>
+                  <HeaderText>
+                    <Underline
+                      size={lineWidths.ctaUnderline}
+                      color={colors.primary}
+                    >
+                      The Ecze Blog
+                    </Underline>
+                  </HeaderText>
+                </PaddingBottom>
+                <SubheaderText style={{ fontWeight: "400" }}>
+                  Want to go deeper into holistic approaches to Eczema? We’ve
+                  got you covered.
+                </SubheaderText>
+              </BlogHeader>
+            </BlogHeaderWrapper>
+            {/* FILTER RESPONSIVE FUNCTIONALITY */}
+            <ResponsiveFilterWrapper>
+              <ResponsiveFilter
+                cta="filter"
                 categories={categories}
                 updateSelectedCategories={this.updateSelectedCategories}
               />
-            </DisplayNone>
-            <div>{displayedSections}</div>
-          </BlogFilterWrapper>
-        </div>
+            </ResponsiveFilterWrapper>
+            {/* FILTER DESKTOP FUNCTIONALITY */}
+            <BlogFilterWrapper>
+              <DisplayNone>
+                <FilterBlog
+                  categories={categories}
+                  updateSelectedCategories={this.updateSelectedCategories}
+                />
+              </DisplayNone>
+              <div>{displayedSections}</div>
+            </BlogFilterWrapper>
+          </div>
         </Layout>
       </BackgroundColor>
     )
@@ -171,6 +184,9 @@ export const query = graphql`
           category
           slug
           heroImage {
+            fluid(maxWidth: 1000, background: "rgb:000000") {
+              ...GatsbyContentfulFluid
+            }
             file {
               url
             }

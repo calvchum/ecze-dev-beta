@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import { colors, BodyText, media } from "../utilities"
 
@@ -16,12 +17,12 @@ const CardWrapper = styled.div`
 
   & > a {
     text-decoration: none;
-    color: ${colors.almostBlack}
+    color: ${colors.almostBlack};
   }
 
   & > a:hover {
     text-decoration: none;
-    color: ${colors.almostBlack}
+    color: ${colors.almostBlack};
   }
 
   ${media.med`
@@ -41,7 +42,7 @@ const BodyTextCapitalized = styled(BodyText)`
   padding: 0px 16px;
 `
 
-const BlogImage = styled.img`
+const BlogImage = styled(Img)`
   position: relative;
   margin-bottom: 16px;
   float: left;
@@ -63,19 +64,19 @@ const ArticlePreview = ({
     title,
     heroImage: {
       file: { url },
+      fluid,
     },
   },
 }) => {
   return (
     <CardWrapper>
       <Link to={`/blog/${slug}`}>
-          <BlogImage src={url} alt="blog post image" />
-          <BodyTextUppercase>{category}</BodyTextUppercase>
-          <BodyTextCapitalized>{title.toLowerCase()}</BodyTextCapitalized>
+        <BlogImage fluid={fluid} />
+        <BodyTextUppercase>{category}</BodyTextUppercase>
+        <BodyTextCapitalized>{title.toLowerCase()}</BodyTextCapitalized>
       </Link>
     </CardWrapper>
-  ) 
+  )
 }
-
 
 export default ArticlePreview
