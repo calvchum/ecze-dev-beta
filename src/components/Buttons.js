@@ -11,6 +11,7 @@ const CTAButtonStyle = styled.button`
 	border: none;
 	padding: 0px 0px 8px 0px;
 	transition: 0.3s;
+	line-height: 140%;
 	& img {
 		margin: 0em;
 		transition: 0.3s;

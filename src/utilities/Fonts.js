@@ -27,10 +27,12 @@ export const fontsize = {
 	subheader: '1.3em',
 	body: '1em'
 }
+
 export const NavLinksFont = {
 	fontFamily: 'DM Sans',
 	fontWeight: '400'
 }
+
 export const HeaderBaselines = {
 	margin: '0.4em 0em',
 	fontFamily: 'DM Sans',
@@ -42,14 +44,19 @@ export const HeroText = styled.h1`
 	${HeaderBaselines}
 	font-size: ${fontsize.hero};
 `;
+
 export const HeaderText = styled.h1`
 	${HeaderBaselines}
 	font-size: ${fontsize.h1};
+	line-height: 140%;
+
 `;
 export const SubheaderText = styled.h2`
 	${HeaderBaselines}
 	font-size: ${fontsize.subheader};
+	line-height: 140%;
 `;
+
 export const BodyText = styled(animated.p)`
 	font-size: ${fontsize.body};
 	margin: 0em;

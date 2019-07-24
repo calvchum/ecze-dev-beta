@@ -9,14 +9,9 @@ const SignUpWrapper = styled.section`
   justify-content: center;
   align-items: flex-end;
   margin: 0 auto;
-  padding: 3em 0em;
+  padding: 3em 1em;
   max-width: 960px;
-
-  ${media.med`
-    padding: 3em 1em;
-    align-items: flex-start;
-  `}
-`
+`;
 
 const InputWrapper = styled.div`
   display: flex;
@@ -27,7 +22,7 @@ const InputWrapper = styled.div`
     display: flex;
     align-items: flex-end;
   }
-`
+`;
 
 const SignUpForm = () => {
   return (
