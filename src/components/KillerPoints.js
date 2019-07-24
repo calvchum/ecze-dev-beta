@@ -4,9 +4,10 @@ import { Underline } from "./Underline"
 import { lineWidths, colors, BodyText, paddingDefaults, media } from '../utilities'
 
 const KillerPointsContainer = styled.div`
-  background: ${colors.almostWhite}
+  background: ${colors.almostWhite};
   width: 100vw;  
 `;
+
 const KillerPointsWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
@@ -51,8 +52,6 @@ const IconBreakpointAlign = styled.div`
     text-align: center;
   `}
 `;
-
-
 
 const KillerPoints = () => (
   <KillerPointsContainer>
