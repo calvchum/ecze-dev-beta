@@ -101,7 +101,7 @@ export const query = graphql`
           slug
           heroImage {
             fluid(maxWidth: 1000, background: "rgb:000000") {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
             file {
               url
