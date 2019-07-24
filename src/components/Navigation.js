@@ -11,12 +11,12 @@ const ListItem = styled.li`
   margin-bottom: 0em;
   margin-left: 0em;
   & a {
-    color: ${colors.almostBlack}
+    color: ${colors.almostBlack};
     text-decoration: none;
     transition: 0.2s;
   }
   & a:hover {
-    color: ${colors.primary}
+    color: ${colors.primary};
     text-decoration: none;
   }
 `
