@@ -28,7 +28,7 @@ const BlogContentWrapper = styled.div`
 
 const HeroImage = styled.img`
   width: 100vw;
-  height: 100vh;
+  object-fit: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,8 +36,9 @@ const HeroImage = styled.img`
 
 const OverFlowHidden = styled.div`
   max-width: 100vw;
-  height: 40vh;
+  height: 60vh;
   overflow: hidden;
+  margin-top: 2px;
 `
 
 
