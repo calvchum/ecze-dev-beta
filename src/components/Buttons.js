@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Underline } from './Underline'
-import { colors, lineWidths, HeaderBaselines, fontsize } from '../utilities'
+import { Underline } from "./Underline"
+import { colors, lineWidths, HeaderBaselines, fontsize } from "../utilities"
 
 const CTAButtonStyle = styled.button`
 	${HeaderBaselines}
@@ -27,14 +27,15 @@ const CTAButtonStyle = styled.button`
 	&:focus {
 		outline: none;
 	}
-`;	
+`
 
-export const CTAButton = ({ cta }) => (
-  <Link to="getstarted">
-    <CTAButtonStyle>
-	    <Underline size={lineWidths.ctaUnderline} color={colors.primary}>{cta}
-	    	<img src={require('../assets/icons/arrow.svg')} alt="left arrow" /> 
-	    </Underline>  
-    </CTAButtonStyle>
-  </Link>
+export const CTAButton = ({ cta, link }) => (
+	<Link to={`/${link}`}>
+		<CTAButtonStyle>
+			<Underline size={lineWidths.ctaUnderline} color={colors.primary}>
+				{cta}
+				<img src={require("../assets/icons/arrow.svg")} alt="left arrow" />
+			</Underline>
+		</CTAButtonStyle>
+	</Link>
 )
