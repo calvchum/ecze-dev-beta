@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
+import { StaticQuery, graphql } from "gatsby"
 import {
 	colors,
 	BodyText,
@@ -48,25 +50,41 @@ const RightSide = styled.div`
 	}
 `
 
-// 1. add a static query to this component
+// 1. add a static query to this component, upload image asset
+// query to return that image
 // 2. return a fluid image from contentful
 // 3. import Img from gatsby-image, render in <LeftSide> img tag
 
 const ReadBlog = () => (
-	<BackgroundColor color={colors.almostWhite}>
-		<ReadBlogWrapper>
-			<LeftSide>
-				<img src={baby} alt="a baby" />
-			</LeftSide>
-			<RightSide>
-				<BodyText>
-					Come discover the root cause of your eczema flare ups and start your
-					journey towards a happier, healthier, itch-free life.
-				</BodyText>
-				<CTAButton cta="Read the blog" link="blog" />
-			</RightSide>
-		</ReadBlogWrapper>
-	</BackgroundColor>
+	<StaticQuery
+		query={graphql`
+			query ReadBlogImage {
+				contentfulAsset(title: { eq: "readBlogImage" }) {
+					fluid(maxWidth: 1000) {
+						...GatsbyContentfulFluid
+					}
+				}
+			}
+		`}
+		render={data => (
+			<>
+				<BackgroundColor color={colors.almostWhite}>
+					<ReadBlogWrapper>
+						<LeftSide>
+							<Img fluid={data.contentfulAsset.fluid} />
+						</LeftSide>
+						<RightSide>
+							<BodyText>
+								Come discover the root cause of your eczema flare ups and start
+								your journey towards a happier, healthier, itch-free life.
+							</BodyText>
+							<CTAButton cta="Read the blog" link="blog" />
+						</RightSide>
+					</ReadBlogWrapper>
+				</BackgroundColor>
+			</>
+		)}
+	/>
 )
 
 export default ReadBlog
