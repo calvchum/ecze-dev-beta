@@ -2,9 +2,18 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { Underline } from "../components/Underline"
-import { HeaderText, BodyText, SubheaderText, colors, lineWidths, BackgroundColor, media } from "../utilities"
+import {
+	HeaderText,
+	BodyText,
+	SubheaderText,
+	colors,
+	lineWidths,
+	BackgroundColor,
+	media,
+} from "../utilities"
 
 // PLACEHOLDER IMAGES
 import family from "../assets/placeholders/family.svg"
@@ -26,7 +35,7 @@ const SectionWrapper = styled.div`
 	grid-template-columns: 1fr 1fr;
 	padding: 2em 0em;
 	grid-gap: 1em;
-	
+
 	${media.med`
 		grid-template-columns: 1fr;
 	`}
@@ -42,11 +51,6 @@ const AboutImage = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	& img {
-		width: 100%;
-		height: auto;
-		margin-bottom: 0;
-	}
 `
 
 const AboutHeaderWrapper = styled.div`
@@ -63,162 +67,168 @@ const AccentWrapper = styled.div`
 	`}
 `
 const About = () => (
-		<StaticQuery
-			query={graphql`
-				query AboutPageQuery {
-					allContentfulAsset {
-						edges {
-							node {
-								file {
-									url
-								}
-							}
+	<StaticQuery
+		query={graphql`
+			query AboutPageQuery {
+				contentfulAsset(title: { eq: "readBlogImage" }) {
+					fluid(maxWidth: 1000) {
+						...GatsbyContentfulFluid
+					}
+				}
+				contentfulAboutPage(
+					id: { eq: "c53ad837-16d2-51ef-a8bc-07ec40db721f" }
+				) {
+					section1 {
+						childMarkdownRemark {
+							html
 						}
 					}
-
-					allContentfulAboutPage {
-						edges {
-							node {
-								section1 {
-									childMarkdownRemark {
-										html
-									}
-								}
-								accentQuote1
-								section2 {
-									childMarkdownRemark {
-										html
-									}
-								}
-								section3 {
-									childMarkdownRemark {
-										html
-									}
-								}
-								section4 {
-									childMarkdownRemark {
-										html
-									}
-								}
-								accentQuote2
-								section5 {
-									childMarkdownRemark {
-										html
-									}
-								}
-							}
+					sectionImage1 {
+						fluid(maxWidth: 1000) {
+							...GatsbyContentfulFluid
+						}
+					}
+					accentQuote1
+					section2 {
+						childMarkdownRemark {
+							html
+						}
+					}
+					sectionImage2 {
+						fluid(maxWidth: 1000) {
+							...GatsbyContentfulFluid
+						}
+					}
+					section3 {
+						childMarkdownRemark {
+							html
+						}
+					}
+					sectionImage3 {
+						fluid(maxWidth: 1000) {
+							...GatsbyContentfulFluid
+						}
+					}
+					section4 {
+						childMarkdownRemark {
+							html
+						}
+					}
+					sectionImage4 {
+						fluid(maxWidth: 1000) {
+							...GatsbyContentfulFluid
+						}
+					}
+					accentQuote2
+					section5 {
+						childMarkdownRemark {
+							html
+						}
+					}
+					sectionImage5 {
+						fluid(maxWidth: 1000) {
+							...GatsbyContentfulFluid
 						}
 					}
 				}
-			`}
-			render={data => (
-				<>
-					<BackgroundColor color={colors.almostWhite}>
-						<Layout>
-							{console.log(data.allContentfulAsset.edges[0].node.file.url)}
-							<SEO title="About" />
+			}
+		`}
+		render={data => (
+			<>
+				<BackgroundColor color={colors.almostWhite}>
+					<Layout>
+						<SEO title="About" />
 
-							<AboutContentWrapper>
-								<AboutHeaderWrapper>
-									<HeaderText>
-										<Underline
-											size={lineWidths.ctaUnderline}
-											color={colors.primary}
-										>
-											Our story
-										</Underline>
-									</HeaderText>
-								</AboutHeaderWrapper>
-								<SectionWrapper>
-									<BodyText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.section1
-													.childMarkdownRemark.html,
-										}}
-									/>
-									<AboutImage>
-										<img src={family} alt="" />
-									</AboutImage>
-								</SectionWrapper>
+						<AboutContentWrapper>
+							<AboutHeaderWrapper>
+								<HeaderText>
+									<Underline
+										size={lineWidths.ctaUnderline}
+										color={colors.primary}
+									>
+										Our story
+									</Underline>
+								</HeaderText>
+							</AboutHeaderWrapper>
+							<SectionWrapper>
+								<BodyText
+									dangerouslySetInnerHTML={{
+										__html:
+											data.contentfulAboutPage.section1.childMarkdownRemark
+												.html,
+									}}
+								/>
 
-								{/* ######### ACCENT AQUOTE  */}
-								<AccentWrapper>
-									<SubheaderText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.accentQuote1,
-										}}
-									/>
-								</AccentWrapper>
+								<Img fluid={data.contentfulAboutPage.sectionImage2.fluid} />
+							</SectionWrapper>
 
-								<SectionWrapper>
-									<AboutImage>
-										<img src={family} alt="" />
-									</AboutImage>
-									<BodyText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.section2
-													.childMarkdownRemark.html,
-										}}
-									/>
-								</SectionWrapper>
+							{/* ######### ACCENT AQUOTE  */}
+							<AccentWrapper>
+								<SubheaderText
+									dangerouslySetInnerHTML={{
+										__html: data.contentfulAboutPage.accentQuote1,
+									}}
+								/>
+							</AccentWrapper>
+							<SectionWrapper>
+								<Img fluid={data.contentfulAsset.fluid} />
 
-								<SectionWrapper>
-									<BodyText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.section3
-													.childMarkdownRemark.html,
-										}}
-									/>
-									<AboutImage>
-										<img src={family} alt="" />
-									</AboutImage>
-								</SectionWrapper>
+								<BodyText
+									dangerouslySetInnerHTML={{
+										__html:
+											data.contentfulAboutPage.section2.childMarkdownRemark
+												.html,
+									}}
+								/>
+							</SectionWrapper>
 
-								<SectionWrapper>
-									<AboutImage>
-										<img src={family} alt="" />
-									</AboutImage>
-									<BodyText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.section4
-													.childMarkdownRemark.html,
-										}}
-									/>
-								</SectionWrapper>
-								{/* ######### ACCENT AQUOTE  */}
-								<AccentWrapper>
-									<SubheaderText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.accentQuote2,
-										}}
-									/>
-								</AccentWrapper>
+							<SectionWrapper>
+								<BodyText
+									dangerouslySetInnerHTML={{
+										__html:
+											data.contentfulAboutPage.section3.childMarkdownRemark
+												.html,
+									}}
+								/>
 
-								<SectionWrapper>
-									<BodyText
-										dangerouslySetInnerHTML={{
-											__html:
-												data.allContentfulAboutPage.edges[0].node.section5
-													.childMarkdownRemark.html,
-										}}
-									/>
-									<AboutImage>
-										<img src={family} alt="" />
-									</AboutImage>
-								</SectionWrapper>
-							</AboutContentWrapper>
-						</Layout>
-					</BackgroundColor>
-				</>
-			)}
-		/>
+								<Img fluid={data.contentfulAboutPage.sectionImage3.fluid} />
+							</SectionWrapper>
+
+							<SectionWrapper>
+								<Img fluid={data.contentfulAboutPage.sectionImage4.fluid} />
+								<BodyText
+									dangerouslySetInnerHTML={{
+										__html:
+											data.contentfulAboutPage.section4.childMarkdownRemark
+												.html,
+									}}
+								/>
+							</SectionWrapper>
+							{/* ######### ACCENT AQUOTE  */}
+							<AccentWrapper>
+								<SubheaderText
+									dangerouslySetInnerHTML={{
+										__html: data.contentfulAboutPage.accentQuote2,
+									}}
+								/>
+							</AccentWrapper>
+
+							<SectionWrapper>
+								<BodyText
+									dangerouslySetInnerHTML={{
+										__html:
+											data.contentfulAboutPage.section5.childMarkdownRemark
+												.html,
+									}}
+								/>
+								<Img fluid={data.contentfulAboutPage.sectionImage5.fluid} />
+							</SectionWrapper>
+						</AboutContentWrapper>
+					</Layout>
+				</BackgroundColor>
+			</>
+		)}
+	/>
 )
-
 
 export default About
