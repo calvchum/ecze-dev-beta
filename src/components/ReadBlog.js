@@ -48,6 +48,10 @@ const RightSide = styled.div`
 	}
 `
 
+// 1. add a static query to this component
+// 2. return a fluid image from contentful
+// 3. import Img from gatsby-image, render in <LeftSide> img tag
+
 const ReadBlog = () => (
 	<BackgroundColor color={colors.almostWhite}>
 		<ReadBlogWrapper>
