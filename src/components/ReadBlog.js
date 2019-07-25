@@ -50,11 +50,6 @@ const RightSide = styled.div`
 	}
 `
 
-// 1. add a static query to this component, upload image asset
-// query to return that image
-// 2. return a fluid image from contentful
-// 3. import Img from gatsby-image, render in <LeftSide> img tag
-
 const ReadBlog = () => (
 	<StaticQuery
 		query={graphql`
