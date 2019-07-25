@@ -29,16 +29,22 @@ const BlogContentWrapper = styled.div`
 const HeroImage = styled.img`
   width: 100vw;
   object-fit: cover;
+  margin-bottom: 0px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 const OverFlowHidden = styled.div`
-  max-width: 100vw;
-  height: 60vh;
+  max-width: 960px;
+  max-height: 60vh;
+  margin: 0 auto;
   overflow: hidden;
   margin-top: 2px;
+
+  ${media.med`
+    max-width: 100vw;
+  `}
 `
 
 
