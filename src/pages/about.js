@@ -71,6 +71,7 @@ const About = () => (
 		query={graphql`
 			query AboutPageQuery {
 				contentfulAsset(title: { eq: "readBlogImage" }) {
+					description
 					fluid(maxWidth: 1000) {
 						...GatsbyContentfulFluid
 					}
@@ -84,6 +85,7 @@ const About = () => (
 						}
 					}
 					sectionImage1 {
+						description
 						fluid(maxWidth: 1000) {
 							...GatsbyContentfulFluid
 						}
@@ -95,6 +97,7 @@ const About = () => (
 						}
 					}
 					sectionImage2 {
+						description
 						fluid(maxWidth: 1000) {
 							...GatsbyContentfulFluid
 						}
@@ -105,6 +108,7 @@ const About = () => (
 						}
 					}
 					sectionImage3 {
+						description
 						fluid(maxWidth: 1000) {
 							...GatsbyContentfulFluid
 						}
@@ -115,6 +119,7 @@ const About = () => (
 						}
 					}
 					sectionImage4 {
+						description
 						fluid(maxWidth: 1000) {
 							...GatsbyContentfulFluid
 						}
@@ -126,6 +131,7 @@ const About = () => (
 						}
 					}
 					sectionImage5 {
+						description
 						fluid(maxWidth: 1000) {
 							...GatsbyContentfulFluid
 						}
@@ -159,7 +165,8 @@ const About = () => (
 									}}
 								/>
 
-								<Img fluid={data.contentfulAboutPage.sectionImage2.fluid} />
+								<Img fluid={data.contentfulAboutPage.sectionImage1.fluid} />
+								<p>{data.contentfulAboutPage.sectionImage1.description}</p>
 							</SectionWrapper>
 
 							{/* ######### ACCENT AQUOTE  */}
@@ -171,8 +178,8 @@ const About = () => (
 								/>
 							</AccentWrapper>
 							<SectionWrapper>
-								<Img fluid={data.contentfulAsset.fluid} />
-
+								<Img fluid={data.contentfulAboutPage.sectionImage2.fluid} />
+								<p>{data.contentfulAboutPage.sectionImage2.description}</p>
 								<BodyText
 									dangerouslySetInnerHTML={{
 										__html:
@@ -192,10 +199,12 @@ const About = () => (
 								/>
 
 								<Img fluid={data.contentfulAboutPage.sectionImage3.fluid} />
+								<p>{data.contentfulAboutPage.sectionImage3.description}</p>
 							</SectionWrapper>
 
 							<SectionWrapper>
 								<Img fluid={data.contentfulAboutPage.sectionImage4.fluid} />
+								<p>{data.contentfulAboutPage.sectionImage4.description}</p>
 								<BodyText
 									dangerouslySetInnerHTML={{
 										__html:
@@ -222,6 +231,7 @@ const About = () => (
 									}}
 								/>
 								<Img fluid={data.contentfulAboutPage.sectionImage5.fluid} />
+								<p>{data.contentfulAboutPage.sectionImage5.description}</p>
 							</SectionWrapper>
 						</AboutContentWrapper>
 					</Layout>
