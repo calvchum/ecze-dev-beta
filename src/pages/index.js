@@ -3,8 +3,9 @@ import Layout from "../components/layout"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 import SEO from "../components/seo"
-import HeroBanner from "../components/HeroBanner"
+import { MailHeroBanner, CTAHeroBanner } from "../components/HeroBanner"
 import KillerPoints from "../components/KillerPoints"
+import { CTAButton } from "../components/Buttons"
 import HeaderSubheader from "../components/HeaderSubheader"
 import ReadBlog from "../components/ReadBlog"
 import { colors } from '../utilities'
@@ -44,9 +45,26 @@ return (
 				<img src={eczeGrey} alt="Ecze LOGO"/>
 			</WelcomeMat>
 			<SEO title="Home" />
-			<HeroBanner />
+			<MailHeroBanner 
+				header="Hey you! Fed up with eczema? You’ve come to the right place."
+				subheader="Sign up below to get regular updates and free eczema info. "
+				color={colors.almostWhite}
+			/>
 			<KillerPoints />
-			<HeaderSubheader />
+
+			<CTAHeroBanner 
+				header="If you are feeling defeated with itchy red, scaly dry skin, 
+you’re not alone. "
+				subheader="Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema."
+				cta="Lets get started"
+				link="getstarted"
+				color={colors.almostWhite}
+			/>
+			<MailHeroBanner 
+				header="Take control of your eczema today and sign up for ongoing helpful tips overcome the itch."
+				subheader="We send super-helpful, non-annoying emails. Pop your email in and let us prove it to you. Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema."
+				color={colors.white}
+			/>
 			<ReadBlog />
 		</Layout>
 	)

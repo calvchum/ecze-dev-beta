@@ -8,34 +8,29 @@ import {
 	paddingDefaults,
 	media,
 	BackgroundColor,
+	lineWidths
 } from "../utilities"
 import { CTAButton } from "./Buttons"
 import baby from "../assets/placeholders/baby.svg"
+import { CenteredHeaderText } from './KillerPoints'
+import { Underline } from './Underline'
 
 const ReadBlogWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	max-width: 960px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	max-width: 720px;
 	margin: 0 auto;
-	padding: ${paddingDefaults.topBottom} 1em;
-
-	${media.med`
-		display: flex;
-		flex-direction: column;
-	`}
 `
 
 const LeftSide = styled.div`
-	& img {
-		width: 100%;
-		height: 100%;
-		margin-bottom: 0px;
-		padding-right: 1em;
-
-		${media.med`
-			padding-right: 0em;
-		`}
-	}
+	margin-bottom: 0px;
+	padding-right: 1em;
+	${media.med`
+		padding-right: 0em;
+		padding-bottom: 1em;
+		max-height: 100%;
+		max-width: 100%;
+	`}
 `
 
 const RightSide = styled.div`
@@ -43,10 +38,13 @@ const RightSide = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
-	max-height: 250px;
 
 	& p:first-child {
-		padding-bottom: 1em;
+		padding-bottom: 2em;
+	}
+
+	& button {
+		margin: 0px;
 	}
 `
 
@@ -63,7 +61,12 @@ const ReadBlog = () => (
 		`}
 		render={data => (
 			<>
-				<BackgroundColor color={colors.almostWhite}>
+				<BackgroundColor color={colors.almostWhite} style={{	padding: `${paddingDefaults.topBottom} 1em` }}>
+				  <CenteredHeaderText>
+		        <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
+		          The Ecze Blog
+		        </Underline>
+		      </CenteredHeaderText>
 					<ReadBlogWrapper>
 						<LeftSide>
 							<Img fluid={data.contentfulAsset.fluid} />
