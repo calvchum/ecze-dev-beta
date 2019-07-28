@@ -6,15 +6,16 @@ const EmailInput = styled.input `
   width: 300px;
   padding: 1em;
   border: none;
+  background: transparent;
   border-bottom: 4px solid ${colors.primary};
 	margin-right: 0.5em;
   &:focus {
-    outline: none;
+    outline: ${colors.primary};
   }
 
-  ${media.med`
-		width: 220px;
-  `}
+  // ${media.med`
+		// width: 220px;
+  // `}
   ${media.small`
 		width: 180px;
   `}
@@ -40,8 +41,9 @@ const SignUpButtonStyle = styled.input`
 
 const SignUpGrid = styled.div`
 	display: grid;
-	width: 100%;
 	grid-template-columns: auto 110px;
+	width: 100%;
+	max-width: 400px;
 `;
 
 class MailchimpForm extends Component {

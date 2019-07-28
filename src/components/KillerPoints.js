@@ -5,100 +5,73 @@ import {
   lineWidths,
   colors,
   BodyText,
+  HeaderText,
   paddingDefaults,
   media,
+  BackgroundColor
 } from "../utilities"
 import foodIcon from "../assets/icons/pearAnimated3.svg"
 import stressIcon from "../assets/icons/relaxedStarsAnimated.svg"
 import clothesIcon from "../assets/icons/pyjamasAnimated3.svg"
 import environmentIcon from "../assets/icons/earthAnimated.svg"
 
-const KillerPointsContainer = styled.div`
-  background: ${colors.almostWhite};
-  width: 100vw;
-`
-
 const KillerPointsWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: ${paddingDefaults.topBottom} 0em;
-  background: ${colors.almostWhite};
 `
 
-const CenteredBodyText = styled(BodyText)`
+export const CenteredHeaderText = styled(HeaderText)`
   text-align: center;
-  padding: 1em;
   margin-bottom: 1em;
 `
 const IconSectionWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-  grid-gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-gap: 2em;
   justify-content: center;
-
-  ${media.med`
-    grid-template-columns: repeat( auto-fit, minmax(150px, auto) );
-  `}
+  align-items: center;
 `
 
 const Icon = styled.img`
   padding: 1.5em;
-  width: 204px;
-  height: 204px;
   ${media.med`
     padding: 1em;
   `}
 `
-const DescriptionText = styled.div`
-  max-width: 672px;
-  padding: 0em 1.5em 4em 1.5em;
-  margin: 0 auto;
-`
 
-const IconBreakpointAlign = styled.div`
-  ${media.med`
-    text-align: center;
-  `}
-`
+const IndividualIconWrapper = styled.div`
+  max-width: 300px;
+  &:nth-child(2) {
+    text-align: justified;
+  }
+`;
+
 
 const KillerPoints = () => (
-  <KillerPointsContainer>
+  <BackgroundColor color={colors.white}>
     <KillerPointsWrapper>
-      <DescriptionText>
-        <BodyText style={{ textAlign: "justify" }}>
-          Simply moisturising or using topical steroids for eczema is often as
-          effective as taking an anti-depressant for depression. It is all about
-          masking the symptoms as opposed to providing a holistic solution.
-        </BodyText>
-      </DescriptionText>
-
+      <CenteredHeaderText>
+        <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
+          What we do
+        </Underline>
+      </CenteredHeaderText>
       <IconSectionWrapper>
-        <div>
-          <CenteredBodyText>
-            <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-              The Inside Stuff
-            </Underline>
-          </CenteredBodyText>
-          <IconBreakpointAlign>
-            <Icon src={foodIcon} alt="ECZE Logo" />
-            <Icon src={stressIcon} alt="ECZE Logo" />
-          </IconBreakpointAlign>
-        </div>
-
-        <div>
-          <CenteredBodyText>
-            <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-              The Outside Stuff
-            </Underline>
-          </CenteredBodyText>
-          <IconBreakpointAlign>
-            <Icon src={clothesIcon} alt="ECZE Logo" />
-            <Icon src={environmentIcon} alt="ECZE Logo" />
-          </IconBreakpointAlign>
-        </div>
+        <IndividualIconWrapper>
+          <Icon src={foodIcon} alt="ECZE Logo" />
+          <BodyText>We provide simple and holistic remedies to help you overcome your eczema.</BodyText>
+        </IndividualIconWrapper>
+        <IndividualIconWrapper>
+          <Icon src={stressIcon} alt="ECZE Logo" />
+          <BodyText>We’re building a community of like-minded eczema fighters to share the ups and downs.</BodyText>
+        </IndividualIconWrapper>
+        <IndividualIconWrapper>
+          <Icon src={environmentIcon} alt="ECZE Logo" />
+          <BodyText>We’re also busy behind the scenes creating eczema-friendly products that will leave your skin feeling super comfortable.</BodyText>
+        </IndividualIconWrapper>
       </IconSectionWrapper>
     </KillerPointsWrapper>
-  </KillerPointsContainer>
+  </BackgroundColor>
 )
 
 export default KillerPoints
