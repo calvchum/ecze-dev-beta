@@ -10,7 +10,7 @@ import {
 } from "../utilities"
 import { CTAButton } from "./Buttons"
 import HeaderSubheader from "./HeaderSubheader"
-import MailChimpForm from "./MailChimpForm"
+import MailChimpForm from "./MailchimpForm"
 
 const HeroBannerWrapper = styled.div`
   display: grid;
