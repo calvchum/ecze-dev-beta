@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { animated } from 'react-spring';
 import Navigation from './Navigation';
 import { colors } from '../utilities';
+import SocialMediaIcons from './SocialMedia'
 
 const ResponsiveNavStyles = styled(animated.div)`
   position: fixed;
@@ -24,6 +25,7 @@ const ResponsiveNav = ({ style }) => {
   return (
     <ResponsiveNavStyles style={style}>
         <Navigation />
+        <SocialMediaIcons />
     </ResponsiveNavStyles>
   );
 };

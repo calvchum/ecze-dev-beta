@@ -7,6 +7,7 @@ import {
   BodyText,
   media,
 } from "../utilities"
+import SocialMediaIcons from './SocialMedia'
 import facebookIcon from "../assets/icons/facebook.svg"
 import instagramIcon from "../assets/icons/instagram.svg"
 import youtubeIcon from "../assets/icons/youtube.svg"
@@ -22,26 +23,6 @@ const FooterWrapper = styled.section`
     padding: 2em 1em 1em 1em;
     grid: repeat(4, auto) / 1fr;
     grid-gap: 1em;
-  `}
-`
-
-const SocialMedia = styled.div`
-  display: flex;
-
-  ${media.med`
-    order: 1;
-    padding: 1em 0em;
-  `}
-`
-
-const SocMediaIcon = styled.img`
-  padding: 0.5em 0.5em;
-  transition: 0.1s;
-  &:hover {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  }
-  ${media.med`
-    margin-bottom: 0em;
   `}
 `
 
@@ -78,11 +59,7 @@ const FooterNavWrapper = styled.ul`
 
 const Footer = () => (
   <FooterWrapper>
-    <SocialMedia>
-      <SocMediaIcon src={facebookIcon} alt="FB Logo" />
-      <SocMediaIcon src={instagramIcon} alt="INSTA Logo" />
-      <SocMediaIcon src={youtubeIcon} alt="YT Logo" />
-    </SocialMedia>
+    <SocialMediaIcons />
     <FooterNavWrapper>
       <SubheaderText>More Info</SubheaderText>
       <Navigation />
