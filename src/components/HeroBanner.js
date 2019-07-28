@@ -1,9 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { BodyText, HeaderText, paddingDefaults, media, colors, BackgroundColor } from "../utilities"
+import {
+  BodyText,
+  HeaderText,
+  paddingDefaults,
+  media,
+  colors,
+  BackgroundColor,
+} from "../utilities"
 import { CTAButton } from "./Buttons"
-import HeaderSubheader from './HeaderSubheader'
-import MailChimpForm from './MailChimpForm'
+import HeaderSubheader from "./HeaderSubheader"
+import MailChimpForm from "./MailChimpForm"
 
 const HeroBannerWrapper = styled.div`
   display: grid;
@@ -29,39 +36,28 @@ const FormWrapper = styled.div`
   padding-top: 3em;
 `
 
-export const MailHeroBanner = ({ header, subheader, color }) => (
+export const MailHeroBanner = ({ blur, header, subheader, color }) => (
   <BackgroundColor color={color}>
     <HeroBannerWrapper>
       <HeroBannerText>
-        <HeaderSubheader 
-          header={header}
-          subheader={subheader}
-        />
+        <HeaderSubheader header={header} subheader={subheader} />
       </HeroBannerText>
       <FormWrapper>
-        <MailChimpForm />
-      </FormWrapper>
-    </HeroBannerWrapper>
-  </BackgroundColor>
-  )
-    
-
-export const CTAHeroBanner = ({ header, subheader, link, cta, color }) => (
-  <BackgroundColor color={color}>
-    <HeroBannerWrapper>
-      <HeroBannerText>
-        <HeaderSubheader 
-          header={header}
-          subheader={subheader}
-        />
-      </HeroBannerText>
-      <FormWrapper>
-        <CTAButton 
-          cta={cta}
-          link={link}
-        />
+        <MailChimpForm blur={blur} />
       </FormWrapper>
     </HeroBannerWrapper>
   </BackgroundColor>
 )
 
+export const CTAHeroBanner = ({ header, subheader, link, cta, color }) => (
+  <BackgroundColor color={color}>
+    <HeroBannerWrapper>
+      <HeroBannerText>
+        <HeaderSubheader header={header} subheader={subheader} />
+      </HeroBannerText>
+      <FormWrapper>
+        <CTAButton cta={cta} link={link} />
+      </FormWrapper>
+    </HeroBannerWrapper>
+  </BackgroundColor>
+)

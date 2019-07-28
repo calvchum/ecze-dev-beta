@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
@@ -8,8 +8,8 @@ import KillerPoints from "../components/KillerPoints"
 import { CTAButton } from "../components/Buttons"
 import HeaderSubheader from "../components/HeaderSubheader"
 import ReadBlog from "../components/ReadBlog"
-import { colors } from '../utilities'
-import eczeGrey from '../assets/logo/grey.svg'
+import { colors } from "../utilities"
+import eczeGrey from "../assets/logo/grey.svg"
 
 const WelcomeMat = styled(animated.div)`
 	position: fixed;
@@ -29,30 +29,33 @@ const WelcomeMat = styled(animated.div)`
 `
 
 const IndexPage = () => {
+	const [count, setCount] = useState(50)
 	const pageFade = useSpring({
-		from: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+		from: { opacity: 1, transform: "translate3d(0%, 0, 0)" },
 		to: async (next, cancel) => {
-	    await next({opacity: 0})
-	    await next({transform: 'translate3d(-100%, 0, 0)'})
-  },
-  config: { duration: 1000 },
-  delay: 1000
-})
+			await next({ opacity: 0 })
+			await next({ transform: "translate3d(-100%, 0, 0)" })
+		},
+		config: { duration: 1000 },
+		delay: 1000,
+	})
 
-return (
+	return (
 		<Layout>
 			<WelcomeMat style={pageFade}>
-				<img src={eczeGrey} alt="Ecze LOGO"/>
+				<img src={eczeGrey} alt="Ecze LOGO" />
 			</WelcomeMat>
 			<SEO title="Home" />
-			<MailHeroBanner 
+			{/* pass down a prop "true" when page loads*/}
+			<MailHeroBanner
+				blur={true}
 				header="Hey you! Fed up with eczema? You’ve come to the right place."
 				subheader="Sign up below to get regular updates and free eczema info. "
 				color={colors.almostWhite}
 			/>
 			<KillerPoints />
 
-			<CTAHeroBanner 
+			<CTAHeroBanner
 				header="If you are feeling defeated with itchy red, scaly dry skin, 
 you’re not alone. "
 				subheader="Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema."
@@ -60,7 +63,7 @@ you’re not alone. "
 				link="getstarted"
 				color={colors.almostWhite}
 			/>
-			<MailHeroBanner 
+			<MailHeroBanner
 				header="Take control of your eczema today and sign up for ongoing helpful tips overcome the itch."
 				subheader="We send super-helpful, non-annoying emails. Pop your email in and let us prove it to you. Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema."
 				color={colors.white}
