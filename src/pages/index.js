@@ -21,7 +21,7 @@ const WelcomeMat = styled(animated.div)`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
+	z-index: 1;
 	& img {
 		width: 100px;
 		height: auto;
@@ -51,8 +51,7 @@ const IndexPage = () => {
 				blur={true}
 				header="Hey you! Fed up with eczema? You’ve come to the right place."
 				subheader="Sign up below to get regular updates and free eczema info. "
-				color={colors.almostWhite}
-			/>
+				color={colors.almostWhite}			/>
 			<KillerPoints />
 
 			<CTAHeroBanner

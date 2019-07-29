@@ -15,8 +15,8 @@ const HeaderWrapper = styled.div`
   padding: 0em ${paddingDefaults.pageBorder};
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   background: white;
-  z-index: 1;
-
+  z-index: 2;
+  margin-bottom: 2px;
 
   ${media.med`
     padding: 0.4em 1.5em;

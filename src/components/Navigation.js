@@ -10,6 +10,7 @@ const ListItem = styled.li`
   list-style: none;
   margin-bottom: 0em;
   margin-left: 0em;
+  z-index: 3;
   & a {
     color: ${colors.almostBlack};
     text-decoration: none;
