@@ -12,7 +12,7 @@ import { CTAButton } from "./Buttons"
 import HeaderSubheader from "./HeaderSubheader"
 import MailChimpForm from "./MailchimpForm"
 
-const HeroBannerWrapper = styled.div`
+export const HeroBannerWrapper = styled.div`
   display: grid;
   grid: repeat(2, auto) / 1fr;
   justify-content: center;
@@ -25,12 +25,12 @@ const HeroBannerWrapper = styled.div`
   `}
 `
 
-const HeroBannerText = styled.div`
+export const HeroBannerText = styled.div`
   max-width: 800px;
   margin: 0 auto;
 `
 
-const FormWrapper = styled.div`
+export const FormWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 3em;
