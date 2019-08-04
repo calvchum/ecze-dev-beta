@@ -12,8 +12,8 @@ const EmailInput = styled.input`
   &:focus {
     outline: ${colors.primary};
   }
-  ${media.small`
-		width: 180px;
+  ${media.med`
+		width: 220px;
   `}
 `
 
@@ -38,10 +38,9 @@ const SignUpButtonStyle = styled.input`
 const SignUpGrid = styled.div`
 	display: grid;
 	grid-template-columns: auto 110px;
-	width: 100%;
 	max-width: 400px;
-	${media.med`
-		 margin-right: 1em;
+	${media.small`
+		 display: flex;
 	`}
 `
 

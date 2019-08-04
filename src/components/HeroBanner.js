@@ -22,7 +22,9 @@ export const HeroBannerWrapper = styled.div`
   margin: 0 auto;
   ${media.med`
     padding: ${paddingDefaults.topBottom} 1em;
+    display: block;
   `}
+
 `
 
 export const HeroBannerText = styled.div`
@@ -34,6 +36,10 @@ export const FormWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 3em;
+
+  ${media.small`
+    justify-content: flex-start;
+  `}
 `
 
 export const MailHeroBanner = ({ blur, header, subheader, color }) => (
