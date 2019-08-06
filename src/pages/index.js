@@ -53,7 +53,7 @@ const IndexPage = () => {
 				<MailHeroBanner
 					blur={true}
 					header="Hey you! Fed up with eczema? You’ve come to the right place."
-					subheader="Sign up below to get regular updates and free eczema info. "
+					subheader="Pop your email below and we'll keep you posted on what we're working on and useful eczema tips to beat the itch."
 					color={colors.white}			
 					/>
 				<AboutTheProblem />

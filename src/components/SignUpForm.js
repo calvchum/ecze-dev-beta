@@ -28,9 +28,7 @@ const SignUpForm = () => {
   return (
     <BackgroundColor color="white">
       <SignUpWrapper>
-        <SubheaderText>
-          Keep up to date with our community and recommended products.
-        </SubheaderText>
+        <SubheaderText>We send super-helpful, non-annoying emails. Pop your email in and let us prove it to you.</SubheaderText>
         <InputWrapper>
           <MailchimpForm />
         </InputWrapper>

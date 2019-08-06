@@ -18,19 +18,21 @@ const SocialMedia = styled.div`
 const SocMediaIcon = styled.img`
   padding: 0.5em 0.5em;
   transition: 0.1s;
+  height: 60px;
+  margin-bottom: 0em;
   &:hover {
     transform: scale3d(1.1, 1.1, 1.1);
   }
   ${media.med`
-    margin-bottom: 0em;
+    padding: 0.3em 0.3em;
   `}
 `
 
 const SocialMediaIcons = () => (
   <SocialMedia>
-    <SocMediaIcon src={facebookIcon} alt="FB Logo" />
-    <SocMediaIcon src={instagramIcon} alt="INSTA Logo" />
-    <SocMediaIcon src={youtubeIcon} alt="YT Logo" />
+    <a href="􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚https://www.facebook.com/Ecze" target="_blank"><SocMediaIcon src={facebookIcon} alt="FB Logo" /></a>
+    <a href="https://www.instagram.com/eczefighter/" target="_blank"><SocMediaIcon src={instagramIcon} alt="INSTA Logo" /></a>
+    <a href="#" target="_blank"><SocMediaIcon src={youtubeIcon} alt="YT Logo" /></a>
   </SocialMedia>
 )
 

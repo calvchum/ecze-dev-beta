@@ -45,7 +45,6 @@ const Span = styled(animated.div)`
   width: 40px;
   padding-bottom: 8px;
   border-bottom: 2px ${colors.almostBlack} solid;
-  transform: rotate(180deg);
 `
 
 const HeaderNavWrapper = styled.ul`
@@ -70,10 +69,17 @@ const Header = () => {
       : `translate3d(-100%,0,0)`
   });
   const middleLine = useSpring({
-    width: isNavOpen ? `32px` : `40px`,
+    transform: isNavOpen ? `rotate(45deg)` : `rotate(0deg)`,
+    paddingBottom: isNavOpen ? `0px` : `8px`,
   });
   const bottomLine = useSpring({
-    width: isNavOpen ? `16px` : `40px`,
+    transform: isNavOpen ? `rotate(-45deg)` : `rotate(0deg)`,
+    paddingBottom: isNavOpen ? `0px` : `8px`,
+  });
+
+  const firstLine = useSpring({
+    borderBottom: isNavOpen ? `0px white solid` : `2px ${colors.almostBlack} solid`,
+    paddingBottom: isNavOpen ? `0px` : `8px`,
   });
 
   return (
@@ -85,7 +91,7 @@ const Header = () => {
         <ResponsiveNav style={navAnimation} />
         <div style={{zIndex: 15}}>
           <BurgerWrapper onClick={() => setNavOpen(!isNavOpen)}>
-            <Span></Span>
+            <Span style={firstLine}></Span>
             <Span style={middleLine}></Span>
             <Span style={bottomLine}></Span>
           </BurgerWrapper>
