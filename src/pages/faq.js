@@ -59,7 +59,7 @@ export default class Faq extends Component {
   render() {
     return (
       <BackgroundColor color={colors.almostWhite}>
-        <Layout>
+        <Layout props={this.props}>
           <SEO title="FAQ" />
           <FaqWrapper>
             <FaqHeaderWrapper>

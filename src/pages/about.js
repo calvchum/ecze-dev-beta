@@ -63,12 +63,12 @@ const AccentWrapper = styled.div`
 		padding: 2em;
 	`}
 `
- const BodyTextItalic = styled(BodyText)`
+const BodyTextItalic = styled(BodyText)`
 	font-style: italic;
 	text-align: center;
- `
+`
 
-const About = () => (
+const About = props => (
 	<StaticQuery
 		query={graphql`
 			query AboutPageQuery {
@@ -144,7 +144,7 @@ const About = () => (
 		render={data => (
 			<>
 				<BackgroundColor color={colors.almostWhite}>
-					<Layout>
+					<Layout props={props}>
 						<SEO title="About" />
 
 						<AboutContentWrapper>
@@ -167,8 +167,13 @@ const About = () => (
 									}}
 								/>
 								<AboutImage>
-									<Img fluid={data.contentfulAboutPage.sectionImage1.fluid} style={{maxHeight: '50vh'}} />
-									<BodyTextItalic>{data.contentfulAboutPage.sectionImage1.description}</BodyTextItalic>	
+									<Img
+										fluid={data.contentfulAboutPage.sectionImage1.fluid}
+										style={{ maxHeight: "50vh" }}
+									/>
+									<BodyTextItalic>
+										{data.contentfulAboutPage.sectionImage1.description}
+									</BodyTextItalic>
 								</AboutImage>
 							</SectionWrapper>
 
@@ -182,8 +187,13 @@ const About = () => (
 							</AccentWrapper>
 							<SectionWrapper>
 								<AboutImage>
-									<Img fluid={data.contentfulAboutPage.sectionImage2.fluid} style={{maxHeight: '50vh'}} />
-									<BodyTextItalic>{data.contentfulAboutPage.sectionImage2.description}</BodyTextItalic>
+									<Img
+										fluid={data.contentfulAboutPage.sectionImage2.fluid}
+										style={{ maxHeight: "50vh" }}
+									/>
+									<BodyTextItalic>
+										{data.contentfulAboutPage.sectionImage2.description}
+									</BodyTextItalic>
 								</AboutImage>
 								<BodyText
 									dangerouslySetInnerHTML={{
@@ -203,16 +213,26 @@ const About = () => (
 									}}
 								/>
 								<AboutImage>
-									<Img fluid={data.contentfulAboutPage.sectionImage3.fluid} style={{maxHeight: '50vh'}} />
-									<BodyTextItalic>{data.contentfulAboutPage.sectionImage3.description}</BodyTextItalic>
+									<Img
+										fluid={data.contentfulAboutPage.sectionImage3.fluid}
+										style={{ maxHeight: "50vh" }}
+									/>
+									<BodyTextItalic>
+										{data.contentfulAboutPage.sectionImage3.description}
+									</BodyTextItalic>
 								</AboutImage>
 							</SectionWrapper>
 
 							<SectionWrapper>
-							<AboutImage>
-								<Img fluid={data.contentfulAboutPage.sectionImage4.fluid} style={{maxHeight: '50vh'}} />
-								<BodyTextItalic>{data.contentfulAboutPage.sectionImage4.description}</BodyTextItalic>
-							</AboutImage>
+								<AboutImage>
+									<Img
+										fluid={data.contentfulAboutPage.sectionImage4.fluid}
+										style={{ maxHeight: "50vh" }}
+									/>
+									<BodyTextItalic>
+										{data.contentfulAboutPage.sectionImage4.description}
+									</BodyTextItalic>
+								</AboutImage>
 								<BodyText
 									dangerouslySetInnerHTML={{
 										__html:
@@ -239,8 +259,13 @@ const About = () => (
 									}}
 								/>
 								<AboutImage>
-									<Img fluid={data.contentfulAboutPage.sectionImage5.fluid} style={{maxHeight: '50vh'}} />
-									<BodyTextItalic>{data.contentfulAboutPage.sectionImage5.description}</BodyTextItalic>	
+									<Img
+										fluid={data.contentfulAboutPage.sectionImage5.fluid}
+										style={{ maxHeight: "50vh" }}
+									/>
+									<BodyTextItalic>
+										{data.contentfulAboutPage.sectionImage5.description}
+									</BodyTextItalic>
 								</AboutImage>
 							</SectionWrapper>
 						</AboutContentWrapper>

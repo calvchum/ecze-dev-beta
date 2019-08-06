@@ -25,6 +25,11 @@ const ListItem = styled.li`
 const Navigation = ({ props }) => (
   <>
     {data.pageData.map((page, i) => {
+      // pass the pathname to navigation
+      // navigation locations: header, burger, footer
+      // get rid of this conditional
+      // add a new conditional that if page.link matches pathname, then render underline
+
       if (page.link === "/getstarted") {
         return (
           <ListItem key={i}>

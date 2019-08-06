@@ -50,7 +50,7 @@ export default class GetStarted extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout props={this.props}>
         <SEO title="Get started" />
         <GetStartedWrapper>
           <HeaderSection>
