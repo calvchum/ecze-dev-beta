@@ -69,7 +69,6 @@ const Footer = ({ path }) => (
         <Navigation path={path} />
       </FooterNavWrapper>
       <ContactEcze>
-      
         <SubheaderText>Get in Touch</SubheaderText>
         <a href="mailto:hello@ecze.co">
           <BodyText
