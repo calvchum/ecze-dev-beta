@@ -18,7 +18,7 @@ const SocialMedia = styled.div`
 const SocMediaIcon = styled.img`
   padding: 0.5em 0.5em;
   transition: 0.1s;
-  height: 60px;
+  height: 70px;
   margin-bottom: 0em;
   &:hover {
     transform: scale3d(1.1, 1.1, 1.1);
