@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import { HeaderText, BodyText, media } from "../utilities"
+import { CTAButton } from "../components/Buttons"
 
 const ThankYouWrapper = styled.div`
 	max-width: 960px;
@@ -13,14 +14,15 @@ const ThankYouWrapper = styled.div`
 	`}
 `
 
-const ThankYouPage = () => (
-	<Layout>
+const ThankYouPage = props => (
+	<Layout props={props}>
 		<SEO title="Subscription success!" />
 		<ThankYouWrapper>
 			<HeaderText>Thanks for subscribing to ECZE!</HeaderText>
 			<BodyText>
-				You will now receive email updates about posts and new products.
+				Thank you for signing up! We promise you won't regret it.
 			</BodyText>
+			<CTAButton cta="Back to the blog" link="blog" />
 		</ThankYouWrapper>
 	</Layout>
 )
