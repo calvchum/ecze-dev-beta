@@ -68,7 +68,7 @@ const Footer = () => (
       </FooterNavWrapper>
       <ContactEcze>
         <SubheaderText>Get in Touch</SubheaderText>
-        <a href="hello@ecze.co"><BodyText style={{paddingBottom: '0.5em', textDecoration: 'underline'}}>hello@ecze.co</BodyText></a>
+        <a href="mailto:hello@ecze.co"><BodyText style={{paddingBottom: '0.5em', textDecoration: 'underline'}}>hello@ecze.co</BodyText></a>
         <BodyText>PO BOX 715, Brentford Square, <br />Victoria, Melbourne 3131</BodyText>
       </ContactEcze>
       <SocialMediaIcons />
