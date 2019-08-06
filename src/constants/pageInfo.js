@@ -1,18 +1,18 @@
 export const pageData = [
   {
     title: "About",
-    link: "/about",
+    link: "/about/",
   },
   {
     title: "FAQ",
-    link: "/faq",
+    link: "/faq/",
   },
   {
     title: "Blog",
-    link: "/blog",
+    link: "/blog/",
   },
   {
     title: "Get Started",
-    link: "/getstarted",
+    link: "/getstarted/",
   },
 ]

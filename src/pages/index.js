@@ -10,7 +10,13 @@ import HeaderSubheader from "../components/HeaderSubheader"
 import ReadBlog from "../components/ReadBlog"
 import AboutTheProblem from "../components/AboutTheProblem"
 import { Underline } from "../components/Underline"
-import { colors, SubheaderText, HeaderText, BodyText, lineWidths } from "../utilities"
+import {
+	colors,
+	SubheaderText,
+	HeaderText,
+	BodyText,
+	lineWidths,
+} from "../utilities"
 import eczeGrey from "../assets/logo/grey.svg"
 
 const WelcomeMat = styled(animated.div)`
@@ -30,7 +36,7 @@ const WelcomeMat = styled(animated.div)`
 	}
 `
 
-const IndexPage = () => {
+const IndexPage = props => {
 	const [count, setCount] = useState(50)
 	const pageFade = useSpring({
 		from: { opacity: 1, transform: "translate3d(0%, 0, 0)" },
@@ -43,7 +49,7 @@ const IndexPage = () => {
 	})
 
 	return (
-		<Layout>
+		<Layout props={props}>
 			<div>
 				<WelcomeMat style={pageFade}>
 					<img src={eczeGrey} alt="Ecze LOGO" />
@@ -54,8 +60,8 @@ const IndexPage = () => {
 					blur={true}
 					header="Hey you! Fed up with eczema? You’ve come to the right place."
 					subheader="Pop your email below and we'll keep you posted on what we're working on and useful eczema tips to beat the itch."
-					color={colors.white}			
-					/>
+					color={colors.white}
+				/>
 				<AboutTheProblem />
 				<KillerPoints />
 				<ReadBlog />
