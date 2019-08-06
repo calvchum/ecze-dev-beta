@@ -91,6 +91,7 @@ export default class blog extends Component {
   }
 
   render() {
+    console.log("blog props", this.props.path)
     const posts = this.props.data.allContentfulBlogPost.edges
     let categories = []
     categories.push("Latest posts")
@@ -130,7 +131,7 @@ export default class blog extends Component {
 
     return (
       <BackgroundColor color={colors.almostWhite}>
-        <Layout>
+        <Layout props={this.props}>
           <div style={{ padding: "0em 1em" }}>
             <BlogHeaderWrapper>
               <BlogHeader>
@@ -145,7 +146,8 @@ export default class blog extends Component {
                   </HeaderText>
                 </PaddingBottom>
                 <SubheaderText style={{ fontWeight: "400" }}>
-                  Get connected to the Ecze Hub to discover a happier, healthier, itch-free life.
+                  Get connected to the Ecze Hub to discover a happier,
+                  healthier, itch-free life.
                 </SubheaderText>
               </BlogHeader>
             </BlogHeaderWrapper>

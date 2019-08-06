@@ -6,7 +6,7 @@ import Footer from "./Footer"
 import SignUpForm from "./SignUpForm"
 import "./layout.css"
 
-const Layout = ({ children }) => (
+const Layout = ({ children, props }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -19,12 +19,12 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} path={props.path} />
         <div>
           <main>{children}</main>
         </div>
         <SignUpForm />
-        <Footer />
+        <Footer path={props.path} />
       </>
     )}
   />

@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import { useSpring, animated } from 'react-spring'; 
+import { useSpring, animated } from "react-spring"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Navigation from "./Navigation"
 import ResponsiveNav from "./ResponsiveNav"
 import { paddingDefaults, colors } from "../utilities"
 import eczeLogoWhite from "../assets/logo/white.svg"
-import { media } from '../utilities'
+import { media } from "../utilities"
 
 const HeaderWrapper = styled.div`
   display: grid;
@@ -60,46 +60,45 @@ const HeaderNavWrapper = styled.ul`
   `}
 `
 
-
-const Header = () => {
-  const [isNavOpen, setNavOpen] = useState(false);
+const Header = ({ path }) => {
+  const [isNavOpen, setNavOpen] = useState(false)
   const navAnimation = useSpring({
-    transform: isNavOpen
-      ? `translate3d(0,0,0)`
-      : `translate3d(-100%,0,0)`
-  });
+    transform: isNavOpen ? `translate3d(0,0,0)` : `translate3d(-100%,0,0)`,
+  })
   const middleLine = useSpring({
     transform: isNavOpen ? `rotate(45deg)` : `rotate(0deg)`,
     paddingBottom: isNavOpen ? `0px` : `8px`,
-  });
+  })
   const bottomLine = useSpring({
     transform: isNavOpen ? `rotate(-45deg)` : `rotate(0deg)`,
     paddingBottom: isNavOpen ? `0px` : `8px`,
-  });
+  })
 
   const firstLine = useSpring({
-    borderBottom: isNavOpen ? `0px white solid` : `2px ${colors.almostBlack} solid`,
+    borderBottom: isNavOpen
+      ? `0px white solid`
+      : `2px ${colors.almostBlack} solid`,
     paddingBottom: isNavOpen ? `0px` : `8px`,
-  });
+  })
 
   return (
     <HeaderWrapper>
-      <Link to="/" style={{display: 'flex', alignItems: 'center'}}>
+      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
         <LogoWrapper src={eczeLogoWhite} alt="ECZE Logo" />
       </Link>
-{/* RESPONSIVE MENU ICON & SLIDEOUT MENU */}
-        <ResponsiveNav style={navAnimation} />
-        <div style={{zIndex: 15}}>
-          <BurgerWrapper onClick={() => setNavOpen(!isNavOpen)}>
-            <Span style={firstLine}></Span>
-            <Span style={middleLine}></Span>
-            <Span style={bottomLine}></Span>
-          </BurgerWrapper>
+      {/* RESPONSIVE MENU ICON & SLIDEOUT MENU */}
+      <ResponsiveNav style={navAnimation} />
+      <div style={{ zIndex: 15 }}>
+        <BurgerWrapper onClick={() => setNavOpen(!isNavOpen)}>
+          <Span style={firstLine}></Span>
+          <Span style={middleLine}></Span>
+          <Span style={bottomLine}></Span>
+        </BurgerWrapper>
 
-          <HeaderNavWrapper>
-            <Navigation />
-          </HeaderNavWrapper>
-        </div>
+        <HeaderNavWrapper>
+          <Navigation path={path} />
+        </HeaderNavWrapper>
+      </div>
     </HeaderWrapper>
   )
 }

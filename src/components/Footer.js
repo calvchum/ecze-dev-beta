@@ -6,9 +6,9 @@ import {
   SubheaderText,
   BodyText,
   media,
-  BackgroundColor
+  BackgroundColor,
 } from "../utilities"
-import SocialMediaIcons from './SocialMedia'
+import SocialMediaIcons from "./SocialMedia"
 import facebookIcon from "../assets/icons/facebook.svg"
 import instagramIcon from "../assets/icons/instagram.svg"
 import youtubeIcon from "../assets/icons/youtube.svg"
@@ -36,7 +36,6 @@ const AboutEcze = styled.div`
 `
 
 const ContactEcze = styled.div`
-
   ${media.med`
     padding-bottom: 2em;
     order: 2;
@@ -55,21 +54,33 @@ const FooterNavWrapper = styled.ul`
   `}
 `
 
-const Footer = () => (
+const Footer = ({ path }) => (
   <BackgroundColor color={colors.almostWhite}>
     <FooterWrapper>
       <AboutEcze>
         <SubheaderText>About Ecze</SubheaderText>
-        <BodyText>We provide simple and holistic remedies to help you overcome your eczema.</BodyText>
+        <BodyText>
+          We provide simple and holistic remedies to help you overcome your
+          eczema.
+        </BodyText>
       </AboutEcze>
       <FooterNavWrapper>
         <SubheaderText>More Info</SubheaderText>
-        <Navigation />
+        <Navigation path={path} />
       </FooterNavWrapper>
       <ContactEcze>
         <SubheaderText>Get in Touch</SubheaderText>
-        <a href="mailto:hello@ecze.co"><BodyText style={{paddingBottom: '0.5em', textDecoration: 'underline'}}>hello@ecze.co</BodyText></a>
-        <BodyText>PO BOX 715, Brentford Square, <br />Victoria, Melbourne 3131</BodyText>
+        <a href="mailto:hello@ecze.co">
+          <BodyText
+            style={{ paddingBottom: "0.5em", textDecoration: "underline" }}
+          >
+            hello@ecze.co
+          </BodyText>
+        </a>
+        <BodyText>
+          PO BOX 715, Brentford Square, <br />
+          Victoria, Melbourne 3131
+        </BodyText>
       </ContactEcze>
       <SocialMediaIcons />
     </FooterWrapper>
