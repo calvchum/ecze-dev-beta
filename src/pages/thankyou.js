@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import { HeaderText, BodyText, media } from "../utilities"
+import { CTAButton } from "../components/Buttons"
 
 const ThankYouWrapper = styled.div`
 	max-width: 960px;
@@ -21,6 +22,7 @@ const ThankYouPage = props => (
 			<BodyText>
 				Thank you for signing up! We promise you won't regret it.
 			</BodyText>
+			<CTAButton cta="Back to the blog" link="blog" />
 		</ThankYouWrapper>
 	</Layout>
 )
