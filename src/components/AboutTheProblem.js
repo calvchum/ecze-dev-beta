@@ -25,7 +25,7 @@ const AboutTheProblem = () => {
 				<BodyText>Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema</BodyText>
 			</PaddedHeroText>
 				<FormWrapper>
-					<CTAButton link="getstarted" cta="Lets get started" />
+					<CTAButton link="getstarted" cta="Let's get started" />
 				</FormWrapper>
 			</HeroBannerWrapper>
 		</BackgroundColor>

@@ -31,6 +31,7 @@ const BlogContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 600px;
   text-align: justify;
+  font-family: 'DM Sans';
 `
 
 const HeroImage = styled(Img)`

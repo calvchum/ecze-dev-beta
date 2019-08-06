@@ -140,13 +140,12 @@ export default class blog extends Component {
                       size={lineWidths.ctaUnderline}
                       color={colors.primary}
                     >
-                      The Ecze Blog
+                      The Ecze Hub
                     </Underline>
                   </HeaderText>
                 </PaddingBottom>
                 <SubheaderText style={{ fontWeight: "400" }}>
-                  Want to go deeper into holistic approaches to Eczema? We’ve
-                  got you covered.
+                  Get connected to the Ecze Hub to discover a happier, healthier, itch-free life.
                 </SubheaderText>
               </BlogHeader>
             </BlogHeaderWrapper>

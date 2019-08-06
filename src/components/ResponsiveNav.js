@@ -14,7 +14,10 @@ const ResponsiveNavStyles = styled(animated.div)`
   z-index: 10;
   background: ${colors.almostWhite};
   font-size: 2em;
-  padding: 10vh 0em 0em 1em;
+  padding: 12vh 0em 0em 0em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;  
 
   & > li {
     padding: 0.5em 0em;
