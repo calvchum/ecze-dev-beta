@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { SubheaderText, BackgroundImage, media, colors } from "../utilities"
 import MailchimpForm from "./MailchimpForm"
-import bgGreen from '../assets/backgrounds/pattern-green.svg'
 
 
 const SignUpWrapper = styled.section`

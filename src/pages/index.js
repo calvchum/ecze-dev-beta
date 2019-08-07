@@ -36,7 +36,6 @@ const WelcomeMat = styled(animated.div)`
 		height: auto;
 	}
 `
-
 const IndexPage = props => {
 	const [count, setCount] = useState(50)
 	const pageFade = useSpring({

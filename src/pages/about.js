@@ -15,7 +15,7 @@ import {
 	media,
 } from "../utilities"
 
-const AboutContentWrapper = styled.div`
+export const AboutContentWrapper = styled.div`
 	display: grid;
 	grid-template-rows: 1fr;
 	padding: 0em;
@@ -27,7 +27,7 @@ const AboutContentWrapper = styled.div`
 	`}
 `
 
-const SectionWrapper = styled.div`
+export const SectionWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	// overflow: hidden;
