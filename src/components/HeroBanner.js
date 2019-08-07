@@ -7,6 +7,7 @@ import {
   media,
   colors,
   BackgroundColor,
+  BackgroundImage
 } from "../utilities"
 import { CTAButton } from "./Buttons"
 import HeaderSubheader from "./HeaderSubheader"
@@ -24,7 +25,6 @@ export const HeroBannerWrapper = styled.div`
     padding: ${paddingDefaults.topBottom} 1em;
     display: block;
   `}
-
 `
 
 export const HeroBannerText = styled.div`
@@ -42,8 +42,8 @@ export const FormWrapper = styled.div`
   `}
 `
 
-export const MailHeroBanner = ({ blur, header, subheader, color }) => (
-  <BackgroundColor color={color}>
+export const MailHeroBanner = ({ blur, header, subheader }) => (
+  <BackgroundImage>
     <HeroBannerWrapper>
       <HeroBannerText>
         <HeaderSubheader header={header} subheader={subheader} />
@@ -52,7 +52,7 @@ export const MailHeroBanner = ({ blur, header, subheader, color }) => (
         <MailChimpForm blur={blur} />
       </FormWrapper>
     </HeroBannerWrapper>
-  </BackgroundColor>
+  </BackgroundImage>
 )
 
 export const CTAHeroBanner = ({ header, subheader, link, cta, color }) => (

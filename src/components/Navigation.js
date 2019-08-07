@@ -29,7 +29,6 @@ const Navigation = ({ props, path }) => (
       // navigation locations: header, burger, footer
       // get rid of this conditional
       // add a new conditional that if page.link matches pathname, then render underline
-      console.log(path)
       if (page.link === path) {
         return (
           <ListItem key={i}>

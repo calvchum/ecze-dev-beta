@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import FilterBlog from "./filterblog"
-import { media, colors, SubheaderText } from "../utilities"
+import { media, colors, SubheaderText, BodyText } from "../utilities"
 
 const ResponsiveFilterStyles = styled(animated.div)`
   width: 100vw;
@@ -35,6 +35,20 @@ const FilterButtonStyle = styled(animated.div)`
     transition: 0.2s;
   `}
 `
+const FilterClose = styled.div`
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  width: 64px;
+  height 40px;
+  cursor: pointer;
+  // color: ${colors.almostBlack};
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 
 export const ResponsiveFilter = ({
   cta,
@@ -46,7 +60,6 @@ export const ResponsiveFilter = ({
     transform: isFilterOpen ? `translateY(0%)` : `translateY(-100%)`,
     opacity: isFilterOpen ? `1` : `0`
   })
-
   const filterButtonAnimation = useSpring({
     background: isFilterOpen ? `${colors.primary}` : `${colors.almostBlack}`
   })
@@ -57,6 +70,9 @@ export const ResponsiveFilter = ({
         { isFilterOpen ? 'Save' : 'Filter' }
       </FilterButtonStyle>
       <ResponsiveFilterStyles style={filterAnimation}>
+        <FilterClose onClick={() => setFilterOpen(!isFilterOpen)}>
+          <SubheaderText>Close</SubheaderText>
+        </FilterClose>
         <SubheaderText>
           <FilterBlog
             categories={categories}
