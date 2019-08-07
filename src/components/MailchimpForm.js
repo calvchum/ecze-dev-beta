@@ -7,10 +7,11 @@ const EmailInput = styled.input`
   padding: 1em;
   border: none;
   background: transparent;
-  border-bottom: 4px solid ${colors.primary};
+  border-bottom: 4px solid ${colors.almostWhite};
 	margin-right: 0.5em;
+	color: ${colors.white};
   &:focus {
-    outline: ${colors.primary};
+    outline: ${colors.almostWhite};
   }
   ${media.med`
 		width: 220px;
@@ -20,8 +21,8 @@ const EmailInput = styled.input`
 const SignUpButtonStyle = styled.input`
 	border: none;
 	padding: 1em 1.2em;
-	color: ${colors.almostWhite};
-	background: ${colors.primary};
+	color: ${colors.primary};
+	background: ${colors.almostWhite};
 	transition: 0.2s;
 	&:hover {
 		color: ${colors.primary};
@@ -71,7 +72,7 @@ class MailchimpForm extends Component {
 								name="MERGE0"
 								type="email"
 								id="mce-EMAIL"
-								placeholder="x Email"
+								placeholder="Enter email here"
 								pattern="(.+)@(.+){2,}\.(.+){2,}"
 								required={true}
 							/>

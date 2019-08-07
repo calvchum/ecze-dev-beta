@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../utilities'
 
 export const GetStartedWrapper = styled.div`
 	width: 100%;
@@ -9,6 +10,7 @@ export const HeaderSection = styled.div`
 	padding: 5em 1em;
 	max-width: 960px;
 	margin: 2px auto;
+	color: ${colors.almostWhite};
 `;
 
 export const BodySection = styled.div`

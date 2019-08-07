@@ -6,8 +6,8 @@ import {
   paddingDefaults,
   media,
   colors,
-  BackgroundColor,
-  BackgroundImage
+  BackgroundImage,
+  BackgroundColor
 } from "../utilities"
 import { CTAButton } from "./Buttons"
 import HeaderSubheader from "./HeaderSubheader"
@@ -42,14 +42,14 @@ export const FormWrapper = styled.div`
   `}
 `
 
-export const MailHeroBanner = ({ blur, header, subheader }) => (
+export const MailHeroBanner = ({ blur, header, subheader, textColor }) => (
   <BackgroundImage>
     <HeroBannerWrapper>
       <HeroBannerText>
-        <HeaderSubheader header={header} subheader={subheader} />
+        <HeaderSubheader header={header} subheader={subheader} textColor={textColor} />
       </HeroBannerText>
       <FormWrapper>
-        <MailChimpForm blur={blur} />
+        <MailChimpForm blur={blur} textColor={colors.almostWhite}/>
       </FormWrapper>
     </HeroBannerWrapper>
   </BackgroundImage>

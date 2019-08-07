@@ -1,7 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { SubheaderText, BackgroundColor, media } from "../utilities"
+import { SubheaderText, BackgroundImage, media, colors } from "../utilities"
 import MailchimpForm from "./MailchimpForm"
+import bgGreen from '../assets/backgrounds/pattern-green.svg'
+
 
 const SignUpWrapper = styled.section`
   display: flex;
@@ -24,16 +26,17 @@ const InputWrapper = styled.div`
   }
 `;
 
+
 const SignUpForm = () => {
   return (
-    <BackgroundColor color="white">
+    <BackgroundImage>
       <SignUpWrapper>
-        <SubheaderText>We send super-helpful, non-annoying emails. Pop your email in and let us prove it to you.</SubheaderText>
+        <SubheaderText style={{color: `${colors.almostWhite}`}}>We send super-helpful, non-annoying emails. Pop your email in and let us prove it to you.</SubheaderText>
         <InputWrapper>
           <MailchimpForm />
         </InputWrapper>
       </SignUpWrapper>
-    </BackgroundColor>
+    </BackgroundImage>
   )
 }
 
