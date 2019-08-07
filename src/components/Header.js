@@ -87,7 +87,7 @@ const Header = ({ path }) => {
         <LogoWrapper src={eczeLogoWhite} alt="ECZE Logo" />
       </Link>
       {/* RESPONSIVE MENU ICON & SLIDEOUT MENU */}
-      <ResponsiveNav style={navAnimation} />
+      <ResponsiveNav style={navAnimation} path={path} />
       <div style={{ zIndex: 15 }}>
         <BurgerWrapper onClick={() => setNavOpen(!isNavOpen)}>
           <Span style={firstLine}></Span>

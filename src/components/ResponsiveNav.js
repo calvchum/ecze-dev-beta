@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { animated } from 'react-spring';
-import Navigation from './Navigation';
-import { colors } from '../utilities';
-import SocialMediaIcons from './SocialMedia'
-import eczeTransparentLogo from '../assets/logo/ecze-logo-transparent.svg'
+import React from "react"
+import styled from "styled-components"
+import { animated } from "react-spring"
+import Navigation from "./Navigation"
+import { colors } from "../utilities"
+import SocialMediaIcons from "./SocialMedia"
+import eczeTransparentLogo from "../assets/logo/ecze-logo-transparent.svg"
 
 const ResponsiveNavStyles = styled(animated.div)`
   position: fixed;
@@ -18,12 +18,12 @@ const ResponsiveNavStyles = styled(animated.div)`
   padding: 15vh 0em 0em 0em;
   display: flex;
   align-items: center;
-  flex-direction: column;  
+  flex-direction: column;
 
   & > li {
     padding: 0.5em 0em;
   }
-`;
+`
 const EczeLogo = styled.div`
   position: absolute;
   left: 1em;
@@ -33,18 +33,18 @@ const EczeLogo = styled.div`
   & img {
     margin-bottom: 0em;
   }
-`;
+`
 
-const ResponsiveNav = ({ style }) => {
+const ResponsiveNav = ({ style, path }) => {
   return (
     <ResponsiveNavStyles style={style}>
       <EczeLogo>
-        <img src={eczeTransparentLogo} alt=""/>
+        <img src={eczeTransparentLogo} alt="" />
       </EczeLogo>
-        <Navigation />
-        <SocialMediaIcons />
+      <Navigation path={path} />
+      <SocialMediaIcons />
     </ResponsiveNavStyles>
-  );
-};
+  )
+}
 
-export default ResponsiveNav;
+export default ResponsiveNav
