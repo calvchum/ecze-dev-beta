@@ -5,41 +5,46 @@ import { Underline } from './Underline';
 import { CTAButton } from './Buttons'
 import { HeroBannerWrapper, FormWrapper, HeroBannerText } from './HeroBanner'
 import placeholder from "../assets/placeholders/baby.svg"
-import { AboutContentWrapper, SectionWrapper } from '../pages/about'
 
-const ImageTextCombo = styled.div`
+
+const ContentWrapper = styled.div`
 	display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 8px;
-  max-width: 960px;
-  padding-bottom: 3em;
-  ${media.med`
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    margin: 0 auto;
-  `}
-  ${media.small`
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    margin: 0 auto;
-  `}
+	grid-template-rows: 1fr;
+	padding: 3em 0em;
+	max-width: 960px;
+	margin: 0 auto;
 
+	${media.med`
+		padding: 3em 1em;
+	`}
+`
 
+const SectionWrapper = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1em;
+	padding-top: 2em;
+	& img {
+		margin-bottom: 0px;
 
-	// & > * {
-	// 	padding: 2em 0em;
-	// }
-`;
+	}
+	${media.med`
+		grid-template-columns: 1fr;
+		align-items: center;
+	`}
+`
 
 const AboutTheProblem = () => {
   return (
 		<BackgroundColor color={colors.almostWhite}>
-			<AboutContentWrapper>
+			<ContentWrapper>
 				<HeaderText> If you are feeling defeated with itchy red, scaly dry skin, 
 			you’re not alone.</HeaderText>
 				<BodyText>An Australian first study, the PEEK STUDY, has finally helped shed light on atopic dermatitis, revealing the often devasting impact it can have on a sufferer’s overall wellbeing and quality of life.
 				</BodyText>
 				<SectionWrapper>
-					<SubheaderText style={{margin: '0px'}}>Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.</SubheaderText>
 					<img style={{width: '100%'}} src={placeholder} alt=""/>
+					<SubheaderText style={{margin: '0px'}}>Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.</SubheaderText>
 				</SectionWrapper>
 				<SectionWrapper>
 					<img style={{width: '100%'}} src={placeholder} alt=""/>
@@ -51,7 +56,7 @@ const AboutTheProblem = () => {
 				<FormWrapper>
 					<CTAButton link="getstarted" cta="Let's get started" />
 				</FormWrapper>
-			</AboutContentWrapper>
+			</ContentWrapper>
 		</BackgroundColor>
   );
 };
