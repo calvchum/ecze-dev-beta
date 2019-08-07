@@ -19,6 +19,7 @@ import {
 } from "../utilities"
 import eczeGrey from "../assets/logo/grey.svg"
 import backgroundGreen from "../assets/backgrounds/pattern-green.png"
+import useWindowDimension from "../hooks/windowDimensions"
 
 const WelcomeMat = styled(animated.div)`
 	position: fixed;
@@ -48,6 +49,11 @@ const IndexPage = props => {
 		config: { duration: 1000 },
 		delay: 1000,
 	})
+
+	const { height, width } = useWindowDimension()
+
+	console.log("width:", width)
+	console.log("height:", height)
 
 	return (
 		<Layout props={props}>
