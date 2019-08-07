@@ -91,7 +91,6 @@ export default class blog extends Component {
   }
 
   render() {
-    console.log("blog props", this.props.path)
     const posts = this.props.data.allContentfulBlogPost.edges
     let categories = []
     categories.push("Latest posts")

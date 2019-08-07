@@ -9,9 +9,8 @@ import {
   BackgroundColor,
 } from "../utilities"
 import SocialMediaIcons from "./SocialMedia"
-import facebookIcon from "../assets/icons/facebook.svg"
-import instagramIcon from "../assets/icons/instagram.svg"
-import youtubeIcon from "../assets/icons/youtube.svg"
+import MailChimpForm from "./MailChimpForm"
+
 
 const FooterWrapper = styled.section`
   display: grid;
@@ -29,9 +28,11 @@ const FooterWrapper = styled.section`
 `
 
 const AboutEcze = styled.div`
+  padding-right: 1em;
   ${media.med`
     text-align: justify;
-    order: 0;
+    padding-right: 1em;
+    order: 1;
   `}
 `
 
