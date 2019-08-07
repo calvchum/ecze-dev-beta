@@ -10,6 +10,7 @@ import {
   colors,
   lineWidths,
   BackgroundColor,
+  BackgroundImage
 } from "../utilities"
 import {
   GetStartedWrapper,
@@ -17,7 +18,6 @@ import {
   BodySection,
 } from "../components/GetStarted"
 import { Underline } from "../components/Underline"
-import { PaddingBottom } from "../components/BlogPage"
 
 // the text on this page should be managed by Contentful and not hard coded
 export default class GetStarted extends Component {
@@ -53,21 +53,19 @@ export default class GetStarted extends Component {
       <Layout props={this.props}>
         <SEO title="Get started" />
         <GetStartedWrapper>
-          <HeaderSection>
-            <PaddingBottom>
-              <HeaderText>
-                <Underline
-                  size={lineWidths.ctaUnderline}
-                  color={colors.primary}
-                >
-                  Getting Started
-                </Underline>
-              </HeaderText>
-            </PaddingBottom>
-            <SubheaderText style={{ fontWeight: "400" }}>
-              If you have eczema, the first step is to LEARN about eczema
-            </SubheaderText>
-          </HeaderSection>
+          <BackgroundImage>
+            <HeaderSection>
+               <HeaderText>
+                  <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
+                    Getting Started
+                  </Underline>
+                </HeaderText>
+              <SubheaderText style={{ fontWeight: "400" }}>
+                If you have eczema, the first step is to LEARN about eczema
+              </SubheaderText>
+            </HeaderSection>
+            
+          </BackgroundImage>
           <BackgroundColor color={colors.almostWhite}>
             <BodySection>
               {this.state.getStartedCategories.map((object, i) => {

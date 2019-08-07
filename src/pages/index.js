@@ -18,7 +18,7 @@ import {
 	lineWidths,
 } from "../utilities"
 import eczeGrey from "../assets/logo/grey.svg"
-import backgroundGreen from "../assets/backgrounds/pattern-green.png"
+import backgroundGreen from "../assets/backgrounds/pattern-green.svg"
 
 const WelcomeMat = styled(animated.div)`
 	position: fixed;
@@ -62,7 +62,7 @@ const IndexPage = props => {
 					header="Hey you! Fed up with eczema? You’ve come to the right place."
 					subheader="Pop your email below and we'll keep you posted on what we're working on and useful eczema tips to beat the itch."
 					color={colors.white}
-					url="../assets/backgrounds/pattern-green.png"
+					textColor={colors.almostWhite}
 				/>
 				<AboutTheProblem />
 				<KillerPoints />

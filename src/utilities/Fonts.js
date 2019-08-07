@@ -23,7 +23,7 @@ const typography = new Typography({
 // TYPORGRAPHY SETUP OBJECTS
 export const fontsize = {
 	hero: '2.67em',
-	h1: '2em',
+	h1: '2.3em',
 	subheader: '1.3em',
 	body: '1em'
 }
