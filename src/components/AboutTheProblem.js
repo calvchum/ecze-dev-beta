@@ -22,7 +22,7 @@ const PaddedHeroText = styled(HeroBannerText)`
 
 const AboutTheProblem = () => {
 	const [ref, inView] = useInView({
-		threshold: 0.4,
+		threshold: 0.25,
 	})
 	const props = useSpring({ opacity: inView ? 1 : 0 })
 	return (
