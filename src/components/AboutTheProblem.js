@@ -21,18 +21,30 @@ const ContentWrapper = styled.div`
 
 const SectionWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(340px, 1fr));
 	grid-gap: 1em;
 	padding-top: 2em;
 	& img {
 		margin-bottom: 0px;
-
 	}
 	${media.med`
 		grid-template-columns: 1fr;
-		align-items: center;
+		grid-template-rows: repeat(2, 1fr);
 	`}
 `
+
+const Order = styled.div`
+	order: 0;
+	${media.med`
+		order: 2;
+	`}
+`
+
+const backgroundStyles = {
+	backgroundImage: `url(${placeholder})`,
+	height: '100%',
+	width: '100%'
+}
 
 const AboutTheProblem = () => {
   return (
@@ -43,15 +55,19 @@ const AboutTheProblem = () => {
 				<BodyText>An Australian first study, the PEEK STUDY, has finally helped shed light on atopic dermatitis, revealing the often devasting impact it can have on a sufferer’s overall wellbeing and quality of life.
 				</BodyText>
 				<SectionWrapper>
-					<img style={{width: '100%'}} src={placeholder} alt=""/>
-					<SubheaderText style={{margin: '0px'}}>Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.</SubheaderText>
+					<div>
+						<SubheaderText style={{margin: '0px'}}>Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.</SubheaderText>
+					</div>
+					<Order>
+						<div style={backgroundStyles}></div>
+					</Order>
 				</SectionWrapper>
 				<SectionWrapper>
-					<img style={{width: '100%'}} src={placeholder} alt=""/>
 					<div>
-						<BodyText>Luckily, here at ECZE, we don’t agree with this. In fact, we think there’s plenty that can be done to help you or your loved one’s situation. </BodyText>
+						<BodyText style={{paddingBottom: '0.5em'}}>Luckily, here at ECZE, we don’t agree with this. In fact, we think there’s plenty that can be done to help you or your loved one’s situation. </BodyText>
 						<BodyText>Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema</BodyText>
 					</div>
+					<div style={backgroundStyles}></div>
 				</SectionWrapper>
 				<FormWrapper>
 					<CTAButton link="getstarted" cta="Let's get started" />

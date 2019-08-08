@@ -37,7 +37,6 @@ const WelcomeMat = styled(animated.div)`
 	}
 `
 const IndexPage = props => {
-	const [count, setCount] = useState(50)
 	const pageFade = useSpring({
 		from: { opacity: 1, transform: "translate3d(0%, 0, 0)" },
 		to: async (next, cancel) => {
