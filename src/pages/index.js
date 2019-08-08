@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Layout from "../components/layout"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
@@ -19,6 +19,13 @@ import {
 } from "../utilities"
 import eczeGrey from "../assets/logo/grey.svg"
 import backgroundGreen from "../assets/backgrounds/pattern-green.svg"
+import { useInView, InView } from "react-intersection-observer"
+
+async function loadPolyfills() {
+	if (typeof window.IntersectionObserver === "undefined") {
+		await import("intersection-observer")
+	}
+}
 
 const WelcomeMat = styled(animated.div)`
 	position: fixed;
@@ -38,7 +45,11 @@ const WelcomeMat = styled(animated.div)`
 `
 
 const IndexPage = props => {
-	const [count, setCount] = useState(50)
+	const [ref, inView, entry] = useInView({
+		/* Optional options */
+		threshold: 0,
+	})
+
 	const pageFade = useSpring({
 		from: { opacity: 1, transform: "translate3d(0%, 0, 0)" },
 		to: async (next, cancel) => {
@@ -49,14 +60,16 @@ const IndexPage = props => {
 		delay: 1000,
 	})
 
+	const handleChange = (inView, entry) => console.log("test", inView)
+
 	return (
 		<Layout props={props}>
-			<div>
-				<WelcomeMat style={pageFade}>
-					<img src={eczeGrey} alt="Ecze LOGO" />
-				</WelcomeMat>
-				<SEO title="Home" />
-				{/* pass down a prop "true" when page loads*/}
+			<WelcomeMat style={pageFade}>
+				<img src={eczeGrey} alt="Ecze LOGO" />
+			</WelcomeMat>
+			<SEO title="Home" />
+			{/* pass down a prop "true" when page loads*/}
+			<InView as="div">
 				<MailHeroBanner
 					blur={true}
 					header="Hey you! Fed up with eczema? You’ve come to the right place."
@@ -64,10 +77,19 @@ const IndexPage = props => {
 					color={colors.white}
 					textColor={colors.almostWhite}
 				/>
+			</InView>
+			<InView as="div">
 				<AboutTheProblem />
+			</InView>
+			<InView
+				as="div"
+				onChange={(inView, entry) => handleChange(inView, entry)}
+			>
 				<KillerPoints />
+			</InView>
+			<InView as="div">
 				<ReadBlog />
-			</div>
+			</InView>
 		</Layout>
 	)
 }
