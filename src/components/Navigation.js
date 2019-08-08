@@ -24,7 +24,6 @@ const ListItem = styled.li`
 
 const Navigation = ({ props, path }) => (
   <>
-    {console.log(`/${path.split("/")[1]}/`)}
     {data.pageData.map((page, i) => {
       // pass the pathname to navigation
       // navigation locations: header, burger, footer
