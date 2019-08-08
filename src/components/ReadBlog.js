@@ -8,16 +8,18 @@ import {
 	paddingDefaults,
 	media,
 	BackgroundColor,
-	lineWidths
+	lineWidths,
 } from "../utilities"
 import { CTAButton } from "./Buttons"
 import baby from "../assets/placeholders/baby.svg"
-import { CenteredHeaderText } from './KillerPoints'
-import { Underline } from './Underline'
+import { CenteredHeaderText } from "./KillerPoints"
+import { Underline } from "./Underline"
+import { useInView } from "react-intersection-observer"
+import { useSpring, animated } from "react-spring"
 
 const ReadBlogWrapper = styled.div`
 	display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
 	max-width: 720px;
 	margin: 0 auto;
 `
@@ -48,41 +50,55 @@ const RightSide = styled.div`
 	}
 `
 
-const ReadBlog = () => (
-	<StaticQuery
-		query={graphql`
-			query ReadBlogImage {
-				contentfulAsset(title: { eq: "readBlogImage" }) {
-					fluid(maxWidth: 1000) {
-						...GatsbyContentfulFluid
+const ReadBlog = () => {
+	const [ref, inView] = useInView({
+		threshold: 0.25,
+	})
+	const props = useSpring({ opacity: inView ? 1 : 0 })
+
+	return (
+		<StaticQuery
+			query={graphql`
+				query ReadBlogImage {
+					contentfulAsset(title: { eq: "readBlogImage" }) {
+						fluid(maxWidth: 1000) {
+							...GatsbyContentfulFluid
+						}
 					}
 				}
-			}
-		`}
-		render={data => (
-			<>
-				<BackgroundColor color={colors.almostWhite} style={{	padding: `${paddingDefaults.topBottom} 1em` }}>
-				  <CenteredHeaderText>
-		        <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-		          The Ecze Blog
-		        </Underline>
-		      </CenteredHeaderText>
-					<ReadBlogWrapper>
-						<LeftSide>
-							<Img fluid={data.contentfulAsset.fluid} />
-						</LeftSide>
-						<RightSide>
-							<BodyText>
-								Come discover the root cause of your eczema flare ups and start
-								your journey towards a happier, healthier, itch-free life.
-							</BodyText>
-							<CTAButton cta="Read the blog" link="blog" />
-						</RightSide>
-					</ReadBlogWrapper>
-				</BackgroundColor>
-			</>
-		)}
-	/>
-)
+			`}
+			render={data => (
+				<animated.div ref={ref} style={props}>
+					<BackgroundColor
+						color={colors.almostWhite}
+						style={{ padding: `${paddingDefaults.topBottom} 1em` }}
+					>
+						<CenteredHeaderText>
+							<Underline
+								size={lineWidths.ctaUnderline}
+								color={colors.secondary}
+							>
+								The Ecze Blog
+							</Underline>
+						</CenteredHeaderText>
+						<ReadBlogWrapper>
+							<LeftSide>
+								<Img fluid={data.contentfulAsset.fluid} />
+							</LeftSide>
+							<RightSide>
+								<BodyText>
+									Come discover the root cause of your eczema flare ups and
+									start your journey towards a happier, healthier, itch-free
+									life.
+								</BodyText>
+								<CTAButton cta="Read the blog" link="blog" />
+							</RightSide>
+						</ReadBlogWrapper>
+					</BackgroundColor>
+				</animated.div>
+			)}
+		/>
+	)
+}
 
 export default ReadBlog
