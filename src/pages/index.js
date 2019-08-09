@@ -65,11 +65,7 @@ const IndexPage = props => {
 				/>
 				<Fade>
 					<AboutTheProblem />
-				</Fade>
-				<Fade>
 					<KillerPoints />
-				</Fade>
-				<Fade>
 					<ReadBlog />
 				</Fade>
 			</div>
