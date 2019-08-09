@@ -173,6 +173,7 @@ const About = props => (
 									</Underline>
 								</HeaderText>
 							</AboutHeaderWrapper>
+							{/* SECTION 1 */}
 							<SectionWrapper>
 								<BodyText
 									dangerouslySetInnerHTML={{
@@ -200,6 +201,7 @@ const About = props => (
 									}}
 								/>
 							</AccentWrapper>
+							{/* SECTION 2 */}
 							<SectionWrapper>
 								<AboutImage>
 									<Img
@@ -218,6 +220,7 @@ const About = props => (
 									}}
 								/>
 							</SectionWrapper>
+							{/* SECTION 2 */}
 
 							<SectionWrapper>
 								<BodyText
@@ -264,16 +267,21 @@ const About = props => (
 									}}
 								/>
 							</AccentWrapper>
-
-							<FinalSection >
+							{/* SECTION 5 */}
+							<FinalSection>
 								<TextCTA>
 									<BodyText
 										dangerouslySetInnerHTML={{
 											__html:
 												data.contentfulAboutPage.section5.childMarkdownRemark
 													.html,
-										}}/>
-									<CTAButton link="getstarted" cta="Let's get started" style={{paddingTop: '1em'}}/>
+										}}
+									/>
+									<CTAButton
+										link="getstarted"
+										cta="Let's get started"
+										style={{ paddingTop: "1em" }}
+									/>
 								</TextCTA>
 								<AboutImage>
 									<Img
