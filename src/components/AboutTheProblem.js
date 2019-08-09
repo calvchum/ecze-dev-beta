@@ -7,6 +7,7 @@ import {
 	SubheaderText,
 	lineWidths,
 	BackgroundColor,
+	media
 } from "../utilities"
 import { Underline } from "./Underline"
 import { CTAButton } from "./Buttons"
@@ -58,7 +59,10 @@ const AboutTheProblem = () => {
 		const [ref, inView] = useInView({
 		threshold: 0.25,
 	})
-	const props = useSpring({ opacity: inView ? 1 : 0 })
+	const props = useSpring({ 
+		opacity: inView ? 1 : 0,
+		transform: inView ? 'translateY(0px)' : 'translateY(50px)'
+	})
   return (
   	<animated.div ref={ref} style={props}>
 			<BackgroundColor color={colors.almostWhite}>

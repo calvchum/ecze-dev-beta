@@ -8,7 +8,7 @@ import { Underline } from "./Underline"
 const ListItem = styled.li`
   ${NavLinksFont}
   list-style: none;
-  margin-bottom: 0em;
+  margin-bottom: 0.3em;
   margin-left: 0em;
   display: block;
   // z-index: 3;
