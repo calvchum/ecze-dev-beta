@@ -42,17 +42,10 @@ const SectionWrapper = styled.div`
 	`}
 `
 
-const Order = styled.div`
-	order: 0;
-	${media.med`
-		order: 2;
-	`}
-`
-
 const backgroundStyles = {
 	backgroundImage: `url(${placeholder})`,
-	height: '100%',
-	width: '100%'
+	height: 'auto',
+	width: '100%',
 }
 
 const AboutTheProblem = () => {
@@ -74,15 +67,13 @@ const AboutTheProblem = () => {
 					<BodyText>An Australian first study, the PEEK STUDY, has finally helped shed light on atopic dermatitis, revealing the often devasting impact it can have on a sufferer’s overall wellbeing and quality of life.
 					</BodyText>
 					<SectionWrapper>
+						<div style={backgroundStyles}></div>
 						<div>
 							<SubheaderText style={{margin: '0px'}}>
 							Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.
 							{" "}
 							</SubheaderText>
 						</div>
-						<Order>
-							<div style={backgroundStyles}></div>
-						</Order>
 					</SectionWrapper>
 					<SectionWrapper>
 						<div>

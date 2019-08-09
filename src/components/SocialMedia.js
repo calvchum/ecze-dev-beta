@@ -32,7 +32,6 @@ const SocialMediaIcons = () => (
   <SocialMedia>
     <a href="􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚https://www.facebook.com/Ecze" target="_blank"><SocMediaIcon src={facebookIcon} alt="FB Logo" /></a>
     <a href="https://www.instagram.com/eczefighter/" target="_blank"><SocMediaIcon src={instagramIcon} alt="INSTA Logo" /></a>
-    <a href="#" target="_blank"><SocMediaIcon src={youtubeIcon} alt="YT Logo" /></a>
   </SocialMedia>
 )
 

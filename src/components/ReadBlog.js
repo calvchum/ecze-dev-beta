@@ -78,7 +78,7 @@ const ReadBlog = () => {
 								size={lineWidths.ctaUnderline}
 								color={colors.secondary}
 							>
-								The Ecze Blog
+								The Ecze Hub
 							</Underline>
 						</CenteredHeaderText>
 						<ReadBlogWrapper>
@@ -91,7 +91,7 @@ const ReadBlog = () => {
 									start your journey towards a happier, healthier, itch-free
 									life.
 								</BodyText>
-								<CTAButton cta="Read the blog" link="blog" />
+								<CTAButton cta="Checkout the Hub" link="blog" />
 							</RightSide>
 						</ReadBlogWrapper>
 					</BackgroundColor>
