@@ -28,7 +28,7 @@ const CTAButtonStyle = styled.button`
 		outline: none;
 	}
 
-	${media.small`
+	${media.med`
 		font-size: ${fontsize.subheader};
 	`}
 `

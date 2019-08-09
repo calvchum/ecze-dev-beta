@@ -16,39 +16,52 @@ import { CenteredHeaderText } from "./KillerPoints"
 import { Underline } from "./Underline"
 import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
+import holistic from "../assets/bt-icons/holistic.svg"
+import community from "../assets/bt-icons/community.svg"
+import excited from "../assets/bt-icons/excited.svg"
+import HeaderSubheader from './HeaderSubheader'
 
 const ReadBlogWrapper = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-	max-width: 720px;
+	max-width: 960px;
 	margin: 0 auto;
-`
-
-const LeftSide = styled.div`
-	margin-bottom: 0px;
-	padding-right: 1em;
-	${media.med`
-		padding-right: 0em;
-		padding-bottom: 1em;
-		max-height: 100%;
-		max-width: 100%;
-	`}
-`
-
-const RightSide = styled.div`
+	padding: 0em 1em;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-end;
-
-	& p:first-child {
-		padding-bottom: 2em;
+	& > * {
+		padding: 1em 0em;
 	}
 
-	& button {
-		margin: 0px;
-	}
 `
+const CenteredBodyText = styled(BodyText)`
+  text-align: center;
+`
+const IconSectionWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-gap: 2em;
+  justify-content: center;
+  align-items: center;
+`
+
+const Icon = styled.img`
+  padding: 1.5em;
+  margin-bottom: 0px;
+  ${media.med`
+    padding: 1em;
+  `}
+`
+
+const IndividualIconWrapper = styled.div`
+  max-width: 200px;
+`
+
+const CTAwrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  paddnig-top: 2em;
+`
+
+						
 
 const ReadBlog = () => {
 	const [ref, inView] = useInView({
@@ -69,31 +82,53 @@ const ReadBlog = () => {
 			`}
 			render={data => (
 				<animated.div ref={ref} style={props}>
-					<BackgroundColor
-						color={colors.almostWhite}
-						style={{ padding: `${paddingDefaults.topBottom} 1em` }}
+					<BackgroundColor 
+					color={colors.almostWhite}
+					style={{padding: `${paddingDefaults.topBottom} 0em`}}
+
 					>
-						<CenteredHeaderText>
-							<Underline
-								size={lineWidths.ctaUnderline}
-								color={colors.secondary}
-							>
-								The Ecze Hub
-							</Underline>
-						</CenteredHeaderText>
 						<ReadBlogWrapper>
-							<LeftSide>
-								<Img fluid={data.contentfulAsset.fluid} />
-							</LeftSide>
-							<RightSide>
-								<BodyText>
-									Come discover the root cause of your eczema flare ups and
-									start your journey towards a happier, healthier, itch-free
-									life.
-								</BodyText>
-								<CTAButton cta="Checkout the Hub" link="blog" />
-							</RightSide>
+							<div>
+								<HeaderSubheader
+									header="Get the tools and support you need to best manage your eczema."
+									subheader="Discover relief for your itchy skin with our recipes, exercises, lifestyle tips and valuable eczema info specifically designed to help people suffering with eczema."
+								/>
+							</div> 
+							<div>
+								<IconSectionWrapper>
+			            <IndividualIconWrapper>
+			              <Icon src={holistic} alt="ECZE Logo" />
+			              <CenteredBodyText>
+			                Exercise
+			              </CenteredBodyText>
+			            </IndividualIconWrapper>
+			            <IndividualIconWrapper>
+			              <Icon src={community} alt="ECZE Logo" />
+			              <CenteredBodyText>
+			                Lifestyle
+			              </CenteredBodyText>
+			            </IndividualIconWrapper>
+			            <IndividualIconWrapper>
+			              <Icon src={excited} alt="ECZE Logo" />
+			              <CenteredBodyText>
+			                Diet
+			              </CenteredBodyText>
+			            </IndividualIconWrapper>  
+
+			            <IndividualIconWrapper>
+			              <Icon src={holistic} alt="ECZE Logo" />
+			              <CenteredBodyText>
+			                Mental Health
+			              </CenteredBodyText>
+			            </IndividualIconWrapper>
+			          </IconSectionWrapper>
+			         </div>
+
+			         	<CTAwrapper>
+									<CTAButton cta="Get onto the Ecze Hub" link="blog" />
+			         	</CTAwrapper>
 						</ReadBlogWrapper>
+
 					</BackgroundColor>
 				</animated.div>
 			)}

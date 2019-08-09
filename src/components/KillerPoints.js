@@ -10,10 +10,9 @@ import {
   media,
   BackgroundColor,
 } from "../utilities"
-import foodIcon from "../assets/icons/pearAnimated3.svg"
-import stressIcon from "../assets/icons/relaxedStarsAnimated.svg"
-import clothesIcon from "../assets/icons/pyjamasAnimated3.svg"
-import environmentIcon from "../assets/icons/earthAnimated.svg"
+import holistic from "../assets/bt-icons/holistic.svg"
+import community from "../assets/bt-icons/community.svg"
+import excited from "../assets/bt-icons/excited.svg"
 import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
 
@@ -27,7 +26,7 @@ export const CenteredHeaderText = styled(HeaderText)`
   text-align: center;
   margin-bottom: 1em;
 `
-const IconSectionWrapper = styled.div`
+export const IconSectionWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   grid-gap: 2em;
@@ -35,14 +34,14 @@ const IconSectionWrapper = styled.div`
   align-items: center;
 `
 
-const Icon = styled.img`
+export const Icon = styled.img`
   padding: 1.5em;
   ${media.med`
     padding: 1em;
   `}
 `
 
-const IndividualIconWrapper = styled.div`
+export const IndividualIconWrapper = styled.div`
   max-width: 300px;
   &:nth-child(2) {
     text-align: justified;
@@ -66,21 +65,21 @@ const KillerPoints = () => {
           </CenteredHeaderText>
           <IconSectionWrapper>
             <IndividualIconWrapper>
-              <Icon src={foodIcon} alt="ECZE Logo" />
+              <Icon src={holistic} alt="ECZE Logo" />
               <BodyText>
                 We provide simple and holistic remedies to help you overcome
                 your eczema.
               </BodyText>
             </IndividualIconWrapper>
             <IndividualIconWrapper>
-              <Icon src={stressIcon} alt="ECZE Logo" />
+              <Icon src={community} alt="ECZE Logo" />
               <BodyText>
                 We’re building a community of like-minded eczema fighters to
                 share the ups and downs.
               </BodyText>
             </IndividualIconWrapper>
             <IndividualIconWrapper>
-              <Icon src={environmentIcon} alt="ECZE Logo" />
+              <Icon src={excited} alt="ECZE Logo" />
               <BodyText>
                 We’re also busy behind the scenes creating eczema-friendly
                 products that will leave your skin feeling super comfortable.
