@@ -49,46 +49,39 @@ export const IndividualIconWrapper = styled.div`
 `
 
 const KillerPoints = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.25,
-  })
-  const props = useSpring({ opacity: inView ? 1 : 0 })
-
   return (
-    <animated.div ref={ref} style={props}>
-      <BackgroundColor color={colors.white}>
-        <KillerPointsWrapper>
-          <CenteredHeaderText>
-            <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-              What we do
-            </Underline>
-          </CenteredHeaderText>
-          <IconSectionWrapper>
-            <IndividualIconWrapper>
-              <Icon src={holistic} alt="ECZE Logo" />
-              <BodyText>
-                We provide simple and holistic remedies to help you overcome
-                your eczema.
-              </BodyText>
-            </IndividualIconWrapper>
-            <IndividualIconWrapper>
-              <Icon src={community} alt="ECZE Logo" />
-              <BodyText>
-                We’re building a community of like-minded eczema fighters to
-                share the ups and downs.
-              </BodyText>
-            </IndividualIconWrapper>
-            <IndividualIconWrapper>
-              <Icon src={excited} alt="ECZE Logo" />
-              <BodyText>
-                We’re also busy behind the scenes creating eczema-friendly
-                products that will leave your skin feeling super comfortable.
-              </BodyText>
-            </IndividualIconWrapper>
-          </IconSectionWrapper>
-        </KillerPointsWrapper>
-      </BackgroundColor>
-    </animated.div>
+    <BackgroundColor color={colors.white}>
+      <KillerPointsWrapper>
+        <CenteredHeaderText>
+          <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
+            What we do
+          </Underline>
+        </CenteredHeaderText>
+        <IconSectionWrapper>
+          <IndividualIconWrapper>
+            <Icon src={holistic} alt="ECZE Logo" />
+            <BodyText>
+              We provide simple and holistic remedies to help you overcome your
+              eczema.
+            </BodyText>
+          </IndividualIconWrapper>
+          <IndividualIconWrapper>
+            <Icon src={community} alt="ECZE Logo" />
+            <BodyText>
+              We’re building a community of like-minded eczema fighters to share
+              the ups and downs.
+            </BodyText>
+          </IndividualIconWrapper>
+          <IndividualIconWrapper>
+            <Icon src={excited} alt="ECZE Logo" />
+            <BodyText>
+              We’re also busy behind the scenes creating eczema-friendly
+              products that will leave your skin feeling super comfortable.
+            </BodyText>
+          </IndividualIconWrapper>
+        </IconSectionWrapper>
+      </KillerPointsWrapper>
+    </BackgroundColor>
   )
 }
 
