@@ -7,7 +7,7 @@ export const GetStartedWrapper = styled.div`
 `;
 
 export const HeaderSection = styled.div`
-	padding: 5em 1em;
+	padding: 8em 1em;
 	max-width: 960px;
 	margin: 2px auto;
 	color: ${colors.almostWhite};
