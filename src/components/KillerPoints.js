@@ -13,7 +13,6 @@ import {
 import holistic from "../assets/bt-icons/holistic.svg"
 import community from "../assets/bt-icons/community.svg"
 import excited from "../assets/bt-icons/excited.svg"
-import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
 
 const KillerPointsWrapper = styled.div`

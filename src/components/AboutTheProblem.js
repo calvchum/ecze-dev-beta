@@ -12,7 +12,6 @@ import {
 import { Underline } from "./Underline"
 import { CTAButton } from "./Buttons"
 import { HeroBannerWrapper, FormWrapper, HeroBannerText } from "./HeroBanner"
-import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
 import placeholder from "../assets/placeholders/baby.svg"
 
