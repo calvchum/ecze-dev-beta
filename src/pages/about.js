@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { Underline } from "../components/Underline"
+import { CTAButton } from "../components/Buttons"
 import {
 	HeaderText,
 	BodyText,
@@ -22,6 +23,9 @@ const AboutContentWrapper = styled.div`
 	max-width: 960px;
 	margin: 0 auto;
 
+	&:last-child {
+		margin-bottom: 2em;
+	}
 	${media.med`
 		padding: 0em 1em;
 	`}
@@ -39,11 +43,16 @@ const SectionWrapper = styled.div`
 	`}
 `
 
+const FinalSection = styled(SectionWrapper)`
+	${media.med`
+		& div:last-child {
+			display: none;
+		}
+	`}
+`
+
 const AboutImage = styled.div`
 	margin-bottom: 0em;
-	// background-size: cover;
-	// background-repeat: no-repeat;
-	// background-position: 50% 50%;
 	${media.med`
 		order: 2;
 	`}
@@ -58,7 +67,7 @@ const AccentWrapper = styled.div`
 	background: white;
 	padding: 3em;
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-
+	margin: 2em 0em;
 	${media.med`
 		padding: 2em;
 	`}
@@ -66,6 +75,12 @@ const AccentWrapper = styled.div`
 const BodyTextItalic = styled(BodyText)`
 	font-style: italic;
 	text-align: center;
+`
+const TextCTA = styled.div`
+	& button:last-child {
+		padding-top: 1em;
+		margin: 0px;
+	}
 `
 
 const About = props => (
@@ -250,14 +265,16 @@ const About = props => (
 								/>
 							</AccentWrapper>
 
-							<SectionWrapper>
-								<BodyText
-									dangerouslySetInnerHTML={{
-										__html:
-											data.contentfulAboutPage.section5.childMarkdownRemark
-												.html,
-									}}
-								/>
+							<FinalSection >
+								<TextCTA>
+									<BodyText
+										dangerouslySetInnerHTML={{
+											__html:
+												data.contentfulAboutPage.section5.childMarkdownRemark
+													.html,
+										}}/>
+									<CTAButton link="getstarted" cta="Let's get started" style={{paddingTop: '1em'}}/>
+								</TextCTA>
 								<AboutImage>
 									<Img
 										fluid={data.contentfulAboutPage.sectionImage5.fluid}
@@ -267,7 +284,7 @@ const About = props => (
 										{data.contentfulAboutPage.sectionImage5.description}
 									</BodyTextItalic>
 								</AboutImage>
-							</SectionWrapper>
+							</FinalSection>
 						</AboutContentWrapper>
 					</Layout>
 				</BackgroundColor>
