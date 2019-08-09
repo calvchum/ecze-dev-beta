@@ -1,11 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import { colors, HeaderText, media, BodyText, SubheaderText, lineWidths, BackgroundColor } from '../utilities';
-import { Underline } from './Underline';
-import { CTAButton } from './Buttons'
-import { HeroBannerWrapper, FormWrapper, HeroBannerText } from './HeroBanner'
+import React from "react"
+import styled from "styled-components"
+import {
+	colors,
+	HeaderText,
+	BodyText,
+	SubheaderText,
+	lineWidths,
+	BackgroundColor,
+} from "../utilities"
+import { Underline } from "./Underline"
+import { CTAButton } from "./Buttons"
+import { HeroBannerWrapper, FormWrapper, HeroBannerText } from "./HeroBanner"
+import { useInView } from "react-intersection-observer"
+import { useSpring, animated } from "react-spring"
 import placeholder from "../assets/placeholders/baby.svg"
-
 
 const ContentWrapper = styled.div`
 	display: grid;
@@ -47,34 +55,47 @@ const backgroundStyles = {
 }
 
 const AboutTheProblem = () => {
+		const [ref, inView] = useInView({
+		threshold: 0.25,
+	})
+	const props = useSpring({ opacity: inView ? 1 : 0 })
   return (
-		<BackgroundColor color={colors.almostWhite}>
-			<ContentWrapper>
-				<HeaderText> If you are feeling defeated with itchy red, scaly dry skin, 
-			you’re not alone.</HeaderText>
-				<BodyText>An Australian first study, the PEEK STUDY, has finally helped shed light on atopic dermatitis, revealing the often devasting impact it can have on a sufferer’s overall wellbeing and quality of life.
-				</BodyText>
-				<SectionWrapper>
-					<div>
-						<SubheaderText style={{margin: '0px'}}>Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.</SubheaderText>
-					</div>
-					<Order>
+  	<animated.div ref={ref} style={props}>
+			<BackgroundColor color={colors.almostWhite}>
+				<ContentWrapper>
+					<HeaderText> 
+					{" "}
+					If you are feeling defeated with itchy red, scaly dry skin, 
+				you’re not alone.</HeaderText>
+					<BodyText>An Australian first study, the PEEK STUDY, has finally helped shed light on atopic dermatitis, revealing the often devasting impact it can have on a sufferer’s overall wellbeing and quality of life.
+					</BodyText>
+					<SectionWrapper>
+						<div>
+							<SubheaderText style={{margin: '0px'}}>
+							Importantly it was found that more than half of all participants living with severe (53%) and very severe AD (54%) said doctors tell them there is nothing we can do.
+							{" "}
+							</SubheaderText>
+						</div>
+						<Order>
+							<div style={backgroundStyles}></div>
+						</Order>
+					</SectionWrapper>
+					<SectionWrapper>
+						<div>
+							<BodyText style={{paddingBottom: '0.5em'}}>Luckily, here at ECZE, we don’t agree with this. In fact, we think there’s plenty that can be done to help you or your loved one’s situation. </BodyText>
+							<BodyText>Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema{" "}</BodyText>
+						</div>
 						<div style={backgroundStyles}></div>
-					</Order>
-				</SectionWrapper>
-				<SectionWrapper>
-					<div>
-						<BodyText style={{paddingBottom: '0.5em'}}>Luckily, here at ECZE, we don’t agree with this. In fact, we think there’s plenty that can be done to help you or your loved one’s situation. </BodyText>
-						<BodyText>Our aim is to provide you a safe place to explore holistic remedies to help you overcome your eczema</BodyText>
-					</div>
-					<div style={backgroundStyles}></div>
-				</SectionWrapper>
-				<FormWrapper>
-					<CTAButton link="getstarted" cta="Let's get started" />
-				</FormWrapper>
-			</ContentWrapper>
-		</BackgroundColor>
+					</SectionWrapper>
+					<FormWrapper>
+						<CTAButton link="getstarted" cta="Let's get started" />
+					</FormWrapper>
+				</ContentWrapper>
+			</BackgroundColor>
+		</animated.div>
+
   );
 };
 
-export default AboutTheProblem;
+
+export default AboutTheProblem

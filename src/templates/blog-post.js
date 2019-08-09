@@ -31,7 +31,7 @@ const BlogContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 600px;
   text-align: justify;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
 `
 
 const HeroImage = styled(Img)`
@@ -68,7 +68,7 @@ export default class BlogPostTemplate extends Component {
     })
     return (
       <BackgroundColor color={colors.almostWhite}>
-        <Layout>
+        <Layout props={this.props}>
           <SEO title={`${post.title}`} />
           <OverFlowHidden>
             <HeroImage fluid={post.heroImage.fluid} />
