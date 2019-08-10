@@ -19,6 +19,7 @@ import {
 } from "../utilities"
 import eczeGrey from "../assets/logo/grey.svg"
 import backgroundGreen from "../assets/backgrounds/pattern-green.svg"
+import Fade from "react-reveal/Fade"
 
 const WelcomeMat = styled(animated.div)`
 	position: fixed;
@@ -62,9 +63,11 @@ const IndexPage = props => {
 					color={colors.white}
 					textColor={colors.almostWhite}
 				/>
-				<AboutTheProblem />
-				<KillerPoints />
-				<ReadBlog />
+				<Fade>
+					<AboutTheProblem />
+					<KillerPoints />
+					<ReadBlog />
+				</Fade>
 			</div>
 		</Layout>
 	)

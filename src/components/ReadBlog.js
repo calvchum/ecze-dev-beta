@@ -14,12 +14,11 @@ import { CTAButton } from "./Buttons"
 import baby from "../assets/placeholders/baby.svg"
 import { CenteredHeaderText } from "./KillerPoints"
 import { Underline } from "./Underline"
-import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
 import holistic from "../assets/bt-icons/holistic.svg"
 import community from "../assets/bt-icons/community.svg"
 import excited from "../assets/bt-icons/excited.svg"
-import HeaderSubheader from './HeaderSubheader'
+import HeaderSubheader from "./HeaderSubheader"
 
 const ReadBlogWrapper = styled.div`
 	max-width: 960px;
@@ -30,45 +29,37 @@ const ReadBlogWrapper = styled.div`
 	& > * {
 		padding: 1em 0em;
 	}
-
 `
 const CenteredBodyText = styled(BodyText)`
-  text-align: center;
+	text-align: center;
 `
 const IconSectionWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-  grid-gap: 2em;
-  justify-content: center;
-  align-items: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	grid-gap: 2em;
+	justify-content: center;
+	align-items: center;
 `
 
 const Icon = styled.img`
-  padding: 1.5em;
-  margin-bottom: 0px;
-  ${media.med`
+	padding: 1.5em;
+	margin-bottom: 0px;
+	${media.med`
     padding: 1em;
   `}
 `
 
 const IndividualIconWrapper = styled.div`
-  max-width: 200px;
+	max-width: 200px;
 `
 
 const CTAwrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  paddnig-top: 2em;
+	display: flex;
+	justify-content: flex-end;
+	paddnig-top: 2em;
 `
 
-						
-
 const ReadBlog = () => {
-	const [ref, inView] = useInView({
-		threshold: 0.25,
-	})
-	const props = useSpring({ opacity: inView ? 1 : 0 })
-
 	return (
 		<StaticQuery
 			query={graphql`
@@ -81,56 +72,44 @@ const ReadBlog = () => {
 				}
 			`}
 			render={data => (
-				<animated.div ref={ref} style={props}>
-					<BackgroundColor 
+				<BackgroundColor
 					color={colors.almostWhite}
-					style={{padding: `${paddingDefaults.topBottom} 0em`}}
+					style={{ padding: `${paddingDefaults.topBottom} 0em` }}
+				>
+					<ReadBlogWrapper>
+						<div>
+							<HeaderSubheader
+								header="Get the tools and support you need to best manage your eczema."
+								subheader="Discover relief for your itchy skin with our recipes, exercises, lifestyle tips and valuable eczema info specifically designed to help people suffering with eczema."
+							/>
+						</div>
+						<div>
+							<IconSectionWrapper>
+								<IndividualIconWrapper>
+									<Icon src={holistic} alt="ECZE Logo" />
+									<CenteredBodyText>Exercise</CenteredBodyText>
+								</IndividualIconWrapper>
+								<IndividualIconWrapper>
+									<Icon src={community} alt="ECZE Logo" />
+									<CenteredBodyText>Lifestyle</CenteredBodyText>
+								</IndividualIconWrapper>
+								<IndividualIconWrapper>
+									<Icon src={excited} alt="ECZE Logo" />
+									<CenteredBodyText>Diet</CenteredBodyText>
+								</IndividualIconWrapper>
 
-					>
-						<ReadBlogWrapper>
-							<div>
-								<HeaderSubheader
-									header="Get the tools and support you need to best manage your eczema."
-									subheader="Discover relief for your itchy skin with our recipes, exercises, lifestyle tips and valuable eczema info specifically designed to help people suffering with eczema."
-								/>
-							</div> 
-							<div>
-								<IconSectionWrapper>
-			            <IndividualIconWrapper>
-			              <Icon src={holistic} alt="ECZE Logo" />
-			              <CenteredBodyText>
-			                Exercise
-			              </CenteredBodyText>
-			            </IndividualIconWrapper>
-			            <IndividualIconWrapper>
-			              <Icon src={community} alt="ECZE Logo" />
-			              <CenteredBodyText>
-			                Lifestyle
-			              </CenteredBodyText>
-			            </IndividualIconWrapper>
-			            <IndividualIconWrapper>
-			              <Icon src={excited} alt="ECZE Logo" />
-			              <CenteredBodyText>
-			                Diet
-			              </CenteredBodyText>
-			            </IndividualIconWrapper>  
+								<IndividualIconWrapper>
+									<Icon src={holistic} alt="ECZE Logo" />
+									<CenteredBodyText>Mental Health</CenteredBodyText>
+								</IndividualIconWrapper>
+							</IconSectionWrapper>
+						</div>
 
-			            <IndividualIconWrapper>
-			              <Icon src={holistic} alt="ECZE Logo" />
-			              <CenteredBodyText>
-			                Mental Health
-			              </CenteredBodyText>
-			            </IndividualIconWrapper>
-			          </IconSectionWrapper>
-			         </div>
-
-			         	<CTAwrapper>
-									<CTAButton cta="Get onto the Ecze Hub" link="blog" />
-			         	</CTAwrapper>
-						</ReadBlogWrapper>
-
-					</BackgroundColor>
-				</animated.div>
+						<CTAwrapper>
+							<CTAButton cta="Get onto the Ecze Hub" link="blog" />
+						</CTAwrapper>
+					</ReadBlogWrapper>
+				</BackgroundColor>
 			)}
 		/>
 	)
