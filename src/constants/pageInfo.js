@@ -8,8 +8,8 @@ export const pageData = [
     link: "/faq/",
   },
   {
-    title: "Blog",
-    link: "/blog/",
+    title: "The ECZE Hub",
+    link: "/hub/",
   },
   {
     title: "Get Started",

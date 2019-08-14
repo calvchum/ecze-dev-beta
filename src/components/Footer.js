@@ -78,8 +78,8 @@ const Footer = ({ path }) => (
           </BodyText>
         </a>
         <BodyText>
-          PO BOX 715, Brentford Square, <br />
-          Victoria, Melbourne 3131
+          PO BOX 999, Placeholder Address, <br />
+          Victoria, Melbourne 3000
         </BodyText>
       </ContactEcze>
       <SocialMediaIcons />
