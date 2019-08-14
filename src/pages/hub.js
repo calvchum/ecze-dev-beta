@@ -21,7 +21,7 @@ import {
   DisplayNone,
 } from "../components/BlogPage"
 
-export default class blog extends Component {
+export default class hub extends Component {
   constructor() {
     super()
     this.state = {
