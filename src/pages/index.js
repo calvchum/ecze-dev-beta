@@ -8,7 +8,7 @@ import KillerPoints from "../components/KillerPoints"
 import { CTAButton } from "../components/Buttons"
 import HeaderSubheader from "../components/HeaderSubheader"
 import ReadBlog from "../components/ReadBlog"
-import AboutTheProblem from "../components/AboutTheProblem"
+import {AboutTheProblem} from "../components/AboutTheProblem"
 import { Underline } from "../components/Underline"
 import {
 	colors,
