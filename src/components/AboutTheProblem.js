@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import {
 	colors,
 	HeaderText,
@@ -47,50 +49,79 @@ const backgroundStyles = {
 	width: "100%",
 }
 
-const AboutTheProblem = () => {
-	return (
-		<BackgroundColor color={colors.almostWhite}>
-			<ContentWrapper>
-				<HeaderText>
-					{" "}
-					If you are feeling defeated with itchy red, scaly dry skin, you’re not
-					alone.
-				</HeaderText>
-				<BodyText>
-					An Australian first study, the PEEK STUDY, has finally helped shed
-					light on atopic dermatitis, revealing the often devasting impact it
-					can have on a sufferer’s overall wellbeing and quality of life.
-				</BodyText>
-				<SectionWrapper>
-					<div style={backgroundStyles}></div>
-					<div>
-						<SubheaderText style={{ margin: "0px" }}>
-							Importantly it was found that more than half of all participants
-							living with severe (53%) and very severe AD (54%) said doctors
-							tell them there is nothing we can do.{" "}
-						</SubheaderText>
-					</div>
-				</SectionWrapper>
-				<SectionWrapper>
-					<div>
-						<BodyText style={{ paddingBottom: "0.5em" }}>
-							Luckily, here at ECZE, we don’t agree with this. In fact, we think
-							there’s plenty that can be done to help you or your loved one’s
-							situation.{" "}
-						</BodyText>
-						<BodyText>
-							Our aim is to provide you a safe place to explore holistic
-							remedies to help you overcome your eczema{" "}
-						</BodyText>
-					</div>
-					<div style={backgroundStyles}></div>
-				</SectionWrapper>
-				<FormWrapper>
-					<CTAButton link="getstarted" cta="Let's get started" />
-				</FormWrapper>
-			</ContentWrapper>
-		</BackgroundColor>
-	)
-}
+const AboutTheProblem = () => (
+	<StaticQuery
+		query={graphql`
+			query HomePageImagesQuery {
+				allContentfulAsset(
+					filter: { title: { in: ["homePage-1", "homePage-2"] } }
+				) {
+					edges {
+						node {
+							title
+							fluid(maxWidth: 500) {
+								...GatsbyContentfulFluid
+							}
+							file {
+								url
+							}
+						}
+					}
+				}
+			}
+		`}
+		render={data => (
+			<BackgroundColor color={colors.almostWhite}>
+				<ContentWrapper>
+					{console.log(data.allContentfulAsset.edges[0].node.title)}
+					{console.log(data.allContentfulAsset.edges[1].node.title)}
+					<HeaderText>
+						If you are feeling defeated with itchy red, scaly dry skin, you’re
+						not alone.
+					</HeaderText>
+					<BodyText>
+						An Australian first study, the PEEK STUDY, has finally helped shed
+						light on atopic dermatitis, revealing the often devasting impact it
+						can have on a sufferer’s overall wellbeing and quality of life.
+					</BodyText>
+					<SectionWrapper>
+						<img src={data.allContentfulAsset.edges[0].node.file.url} alt="" />
+						<div>
+							<SubheaderText style={{ margin: "0px" }}>
+								Importantly it was found that more than half of all participants
+								living with severe (53%) and very severe AD (54%) said doctors
+								tell them there is nothing we can do.{" "}
+							</SubheaderText>
+						</div>
+					</SectionWrapper>
+					<SectionWrapper>
+						<div>
+							<BodyText style={{ paddingBottom: "0.5em" }}>
+								Luckily, here at ECZE, we don’t agree with this. In fact, we
+								think there’s plenty that can be done to help you or your loved
+								one’s situation.{" "}
+							</BodyText>
+							<BodyText>
+								Our aim is to provide you a safe place to explore holistic
+								remedies to help you overcome your eczema{" "}
+							</BodyText>
+						</div>
+						<img
+							styl={{ height: "auto", width: "100%" }}
+							src={data.allContentfulAsset.edges[1].node.file.url}
+							alt=""
+						/>
+					</SectionWrapper>
+					<FormWrapper>
+						<CTAButton link="getstarted" cta="Let's get started" />
+					</FormWrapper>
+				</ContentWrapper>
+			</BackgroundColor>
+		)}
+	/>
+)
 
 export default AboutTheProblem
+
+// return (
+// )
