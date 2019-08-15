@@ -3,14 +3,16 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
+import styled from "styled-components"
 import * as data from "../constants/getStartedPosts"
 import {
   HeaderText,
   SubheaderText,
   colors,
+  media,
   lineWidths,
   BackgroundColor,
-  BackgroundImage
+  BackgroundImage,
 } from "../utilities"
 import {
   GetStartedWrapper,
@@ -18,6 +20,9 @@ import {
   BodySection,
 } from "../components/GetStarted"
 import { Underline } from "../components/Underline"
+import Learning from "../assets/icons/Learn.svg"
+import Engaging from "../assets/icons/Engage.svg"
+import Developing from "../assets/icons/Develop.svg"
 
 // the text on this page should be managed by Contentful and not hard coded
 export default class GetStarted extends Component {
@@ -30,6 +35,11 @@ export default class GetStarted extends Component {
 
   componentDidMount() {
     let getStartedCategories = []
+    const IconArray = [
+      { title: "Learning", icon: Learning },
+      { title: "Developing", icon: Developing },
+      { title: "Engaging", icon: Engaging },
+    ]
     data.postData.map(object => {
       let objectPosts = []
       object.slugs.map(slug => {
@@ -41,6 +51,11 @@ export default class GetStarted extends Component {
         object.posts = objectPosts
         console.log(object)
       })
+      IconArray.map((iconObject, i) => {
+        if (iconObject.title === object.category) {
+          object.icon = iconObject.icon
+        }
+      })
       getStartedCategories.push(object)
     })
     this.setState({
@@ -49,22 +64,36 @@ export default class GetStarted extends Component {
   }
 
   render() {
+    const Icon = styled.img`
+      width: 1.5em;
+      padding: 1.5em;
+      ${media.med`
+      padding: 1em;
+      `}
+    `
+
     return (
       <Layout props={this.props}>
         <SEO title="Get started" />
         <GetStartedWrapper>
           <BackgroundImage>
             <HeaderSection>
-               <HeaderText>
-                  <Underline size={lineWidths.ctaUnderline} color={colors.secondary}>
-                    Getting Started
-                  </Underline>
-                </HeaderText>
+              <HeaderText>
+                <Underline
+                  size={lineWidths.ctaUnderline}
+                  color={colors.secondary}
+                >
+                  Getting Started
+                </Underline>
+              </HeaderText>
               <SubheaderText style={{ fontWeight: "400" }}>
-                If you have eczema, the first step is to LEARN about eczema
+                Welcome to the start of your journey! If you're here, you or
+                someone you love is probably suffering from eczema and you're
+                here to find out more about it. <br></br>
+                <br></br>We hope to make this as easy as possible for you with
+                our three-step process to kick start your eczema healig journey:
               </SubheaderText>
             </HeaderSection>
-            
           </BackgroundImage>
           <BackgroundColor color={colors.almostWhite}>
             <BodySection>
@@ -77,6 +106,7 @@ export default class GetStarted extends Component {
                     key={i}
                     index={i}
                     postLimit={3}
+                    icon={object.icon}
                   />
                 )
               })}

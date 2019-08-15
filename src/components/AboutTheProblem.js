@@ -73,8 +73,6 @@ const AboutTheProblem = () => (
 		render={data => (
 			<BackgroundColor color={colors.almostWhite}>
 				<ContentWrapper>
-					{console.log(data.allContentfulAsset.edges[0].node.title)}
-					{console.log(data.allContentfulAsset.edges[1].node.title)}
 					<HeaderText>
 						If you are feeling defeated with itchy red, scaly dry skin, you’re
 						not alone.
@@ -106,11 +104,7 @@ const AboutTheProblem = () => (
 								remedies to help you overcome your eczema{" "}
 							</BodyText>
 						</div>
-						<img
-							styl={{ height: "auto", width: "100%" }}
-							src={data.allContentfulAsset.edges[1].node.file.url}
-							alt=""
-						/>
+						<img src={data.allContentfulAsset.edges[1].node.file.url} alt="" />
 					</SectionWrapper>
 					<FormWrapper>
 						<CTAButton link="getstarted" cta="Let's get started" />
