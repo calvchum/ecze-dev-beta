@@ -17,7 +17,7 @@ import {
 	BodyText,
 	lineWidths,
 } from "../utilities"
-import eczeGrey from "../assets/logo/grey.svg"
+import eczeGrey from "../assets/logo/ecze-logo-transparent.svg"
 import backgroundGreen from "../assets/backgrounds/pattern-green.svg"
 import Fade from "react-reveal/Fade"
 
