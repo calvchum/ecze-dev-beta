@@ -64,16 +64,24 @@ class BlogSection extends Component {
         >
           {item => ({ transform, opacity }) => (
             <animated.div style={{ transform, opacity }}>
+              {this.props.icon ? (
+                <img
+                  style={{ width: "100px" }}
+                  src={this.props.icon}
+                  alt={`${this.props.title} icon`}
+                />
+              ) : null}
               <GridSectionTitleWrapper>
-                <SubheaderText style={{ fontWeight: 400, lineHeight: '180%' }}>
+                <SubheaderText style={{ fontWeight: 400, lineHeight: "180%" }}>
                   <Underline
                     size={lineWidths.ctaUnderline}
                     color={colors.secondary}
                     style={{ fontWeight: 500 }}
                   >
                     {this.props.title}
-                   </Underline>
-                  <span> </span>{this.props.subtitle ? this.props.subtitle : null}
+                  </Underline>
+                  <span> </span>
+                  {this.props.subtitle ? this.props.subtitle : null}
                 </SubheaderText>
               </GridSectionTitleWrapper>
             </animated.div>
