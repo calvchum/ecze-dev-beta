@@ -37,6 +37,14 @@ const SeeMoreWrapper = styled.div`
   }
 `
 
+const IconAndTitle = styled(animated.div)`
+  display: flex;
+  align-items: center;
+  & img:first-child {
+    padding-right: 16px;
+  }
+` 
+
 /* eslint-disable */
 class BlogSection extends Component {
   render() {
@@ -63,7 +71,7 @@ class BlogSection extends Component {
           to={{ transform: "translate3d(0,0,0)", opacity: 1 }}
         >
           {item => ({ transform, opacity }) => (
-            <animated.div style={{ transform, opacity }}>
+            <IconAndTitle style={{ transform, opacity }}>
               {this.props.icon ? (
                 <img
                   style={{ width: "100px" }}
@@ -84,7 +92,7 @@ class BlogSection extends Component {
                   {this.props.subtitle ? this.props.subtitle : null}
                 </SubheaderText>
               </GridSectionTitleWrapper>
-            </animated.div>
+            </IconAndTitle>
           )}
         </Trail>
 

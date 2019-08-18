@@ -64,14 +64,6 @@ export default class GetStarted extends Component {
   }
 
   render() {
-    const Icon = styled.img`
-      width: 1.5em;
-      padding: 1.5em;
-      ${media.med`
-      padding: 1em;
-      `}
-    `
-
     return (
       <Layout props={this.props}>
         <SEO title="Get started" />
