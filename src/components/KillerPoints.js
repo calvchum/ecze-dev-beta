@@ -13,7 +13,6 @@ import {
 import holistic from "../assets/bt-icons/holistic.svg"
 import community from "../assets/bt-icons/community.svg"
 import excited from "../assets/bt-icons/excited.svg"
-import { useSpring, animated } from "react-spring"
 
 const KillerPointsWrapper = styled.div`
   max-width: 960px;

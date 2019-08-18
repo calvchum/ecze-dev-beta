@@ -9,7 +9,6 @@ import {
   BackgroundColor,
 } from "../utilities"
 import SocialMediaIcons from "./SocialMedia"
-import MailChimpForm from "./MailchimpForm"
 
 const FooterWrapper = styled.section`
   display: grid;

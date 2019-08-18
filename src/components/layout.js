@@ -23,7 +23,7 @@ const Layout = ({ children, props }) => (
         <div>
           <main>{children}</main>
         </div>
-        {props.path != "/thankyou/" ? <SignUpForm /> : null}
+        {props.path !== "/thankyou/" ? <SignUpForm /> : null}
         <Footer path={props.path} />
       </>
     )}

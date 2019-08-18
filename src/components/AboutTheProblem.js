@@ -1,21 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import {
 	colors,
 	HeaderText,
 	BodyText,
 	SubheaderText,
-	lineWidths,
 	BackgroundColor,
 	media,
 } from "../utilities"
-import { Underline } from "./Underline"
 import { CTAButton } from "./Buttons"
-import { HeroBannerWrapper, FormWrapper, HeroBannerText } from "./HeroBanner"
-import { useSpring, animated } from "react-spring"
-import placeholder from "../assets/placeholders/baby.svg"
+import { FormWrapper } from "./HeroBanner"
 
 const ContentWrapper = styled.div`
 	display: grid;
@@ -33,21 +28,24 @@ const SectionWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, minmax(340px, 1fr));
 	grid-gap: 1em;
-	padding-top: 2em;
-	& img {
-		margin-bottom: 0px;
-	}
+	padding-top: 54px;
+	align-items: center;
+	
 	${media.med`
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, 1fr);
 	`}
 `
+const IconWrapper = styled.div`
+	background-repeat: no-repeat;
+  background-size: auto;
+  min-height: 250px;
+  background-position: center; 
 
-const backgroundStyles = {
-	backgroundImage: `url(${placeholder})`,
-	height: "auto",
-	width: "100%",
-}
+  ${media.med`
+		order: -1;
+  `}
+`
 
 const AboutTheProblem = () => (
 	<StaticQuery
@@ -82,8 +80,8 @@ const AboutTheProblem = () => (
 						light on atopic dermatitis, revealing the often devasting impact it
 						can have on a sufferer’s overall wellbeing and quality of life.
 					</BodyText>
-					<SectionWrapper>
-						<img src={data.allContentfulAsset.edges[0].node.file.url} alt="" />
+					<SectionWrapper >
+						<IconWrapper style={{backgroundImage: `url(${data.allContentfulAsset.edges[0].node.file.url})`}} />
 						<div>
 							<SubheaderText style={{ margin: "0px" }}>
 								Importantly it was found that more than half of all participants
@@ -94,17 +92,17 @@ const AboutTheProblem = () => (
 					</SectionWrapper>
 					<SectionWrapper>
 						<div>
-							<BodyText style={{ paddingBottom: "0.5em" }}>
+							<SubheaderText style={{ paddingBottom: "0.5em" }}>
 								Luckily, here at ECZE, we don’t agree with this. In fact, we
 								think there’s plenty that can be done to help you or your loved
 								one’s situation.{" "}
-							</BodyText>
-							<BodyText>
+							</SubheaderText>
+							<SubheaderText>
 								Our aim is to provide you a safe place to explore holistic
 								remedies to help you overcome your eczema{" "}
-							</BodyText>
+							</SubheaderText>
 						</div>
-						<img src={data.allContentfulAsset.edges[1].node.file.url} alt="" />
+						<IconWrapper style={{backgroundImage: `url(${data.allContentfulAsset.edges[1].node.file.url})`}} />
 					</SectionWrapper>
 					<FormWrapper>
 						<CTAButton link="getstarted" cta="Let's get started" />
@@ -117,5 +115,3 @@ const AboutTheProblem = () => (
 
 export default AboutTheProblem
 
-// return (
-// )

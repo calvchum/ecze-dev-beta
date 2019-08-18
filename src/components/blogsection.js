@@ -11,7 +11,7 @@ const ArticleGrid = styled(animated.div)`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 8px;
   max-width: 960px;
-  padding-bottom: 3em;
+  // padding-bottom: 3em;
   // padding-right: 1em
   ${media.med`
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -22,10 +22,6 @@ const ArticleGrid = styled(animated.div)`
     margin: 0 auto;
   `}
 `
-const GridSectionTitleWrapper = styled(animated.div)`
-  padding: 0em 0em 1em 0em;
-`
-
 const SeeMoreWrapper = styled.div`
   & button {
     padding: 0.8em;
@@ -36,6 +32,16 @@ const SeeMoreWrapper = styled.div`
     }
   }
 `
+const IconAndTitle = styled(animated.div)`
+  display: flex;
+  align-items: center;
+  & img:first-child {
+    padding-right: 16px;
+    margin-bottom: 0px;
+  }
+
+  padding: 40px 0px;
+` 
 
 /* eslint-disable */
 class BlogSection extends Component {
@@ -63,28 +69,28 @@ class BlogSection extends Component {
           to={{ transform: "translate3d(0,0,0)", opacity: 1 }}
         >
           {item => ({ transform, opacity }) => (
-            <animated.div style={{ transform, opacity }}>
+            <IconAndTitle style={{ transform, opacity }}>
               {this.props.icon ? (
-                <img
-                  style={{ width: "100px" }}
-                  src={this.props.icon}
-                  alt={`${this.props.title} icon`}
-                />
-              ) : null}
-              <GridSectionTitleWrapper>
-                <SubheaderText style={{ fontWeight: 400, lineHeight: "180%" }}>
-                  <Underline
-                    size={lineWidths.ctaUnderline}
-                    color={colors.secondary}
-                    style={{ fontWeight: 500 }}
-                  >
-                    {this.props.title}
-                  </Underline>
-                  <span> </span>
-                  {this.props.subtitle ? this.props.subtitle : null}
-                </SubheaderText>
-              </GridSectionTitleWrapper>
-            </animated.div>
+              <img
+                style={{ width: "100px" }}
+                src={this.props.icon}
+                alt={`${this.props.title} icon`}
+              />
+            ) : null}
+              <SubheaderText style={{ fontWeight: 400, lineHeight: "180%" }}>
+                <Underline
+                  size={lineWidths.ctaUnderline}
+                  color={colors.secondary}
+                  style={{ fontWeight: 500 }}
+                >
+                  {this.props.title}
+                </Underline>
+
+              {/*This span below exists so there is a space between the underlined word and the following sentence*/}
+                <span> </span>
+                {this.props.subtitle ? this.props.subtitle : null}
+              </SubheaderText>
+            </IconAndTitle>
           )}
         </Trail>
 

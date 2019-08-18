@@ -1,17 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { Underline } from './Underline'
-import { lineWidths, colors, BodyText, HeaderText, paddingDefaults } from '../utilities'
+import { BodyText, HeaderText } from '../utilities'
 
 const HeaderSubheader = ({ header, subheader, textColor }) => {
-	
-
-const HeaderSubheaderWrapper = styled.div`
-	max-width: 960px;
-	margin: 0 auto;
-	color: ${textColor};
-`;
-
+	const HeaderSubheaderWrapper = styled.div`
+		max-width: 960px;
+		margin: 0 auto;
+		color: ${textColor};
+	`
 
 	return (
 		<HeaderSubheaderWrapper>

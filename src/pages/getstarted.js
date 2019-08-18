@@ -3,13 +3,11 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import BlogSection from "../components/blogsection"
 import SEO from "../components/seo"
-import styled from "styled-components"
 import * as data from "../constants/getStartedPosts"
 import {
   HeaderText,
   SubheaderText,
   colors,
-  media,
   lineWidths,
   BackgroundColor,
   BackgroundImage,
@@ -64,14 +62,6 @@ export default class GetStarted extends Component {
   }
 
   render() {
-    const Icon = styled.img`
-      width: 1.5em;
-      padding: 1.5em;
-      ${media.med`
-      padding: 1em;
-      `}
-    `
-
     return (
       <Layout props={this.props}>
         <SEO title="Get started" />
