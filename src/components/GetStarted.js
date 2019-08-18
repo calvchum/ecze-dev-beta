@@ -16,5 +16,5 @@ export const HeaderSection = styled.div`
 export const BodySection = styled.div`
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 3em 1em;
+	padding: 0em 1em 3em 1em;
 `;

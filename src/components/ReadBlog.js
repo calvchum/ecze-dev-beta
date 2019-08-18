@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 import {
 	colors,
@@ -8,13 +7,8 @@ import {
 	paddingDefaults,
 	media,
 	BackgroundColor,
-	lineWidths,
 } from "../utilities"
 import { CTAButton } from "./Buttons"
-import baby from "../assets/placeholders/baby.svg"
-import { CenteredHeaderText } from "./KillerPoints"
-import { Underline } from "./Underline"
-import { useSpring, animated } from "react-spring"
 import holistic from "../assets/bt-icons/holistic.svg"
 import community from "../assets/bt-icons/community.svg"
 import excited from "../assets/bt-icons/excited.svg"

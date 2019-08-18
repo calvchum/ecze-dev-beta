@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import FilterBlog from "./filterblog"
-import { media, colors, SubheaderText, BodyText } from "../utilities"
+import { media, colors, SubheaderText } from "../utilities"
 
 const ResponsiveFilterStyles = styled(animated.div)`
   width: 100vw;

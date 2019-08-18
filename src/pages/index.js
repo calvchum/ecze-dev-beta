@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 import SEO from "../components/seo"
-import { MailHeroBanner, CTAHeroBanner } from "../components/HeroBanner"
+import { MailHeroBanner } from "../components/HeroBanner"
 import KillerPoints from "../components/KillerPoints"
-import { CTAButton } from "../components/Buttons"
-import HeaderSubheader from "../components/HeaderSubheader"
 import ReadBlog from "../components/ReadBlog"
 import AboutTheProblem from "../components/AboutTheProblem"
-import { Underline } from "../components/Underline"
-import {
-	colors,
-	SubheaderText,
-	HeaderText,
-	BodyText,
-	lineWidths,
-} from "../utilities"
+import { colors, SubheaderText } from "../utilities"
 import eczeGrey from "../assets/logo/ecze-logo-transparent.svg"
-import backgroundGreen from "../assets/backgrounds/pattern-green.svg"
 import Fade from "react-reveal/Fade"
 
 const WelcomeMat = styled(animated.div)`

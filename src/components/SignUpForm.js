@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { SubheaderText, BackgroundImage, media, colors } from "../utilities"
+import { SubheaderText, BackgroundImage, colors } from "../utilities"
 import MailchimpForm from "./MailchimpForm"
 
 
