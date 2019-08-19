@@ -77,8 +77,10 @@ const ReadBlog = () => {
 					<ReadBlogWrapper>
 						<div>
 							<HeaderSubheader
-								header="Get the tools and support you need to best manage your eczema."
-								subheader="Discover relief for your itchy skin with our recipes, exercises, lifestyle tips and valuable eczema info specifically designed to help people suffering with eczema."
+								header="The Ecze Hub"
+								subheader={`"Here at ECZE, we look at the bigger picture as to why you’re suffering with eczema, provide holistic solutions for you to explore and develop useful ways to better manage your eczema.
+																We believe that eczema is best managed holistically. We believe that what you eat, what you wear, what you think and feel all has a significant impact on your eczema.
+																The Ecze Hub is a place for you to discover relief for your itchy skin with our recipes, exercises, lifestyle tips and valuable eczema info specifically designed to help people suffering with eczema."`}
 							/>
 						</div>
 						<div>
