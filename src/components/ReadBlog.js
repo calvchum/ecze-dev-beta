@@ -13,6 +13,10 @@ import holistic from "../assets/bt-icons/holistic.svg"
 import community from "../assets/bt-icons/community.svg"
 import excited from "../assets/bt-icons/excited.svg"
 import HeaderSubheader from "./HeaderSubheader"
+import Mentalhealth from "../assets/bt-icons/Mental health.svg"
+import Lifestyle from "../assets/bt-icons/lifestyle.svg"
+import Fitness from "../assets/bt-icons/Fitness.svg"
+import Diet from "../assets/bt-icons/Diet.svg"
 
 const ReadBlogWrapper = styled.div`
 	max-width: 960px;
@@ -80,20 +84,20 @@ const ReadBlog = () => {
 						<div>
 							<IconSectionWrapper>
 								<IndividualIconWrapper>
-									<Icon src={holistic} alt="ECZE Logo" />
+									<Icon src={Fitness} alt="ECZE Logo" />
 									<CenteredBodyText>Exercise</CenteredBodyText>
 								</IndividualIconWrapper>
 								<IndividualIconWrapper>
-									<Icon src={community} alt="ECZE Logo" />
+									<Icon src={Lifestyle} alt="ECZE Logo" />
 									<CenteredBodyText>Lifestyle</CenteredBodyText>
 								</IndividualIconWrapper>
 								<IndividualIconWrapper>
-									<Icon src={excited} alt="ECZE Logo" />
+									<Icon src={Diet} alt="ECZE Logo" />
 									<CenteredBodyText>Diet</CenteredBodyText>
 								</IndividualIconWrapper>
 
 								<IndividualIconWrapper>
-									<Icon src={holistic} alt="ECZE Logo" />
+									<Icon src={Mentalhealth} alt="ECZE Logo" />
 									<CenteredBodyText>Mental Health</CenteredBodyText>
 								</IndividualIconWrapper>
 							</IconSectionWrapper>
