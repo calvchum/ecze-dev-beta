@@ -100,7 +100,7 @@ const ReadBlog = () => {
 						</div>
 
 						<CTAwrapper>
-							<CTAButton cta="Get onto the Ecze Hub" link="blog" />
+							<CTAButton cta="Get onto the Ecze Hub" link="hub" />
 						</CTAwrapper>
 					</ReadBlogWrapper>
 				</BackgroundColor>

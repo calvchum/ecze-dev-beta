@@ -70,7 +70,7 @@ const ArticlePreview = ({
 }) => {
   return (
     <CardWrapper>
-      <Link to={`/blog/${slug}`}>
+      <Link to={`/hub/${slug}`}>
         <BlogImage fluid={fluid} />
         <BodyTextUppercase>{category}</BodyTextUppercase>
         <BodyTextCapitalized>{title.toLowerCase()}</BodyTextCapitalized>
