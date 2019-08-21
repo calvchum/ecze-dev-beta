@@ -29,7 +29,6 @@ const BlogHeaderWrapper = styled.div`
 const BlogContentWrapper = styled.div`
   padding: 1em 0em 3em 0em;
   margin: 0 auto;
-  max-width: 600px;
   text-align: justify;
   font-family: "DM Sans";
 `
