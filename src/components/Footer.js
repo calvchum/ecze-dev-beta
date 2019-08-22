@@ -53,14 +53,26 @@ const FooterNavWrapper = styled.ul`
   `}
 `
 
+const DisclaimerContainer = styled.div`
+  grid-column: 1 / -1;
+  padding: 3em;
+  ${media.small`
+    grid-row: 3/4
+    `}
+`
+const DisclaimerText = styled(BodyText)`
+  font-size: 0.5em;
+  opacity: 0.4;
+`
+
 const Footer = ({ path }) => (
   <BackgroundColor color={colors.almostWhite}>
     <FooterWrapper>
       <AboutEcze>
         <SubheaderText>About Ecze</SubheaderText>
         <BodyText>
-          We provide simple and holistic remedies to help you overcome your
-          eczema.
+          We provide simple and holistic remedies to help provide relief for
+          your eczema.
         </BodyText>
       </AboutEcze>
       <FooterNavWrapper>
@@ -76,12 +88,21 @@ const Footer = ({ path }) => (
             hello@ecze.co
           </BodyText>
         </a>
-        <BodyText>
-          PO BOX 999, Placeholder Address, <br />
-          Victoria, Melbourne 3000
-        </BodyText>
+        <BodyText></BodyText>
       </ContactEcze>
       <SocialMediaIcons />
+      <DisclaimerContainer>
+        <DisclaimerText>
+          The Ecze Disclaimer: The contents of Ecze such as text, graphics,
+          images, and other material contained on the Ecze site ("Content") are
+          for informational purposes only. The Content is not intended to be a
+          substitute for professional medical advice, diagnosis, or treatment.
+          Always seek the advice of your physician or other qualified health
+          provider with any questions you may have regarding a medical
+          condition. Never disregard professional medical advice or delay in
+          seeking it because of something you have read on the Ecze site.
+        </DisclaimerText>
+      </DisclaimerContainer>
     </FooterWrapper>
   </BackgroundColor>
 )
