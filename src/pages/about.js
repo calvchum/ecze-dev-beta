@@ -179,7 +179,7 @@ const About = props => (
 							<Fade>
 								<div>
 									<SectionWrapper>
-										<BodyText
+										<div
 											dangerouslySetInnerHTML={{
 												__html:
 													data.contentfulAboutPage.section1.childMarkdownRemark
