@@ -221,7 +221,7 @@ const About = props => (
 											{data.contentfulAboutPage.sectionImage2.description}
 										</BodyTextItalic>
 									</AboutImage>
-									<BodyText
+									<div
 										dangerouslySetInnerHTML={{
 											__html:
 												data.contentfulAboutPage.section2.childMarkdownRemark
@@ -233,7 +233,7 @@ const About = props => (
 							{/* SECTION 2 */}
 							<Fade>
 								<SectionWrapper>
-									<BodyText
+									<div
 										dangerouslySetInnerHTML={{
 											__html:
 												data.contentfulAboutPage.section3.childMarkdownRemark
@@ -262,7 +262,7 @@ const About = props => (
 											{data.contentfulAboutPage.sectionImage4.description}
 										</BodyTextItalic>
 									</AboutImage>
-									<BodyText
+									<div
 										dangerouslySetInnerHTML={{
 											__html:
 												data.contentfulAboutPage.section4.childMarkdownRemark
@@ -285,7 +285,7 @@ const About = props => (
 							<Fade>
 								<FinalSection>
 									<TextCTA>
-										<BodyText
+										<div
 											dangerouslySetInnerHTML={{
 												__html:
 													data.contentfulAboutPage.section5.childMarkdownRemark
