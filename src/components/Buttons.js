@@ -26,7 +26,6 @@ const CTAButtonStyle = styled.button`
 	}
 	&:focus {
 		outline: none;
-		
 	}
 
 	${media.med`
