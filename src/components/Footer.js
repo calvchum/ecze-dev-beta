@@ -55,10 +55,8 @@ const FooterNavWrapper = styled.ul`
 
 const DisclaimerContainer = styled.div`
   grid-column: 1 / -1;
+  grid-row: 4 / -1;
   padding: 3em;
-  ${media.small`
-    grid-row: 3/4
-    `}
 `
 const DisclaimerText = styled(BodyText)`
   font-size: 0.5em;
