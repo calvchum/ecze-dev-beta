@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import { animated } from "react-spring"
 import Navigation from "./Navigation"
@@ -24,7 +25,7 @@ const ResponsiveNavStyles = styled(animated.div)`
     padding: 0.5em 0em;
   }
 `
-const EczeLogo = styled.div`
+const EczeLogo = styled(Link)`
   position: absolute;
   left: 1em;
   top: 0.5em;
@@ -38,7 +39,7 @@ const EczeLogo = styled.div`
 const ResponsiveNav = ({ style, path }) => {
   return (
     <ResponsiveNavStyles style={style}>
-      <EczeLogo>
+      <EczeLogo to="/">
         <img src={eczeTransparentLogo} alt="" />
       </EczeLogo>
       <Navigation path={path} />

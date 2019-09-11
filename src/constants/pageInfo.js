@@ -4,7 +4,7 @@ export const pageData = [
     link: "/about/",
   },
   {
-    title: "FAQ",
+    title: "FAQs",
     link: "/faq/",
   },
   {
