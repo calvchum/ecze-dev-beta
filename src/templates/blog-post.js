@@ -14,7 +14,7 @@ import {
 } from "../utilities"
 
 const IndividualBlogWrapper = styled.div`
-  max-width: 960px;
+  max-width: 820px;
   margin: 0 auto;
 
   ${media.med`
@@ -34,20 +34,18 @@ const BlogContentWrapper = styled.div`
 `
 
 const HeroImage = styled(Img)`
-  width: 100vw;
-  object-fit: cover;
-  margin-bottom: 0px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  max-width: 820px;
+  width: 100%;
+  height: auto;
   background-size: cover;
+  background-position: center;
+  margin-bottom: 0px; 
 `
 
 const OverFlowHidden = styled.div`
-  max-width: 960px;
-  max-height: 60vh;
-  margin: 0 auto;
-  overflow: hidden;
-  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${media.med`
     max-width: 100vw;
