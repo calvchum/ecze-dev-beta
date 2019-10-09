@@ -3,17 +3,17 @@ import styled from "styled-components"
 import { media, colors } from "../utilities"
 
 const EmailInput = styled.input`
-  width: 300px;
-  padding: 1em;
-  border: none;
-  background: transparent;
-  border-bottom: 4px solid ${colors.almostWhite};
+	width: 300px;
+	padding: 1em;
+	border: none;
+	background: transparent;
+	border-bottom: 4px solid ${colors.almostWhite};
 	margin-right: 0.5em;
 	color: ${colors.white};
-  &:focus {
-    outline: ${colors.almostWhite};
-  }
-  ${media.med`
+	&:focus {
+		outline: ${colors.almostWhite};
+	}
+	${media.med`
 		width: 220px;
   `}
 `
@@ -62,8 +62,8 @@ class MailchimpForm extends Component {
 					<SignUpGrid>
 						{/* there are two hidden inputs that have the following specific value and names */}
 						<div>
-							<input type="hidden" name="u" value="c41941bbcbecdc562a2885df3" />
-							<input type="hidden" name="id" value="b5400ff385" />
+							<input type="hidden" name="u" value="3ec70a0e6707ac8f63681ab4d" />
+							<input type="hidden" name="id" value="0bd01a9c6e" />
 							{/* This is the input that the user puts email into */}
 							<EmailInput
 								ref={input => {

@@ -22,7 +22,7 @@ const ThankYouPage = props => (
 			<BodyText>
 				Thank you for signing up! We promise you won't regret it.
 			</BodyText>
-			<CTAButton cta="Back to the blog" link="blog" />
+			<CTAButton cta="Back to the Ecze Hub" link="hub" />
 		</ThankYouWrapper>
 	</Layout>
 )
