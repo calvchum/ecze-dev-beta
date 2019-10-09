@@ -14,14 +14,18 @@ const ThankYouWrapper = styled.div`
 	`}
 `
 
+const ThankYouText = styled(BodyText)`
+	padding: 2em 0em 5em 0em;
+`
+
 const ThankYouPage = props => (
 	<Layout props={props}>
 		<SEO title="Subscription success!" />
 		<ThankYouWrapper>
 			<HeaderText>Thanks for subscribing to ECZE!</HeaderText>
-			<BodyText>
+			<ThankYouText>
 				Thank you for signing up! We promise you won't regret it.
-			</BodyText>
+			</ThankYouText>
 			<CTAButton cta="Back to the Ecze Hub" link="hub" />
 		</ThankYouWrapper>
 	</Layout>
