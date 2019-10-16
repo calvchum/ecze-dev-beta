@@ -27,8 +27,20 @@ const SocMediaIcon = styled.img`
 
 const SocialMediaIcons = () => (
   <SocialMedia>
-    <a href="􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚https://www.facebook.com/Ecze" target="_blank" rel="noopener noreferrer"><SocMediaIcon src={facebookIcon} alt="FB Logo" /></a>
-    <a href="https://www.instagram.com/eczefighter/" target="_blank" rel="noopener noreferrer"><SocMediaIcon src={instagramIcon} alt="INSTA Logo" /></a>
+    <a
+      href="􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚https://www.facebook.com/Ecze"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <SocMediaIcon src={facebookIcon} alt="FB Logo" />
+    </a>
+    <a
+      href="https://www.instagram.com/eczecotton/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <SocMediaIcon src={instagramIcon} alt="INSTA Logo" />
+    </a>
   </SocialMedia>
 )
 
