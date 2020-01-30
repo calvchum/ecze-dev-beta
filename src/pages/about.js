@@ -251,64 +251,6 @@ const About = props => (
 									</AboutImage>
 								</SectionWrapper>
 							</Fade>
-							<Fade>
-								<SectionWrapper>
-									<AboutImage>
-										<Img
-											fluid={data.contentfulAboutPage.sectionImage4.fluid}
-											style={{ maxHeight: "50vh" }}
-										/>
-										<BodyTextItalic>
-											{data.contentfulAboutPage.sectionImage4.description}
-										</BodyTextItalic>
-									</AboutImage>
-									<div
-										dangerouslySetInnerHTML={{
-											__html:
-												data.contentfulAboutPage.section4.childMarkdownRemark
-													.html,
-										}}
-									/>
-								</SectionWrapper>
-							</Fade>
-							{/* ######### ACCENT AQUOTE  */}
-							<Fade>
-								<AccentWrapper>
-									<SubheaderText
-										dangerouslySetInnerHTML={{
-											__html: data.contentfulAboutPage.accentQuote2,
-										}}
-									/>
-								</AccentWrapper>
-							</Fade>
-							{/* SECTION 5 */}
-							<Fade>
-								<FinalSection>
-									<TextCTA>
-										<div
-											dangerouslySetInnerHTML={{
-												__html:
-													data.contentfulAboutPage.section5.childMarkdownRemark
-														.html,
-											}}
-										/>
-										<CTAButton
-											link="getstarted"
-											cta="Let's get started"
-											style={{ paddingTop: "1em" }}
-										/>
-									</TextCTA>
-									<AboutImage>
-										<Img
-											fluid={data.contentfulAboutPage.sectionImage5.fluid}
-											style={{ maxHeight: "50vh" }}
-										/>
-										<BodyTextItalic>
-											{data.contentfulAboutPage.sectionImage5.description}
-										</BodyTextItalic>
-									</AboutImage>
-								</FinalSection>
-							</Fade>
 						</AboutContentWrapper>
 					</Layout>
 				</BackgroundColor>
@@ -318,3 +260,61 @@ const About = props => (
 )
 
 export default About
+// <Fade>
+// 	<SectionWrapper>
+// 		<AboutImage>
+// 			<Img
+// 				fluid={data.contentfulAboutPage.sectionImage4.fluid}
+// 				style={{ maxHeight: "50vh" }}
+// 			/>
+// 			<BodyTextItalic>
+// 				{data.contentfulAboutPage.sectionImage4.description}
+// 			</BodyTextItalic>
+// 		</AboutImage>
+// 		<div
+// 			dangerouslySetInnerHTML={{
+// 				__html:
+// 					data.contentfulAboutPage.section4.childMarkdownRemark
+// 						.html,
+// 			}}
+// 		/>
+// 	</SectionWrapper>
+// </Fade>
+// {/* ######### ACCENT AQUOTE  */}
+// <Fade>
+// 	<AccentWrapper>
+// 		<SubheaderText
+// 			dangerouslySetInnerHTML={{
+// 				__html: data.contentfulAboutPage.accentQuote2,
+// 			}}
+// 		/>
+// 	</AccentWrapper>
+// </Fade>
+// {/* SECTION 5 */}
+// <Fade>
+// 	<FinalSection>
+// 		<TextCTA>
+// 			<div
+// 				dangerouslySetInnerHTML={{
+// 					__html:
+// 						data.contentfulAboutPage.section5.childMarkdownRemark
+// 							.html,
+// 				}}
+// 			/>
+// 			<CTAButton
+// 				link="getstarted"
+// 				cta="Let's get started"
+// 				style={{ paddingTop: "1em" }}
+// 			/>
+// 		</TextCTA>
+// 		<AboutImage>
+// 			<Img
+// 				fluid={data.contentfulAboutPage.sectionImage5.fluid}
+// 				style={{ maxHeight: "50vh" }}
+// 			/>
+// 			<BodyTextItalic>
+// 				{data.contentfulAboutPage.sectionImage5.description}
+// 			</BodyTextItalic>
+// 		</AboutImage>
+// 	</FinalSection>
+// </Fade>
