@@ -136,24 +136,6 @@ const About = props => (
 							html
 						}
 					}
-					sectionImage4 {
-						description
-						fluid(maxWidth: 1000) {
-							...GatsbyContentfulFluid
-						}
-					}
-					accentQuote2
-					section5 {
-						childMarkdownRemark {
-							html
-						}
-					}
-					sectionImage5 {
-						description
-						fluid(maxWidth: 1000) {
-							...GatsbyContentfulFluid
-						}
-					}
 				}
 			}
 		`}
@@ -318,3 +300,76 @@ export default About
 // 		</AboutImage>
 // 	</FinalSection>
 // </Fade>
+
+// <StaticQuery
+// 	query={graphql`
+// 		query AboutPageQuery {
+// 			contentfulAsset(title: { eq: "readBlogImage" }) {
+// 				description
+// 				fluid(maxWidth: 1000) {
+// 					...GatsbyContentfulFluid
+// 				}
+// 			}
+// 			contentfulAboutPage(
+// 				id: { eq: "c53ad837-16d2-51ef-a8bc-07ec40db721f" }
+// 			) {
+// 				section1 {
+// 					childMarkdownRemark {
+// 						html
+// 					}
+// 				}
+// 				sectionImage1 {
+// 					description
+// 					fluid(maxWidth: 1000) {
+// 						...GatsbyContentfulFluid
+// 					}
+// 				}
+// 				accentQuote1
+// 				section2 {
+// 					childMarkdownRemark {
+// 						html
+// 					}
+// 				}
+// 				sectionImage2 {
+// 					description
+// 					fluid(maxWidth: 1000) {
+// 						...GatsbyContentfulFluid
+// 					}
+// 				}
+// 				section3 {
+// 					childMarkdownRemark {
+// 						html
+// 					}
+// 				}
+// 				sectionImage3 {
+// 					description
+// 					fluid(maxWidth: 1000) {
+// 						...GatsbyContentfulFluid
+// 					}
+// 				}
+// 				section4 {
+// 					childMarkdownRemark {
+// 						html
+// 					}
+// 				}
+// 				sectionImage4 {
+// 					description
+// 					fluid(maxWidth: 1000) {
+// 						...GatsbyContentfulFluid
+// 					}
+// 				}
+// 				accentQuote2
+// 				section5 {
+// 					childMarkdownRemark {
+// 						html
+// 					}
+// 				}
+// 				sectionImage5 {
+// 					description
+// 					fluid(maxWidth: 1000) {
+// 						...GatsbyContentfulFluid
+// 					}
+// 				}
+// 			}
+// 		}
+// 	`}
