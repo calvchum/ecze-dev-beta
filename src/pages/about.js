@@ -125,12 +125,6 @@ const About = props => (
 							html
 						}
 					}
-					sectionImage3 {
-						description
-						fluid(maxWidth: 1000) {
-							...GatsbyContentfulFluid
-						}
-					}
 				}
 			}
 		`}
@@ -217,15 +211,6 @@ const About = props => (
 													.html,
 										}}
 									/>
-									<AboutImage>
-										<Img
-											fluid={data.contentfulAboutPage.sectionImage3.fluid}
-											style={{ maxHeight: "50vh" }}
-										/>
-										<BodyTextItalic>
-											{data.contentfulAboutPage.sectionImage3.description}
-										</BodyTextItalic>
-									</AboutImage>
 								</SectionWrapper>
 							</Fade>
 						</AboutContentWrapper>
