@@ -73,7 +73,7 @@ export default class Faq extends Component {
               </HeaderText>
               <div>
                 <SubheaderText>
-                  Got a question? Let's get them answered.
+                  Got a question? Let's get them answered!
                 </SubheaderText>
               </div>
             </FaqHeaderWrapper>
