@@ -13,7 +13,7 @@ const CardWrapper = styled.div`
   transition: 0.3s;
   &:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  }
+  } 
 
   & > a {
     text-decoration: none;
