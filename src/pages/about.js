@@ -131,11 +131,6 @@ const About = props => (
 							...GatsbyContentfulFluid
 						}
 					}
-					section4 {
-						childMarkdownRemark {
-							html
-						}
-					}
 				}
 			}
 		`}
