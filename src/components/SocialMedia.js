@@ -28,7 +28,7 @@ const SocMediaIcon = styled.img`
 const SocialMediaIcons = () => (
   <SocialMedia>
     <a
-      href="􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚􏰓􏰈􏰈􏰤􏰇􏰥􏰚􏰚􏰙􏰙􏰙􏰖􏰃􏰏􏰇􏰈􏰋􏰝􏰌􏰋􏰔􏰖􏰎􏰁􏰔􏰚􏰅􏰎􏰠􏰅􏰒􏰃􏰝􏰓􏰈􏰅􏰌􏰚https://www.facebook.com/Ecze"
+      href="https://www.facebook.com/ECZE-Cotton-107931974087325/?view_public_for=107931974087325"
       target="_blank"
       rel="noopener noreferrer"
     >
