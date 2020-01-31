@@ -12,6 +12,7 @@ import {
   BackgroundColor,
   media,
 } from "../utilities"
+import { PaddingBottom } from "../components/BlogPage"
 
 const IndividualBlogWrapper = styled.div`
   max-width: 820px;
@@ -39,7 +40,7 @@ const HeroImage = styled(Img)`
   height: auto;
   background-size: cover;
   background-position: center;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
 `
 
 const OverFlowHidden = styled.div`
@@ -80,11 +81,13 @@ export default class BlogPostTemplate extends Component {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
-            <BlogSection
-              posts={renderPosts}
-              category={category}
-              title="Similar posts"
-            />
+            <PaddingBottom>
+              <BlogSection
+                posts={renderPosts}
+                category={category}
+                title="Similar posts"
+              />
+            </PaddingBottom>
           </IndividualBlogWrapper>
         </Layout>
       </BackgroundColor>
