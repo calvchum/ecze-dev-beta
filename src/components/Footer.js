@@ -83,7 +83,7 @@ const Footer = ({ path }) => (
           <BodyText
             style={{ paddingBottom: "0.5em", textDecoration: "underline" }}
           >
-            hello@ecze.co
+            hello@eczecotton.com
           </BodyText>
         </a>
         <BodyText></BodyText>
