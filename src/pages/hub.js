@@ -166,7 +166,7 @@ export default class hub extends Component {
                   updateSelectedCategories={this.updateSelectedCategories}
                 />
               </DisplayNone>
-              <div>{displayedSections}</div>
+              <PaddingBottom>{displayedSections}</PaddingBottom>
             </BlogFilterWrapper>
           </div>
         </Layout>
