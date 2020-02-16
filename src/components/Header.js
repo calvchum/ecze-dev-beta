@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Navigation from "./Navigation"
 import ResponsiveNav from "./ResponsiveNav"
 import { paddingDefaults, colors } from "../utilities"
-import eczeLogoWhite from "../assets/logo/white.svg"
+import eczeLogoWhite from "../assets/logo/newLogoWhite740x300.svg"
 import { media } from "../utilities"
 
 const HeaderWrapper = styled.div`
@@ -26,7 +26,7 @@ const HeaderWrapper = styled.div`
 `
 
 const LogoWrapper = styled.img`
-  height: 100px;
+  height: 90px;
   margin-bottom: 0em;
   display: flex;
 `
