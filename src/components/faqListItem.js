@@ -11,7 +11,7 @@ const FaqListItem = ({ index, question, answer, handleClick, isClicked }) => {
 
 	const transitions = useTransition(isClicked, null, {
 		from: { opacity: 1, height: "0px" },
-		enter: { opactiy: 1, height: `${answer.length < 350 ? "170px" : "350px"}` },
+		enter: { opactiy: 1, height: `${answer.length < 350 ? "170px" : "360px"}` },
 		leave: { opacity: 0, height: "0px" },
 	})
 
