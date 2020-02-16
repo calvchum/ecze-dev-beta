@@ -2,7 +2,7 @@ const keys = require("./config/dev")
 
 module.exports = {
   siteMetadata: {
-    title: `ECZE`,
+    title: `ecze`,
     description: `If you want to cure your eczema, you need to LEARN about eczema.`,
     author: `@calvchum`,
   },
@@ -28,7 +28,7 @@ module.exports = {
         background_color: `#00DAD3`,
         theme_color: `#00DAD3`,
         display: `minimal-ui`,
-        icon: `src/assets/logo/fav-white.png`, // This path is relative to the root of the site.
+        icon: `src/assets/logo/favicon-32x32.png`, // This path is relative to the root of the site.
       },
     },
     {
