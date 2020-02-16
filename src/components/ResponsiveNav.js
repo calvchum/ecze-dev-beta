@@ -5,7 +5,7 @@ import { animated } from "react-spring"
 import Navigation from "./Navigation"
 import { colors } from "../utilities"
 import SocialMediaIcons from "./SocialMedia"
-import eczeTransparentLogo from "../assets/logo/ecze-logo-transparent.svg"
+import eczeTransparentLogo from "../assets/logo/newLogoWhite740x300.svg"
 
 const ResponsiveNavStyles = styled(animated.div)`
   position: fixed;
@@ -36,11 +36,17 @@ const EczeLogo = styled(Link)`
   }
 `
 
+const LogoWrapper = styled.img`
+  height: 80px;
+  margin-bottom: 0em;
+  display: flex;
+`
+
 const ResponsiveNav = ({ style, path }) => {
   return (
     <ResponsiveNavStyles style={style}>
       <EczeLogo to="/">
-        <img src={eczeTransparentLogo} alt="" />
+        <LogoWrapper src={eczeTransparentLogo} alt="" />
       </EczeLogo>
       <Navigation path={path} />
       <SocialMediaIcons />

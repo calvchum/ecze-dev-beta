@@ -8,7 +8,7 @@ import KillerPoints from "../components/KillerPoints"
 import ReadBlog from "../components/ReadBlog"
 import AboutTheProblem from "../components/AboutTheProblem"
 import { colors, SubheaderText } from "../utilities"
-import eczeGrey from "../assets/logo/ecze-logo-transparent.svg"
+import eczeGrey from "../assets/logo/newLogoWhite740x300.svg"
 import Fade from "react-reveal/Fade"
 
 const WelcomeMat = styled(animated.div)`
@@ -23,7 +23,7 @@ const WelcomeMat = styled(animated.div)`
 	justify-content: center;
 	z-index: 1;
 	& img {
-		width: 100px;
+		width: 200px;
 		height: auto;
 	}
 `
